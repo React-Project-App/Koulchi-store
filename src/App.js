@@ -1,21 +1,34 @@
 
 import  React ,{useEffect}from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { GetAllProduct } from './Actions/Poroducts';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'bootstrap/dist/js/bootstrap.min.js';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import ProductDetails from './Pages/ProductDetails/ProductDetails';
+import Products from './Pages/Products/Products';
+import Home from './Pages/Home/Home';
+
+
+
 
 function App() {
-  const dispatch= useDispatch()
- const Products= useSelector(state=>state.products)
- 
- console.log(Products)
-useEffect(() => {
-  dispatch(GetAllProduct())
- 
-})
+  
+
+
   return (
-    <div className="App">
-    hello world
-    </div>
+    <BrowserRouter>
+      <Routes>
+     
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:Id" element={<ProductDetails />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+
+   </BrowserRouter>
+    
+   
   );
 }
 
