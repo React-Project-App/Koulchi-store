@@ -14,10 +14,10 @@ const Products = () => {
        
       }, [])
       const products= useSelector(state=>state.products)
-      console.log(products)
+  
  
  
-  return (
+  return products.length>0? (
     <div className='container'>
       <div className="row">
       {(
@@ -31,7 +31,7 @@ const Products = () => {
       </div>
     
     </div>
-  )
+  ):<h1>Loading</h1>
 }
 
 export default Products
