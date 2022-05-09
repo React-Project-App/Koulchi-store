@@ -1,5 +1,6 @@
-import { collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
-import { GET_ALL_PRODUCTS, GET_FEATURED_PRODUCTS } from "../actionconstants/ActionCn";
+import { async } from "@firebase/util";
+import { collection, doc, getDocs, onSnapshot, query, where } from "firebase/firestore";
+import { GET_ALL_PRODUCTS, GET_DETAILS_PRODUCT, GET_FEATURED_PRODUCTS } from "../actionconstants/ActionCn";
 import { db } from "../FirebaseConfig/FirebaseConfig";
 
 
@@ -19,4 +20,12 @@ export const GetFeaturedProduct= ()=>async (dispatch)=>{
 
     const doc =await getDocs(qr);
     dispatch({type:GET_FEATURED_PRODUCTS,pyload:doc});
+}
+
+
+export const GETDETAILSPRODUCT=(id)=>async(dispatch)=>{
+    const ref=doc(db,'Product',id)
+onSnapshot(ref,(prod)=>{
+  dispatch({type:GET_DETAILS_PRODUCT,pyload:prod});
+})
 }
