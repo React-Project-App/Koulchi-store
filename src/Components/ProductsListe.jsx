@@ -8,11 +8,11 @@ const ProductsListe = ({product}) => {
        
       
    
-    <div class="card shadow h-75">
-        <img class="card-img-top h-75 " src={Photo} alt={Title}   />
-        <div class="card-body">
-            <h4 class="card-title">{Title}</h4>
-            <p class="card-text">{Price}</p>
+    <div className="card shadow h-75">
+        <img className="card-img-top h-75 " src={Photo} alt={Title}   />
+        <div className="card-body">
+            <h4 className="card-title">{Title}</h4>
+            <p className="card-text">{Price}</p>
         </div>
         <Link to={`/products/${id}`} className='btn btn-primary'>View</Link>
         

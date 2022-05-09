@@ -9,6 +9,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import Products from './Pages/Products/Products';
 import Home from './Pages/Home/Home';
+import Cart from './Pages/Cart/Cart';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:Id" element={<ProductDetails />} />
         <Route path="/" element={<Home />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
 
    </BrowserRouter>

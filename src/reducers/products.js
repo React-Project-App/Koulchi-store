@@ -6,7 +6,7 @@ export default function products(state = [], {type,pyload}) {
         case GET_ALL_PRODUCTS:
 
             const Products=pyload.docs.map(doc=>({...doc.data(),id:doc.id}))
-            console.log(Products)
+           
             return Products;
         case GET_FEATURED_PRODUCTS:
             const FeaturedProducts=pyload.docs.map(doc=>({...doc.data(),id:doc.id}))
