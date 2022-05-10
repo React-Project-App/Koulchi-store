@@ -37,7 +37,7 @@ const ProductDetails = () => {
             <p className="card-text">{Description}</p>
           </dir>
           <div className="container d-flex flex-wrap align-content-center">
-            {MorePhoto.map((pic) => {
+            {MorePhoto&&(MorePhoto.map((pic) => {
               return (
                 <img
                   className="card-img-top h-75 w-25  border border-primary rounded rounded-5 me-2"
@@ -46,7 +46,7 @@ const ProductDetails = () => {
                   onClick={changeImg}
                 />
               );
-            })}
+            }))}
           </div>
         </div>
         <Link
