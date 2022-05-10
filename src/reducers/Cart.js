@@ -33,13 +33,17 @@ export const Cart = (cart = [], { type, payload }) => {
         console.log(payload)
         const newCart=cart.map((item) =>{
           if (item.id === ID) {
+            
             return { 
               ...item,
               Amount: item.Amount + 1,
               SubTotal: (item.Amount+1) * item.Price
               
             };
+           
+
           }
+          
           return item
         })
         return [...newCart]
@@ -47,17 +51,24 @@ export const Cart = (cart = [], { type, payload }) => {
         const newCartt=cart.map((item) =>{
         if (item.id === payload)
           {         
+            if (item.Amount >1){
              return { 
                 ...item,
                 Amount: item.Amount- 1,
                 SubTotal: (item.Amount-1) * item.Price               
-              };     
-                     
-            }   
-        return item
-
+              };     }
+              else{
+                return { 
+                  ...item,
+                  Amount: 1,
+                  SubTotal:  item.Price
+                  
+                };
+              }
+          }   
+          return item
         })
-        return [...newCartt]
+        return  [...newCartt]
         
       default:
         return cart;
