@@ -1,0 +1,138 @@
+span{
+    color: #1363E2;
+}
+a{
+    text-decoration: none;
+    color: #000 !important;
+}
+.search,.search .ipt , .btr{
+    border-radius: 20px !important;
+}
+.search{
+    border: #000 1px solid;
+}
+.btr{
+    color: #1363E2 !important;
+}
+.btr:hover{
+    background-color: #1363E2 !important;
+    color: #fff !important;
+}
+nav{
+    -webkit-box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50); 
+box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
+}
+.crtp{
+    background-color: #FF6120 !important;
+    width: 18px !important;
+    height: 18px !important;
+    left: 20px !important;
+    bottom: 10px !important;
+}
+.Register{
+    color: #FF6120 !important;
+}
+
+
+
+
+
+
+.product-item{
+    border: 1px solid rgb(219, 219, 219);
+    -webkit-box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23); 
+    box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23);
+    border-radius: 20px;
+}
+.product-img{
+    position: relative;
+    overflow: hidden;
+    border-radius:20px 20px 0px 0px;
+}
+.btns{
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    font-size: 15px;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+}
+.btns button{
+    border: none;
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.btns a:hover{
+    color: #FF6120 !important;
+}
+
+.product-img:hover .btns{
+    bottom: 0;
+}
+
+.heart-icon{
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    font-size: 18px;
+}
+
+.product-type{
+    font-size: 13px;
+    opacity: 0.8;
+}
+.product-name{
+    transition: all 0.3s ease-in-out;
+}
+.product-name:hover{
+    color: #FF6120!important;
+}
+.product-price{
+    color: #FF6120;
+}
+.old-price{
+    text-decoration: line-through;
+}
+.rating{
+    font-size: 13px;
+}
+.product-item{
+    width: 300px;
+}
+
+.big img{
+    border-radius: 20px;
+    border: rgba(0, 0, 0, 0.158) 1px solid;  
+}
+.pucadm img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: rgba(0, 0, 0, 0.158) 1px solid;
+}
+.active{
+    border: 2px solid#1362e29c !important;
+
+}
+.product-price{
+    font-size: 25px;
+    padding-right: 15px;
+    font-weight: 700;
+}
+.quantité{
+    width: 120px;
+}
+.adto button{
+    border: none;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 15px;
+    width: 200px;
+}
+
+.adto a{
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 17px;
+}
