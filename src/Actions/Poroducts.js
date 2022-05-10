@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import { collection, doc, getDocs, onSnapshot, query, where } from "firebase/firestore";
-import { GET_ALL_PRODUCTS, GET_DETAILS_PRODUCT, GET_FEATURED_PRODUCTS } from "../actionconstants/ActionCn";
+import { AMOUNT_PRODUCT, GET_ALL_PRODUCTS, GET_DETAILS_PRODUCT, GET_FEATURED_PRODUCTS, INCRES_AMOUNT } from "../actionconstants/ActionCn";
 import { db } from "../FirebaseConfig/FirebaseConfig";
 
 
@@ -29,3 +29,11 @@ onSnapshot(ref,(prod)=>{
   dispatch({type:GET_DETAILS_PRODUCT,pyload:prod});
 })
 }
+
+export const AMOUNTPRODUCT=(id)=>async(dispatch)=>{
+    const ref=doc(db,'Product',id)
+    onSnapshot(ref,(prod)=>{
+      dispatch({type:AMOUNT_PRODUCT,pyload:prod});
+    })
+}
+

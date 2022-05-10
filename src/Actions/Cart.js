@@ -14,8 +14,6 @@ export const ClearCart =()=>async (dispatch)=>{
     dispatch({type:CLEAR_CART});
 }
 export const IncresAmount =(Id)=>async (dispatch)=>{
-    // const Product= await getDoc(doc(db,"Product",Id));
-    console.log(Id);
     dispatch({type:INCRESAMOUNT,payload:Id});
 }
 export const DicresAmount =(Id)=>async (dispatch)=>{

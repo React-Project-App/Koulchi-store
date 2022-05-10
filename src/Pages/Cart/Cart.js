@@ -6,7 +6,6 @@ import CartItems from '../../Components/CartItems/CartItems'
 
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
-
      const [Total,setTotal]=useState(0);
   useEffect(() => {
     const  ProductTotal = CartProducts.reduce((Product, item) => {

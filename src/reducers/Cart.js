@@ -18,7 +18,7 @@ export const Cart = (cart = [], { type, payload }) => {
           }
           return item;
         });
-        // debugger ;
+        
         return [...newCart];
       }
 
@@ -32,18 +32,13 @@ export const Cart = (cart = [], { type, payload }) => {
         const  ID  = payload;
         console.log(payload)
         const newCart=cart.map((item) =>{
-          if (item.id === ID) {
-            
+          if (item.id === ID) {     
             return { 
               ...item,
               Amount: item.Amount + 1,
               SubTotal: (item.Amount+1) * item.Price
-              
             };
-           
-
           }
-          
           return item
         })
         return [...newCart]
