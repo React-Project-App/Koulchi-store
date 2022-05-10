@@ -11,10 +11,9 @@ const ProductDetails = () => {
   const [pic, setpic] = useState("");
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(AMOUNTPRODUCT(Id));
+    dispatch(GETDETAILSPRODUCT(Id));
   }, []);
-  const {Title, Description, Price, Photo, MorePhoto,Amount} = useSelector((state) => state.products);
-
+  const {Title, Description, Price, Photo, MorePhoto} = useSelector((state) => state.products);
   const changeImg = (e) => {
     setpic(e.currentTarget.src);
   };
@@ -48,7 +47,7 @@ const ProductDetails = () => {
           <div className="pt-3 ps-1 row">
             <p className="col-12">QUANTITÉ</p>
             <div className="quantité col-5 pt-1">
-              <a className="pe-5" href="">-</a>{Amount}<a className="ps-5" href="" >+</a>
+              <a className="pe-5" href="">-</a>0<a className="ps-5" href="" >+</a>
               <hr className="quantité"/>
             </div>
             <div className="col-5 ps-5 adto" >
