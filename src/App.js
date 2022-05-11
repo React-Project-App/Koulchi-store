@@ -11,21 +11,25 @@ import Products from './Pages/Products/Products';
 import Home from './Pages/Home/Home';
 import Cart from './Pages/Cart/Cart';
 
+import { ToastContainer } from 'react-toastify';
+import Login from './Pages/Login/Login';
 
-
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   
 
 
   return (
     <BrowserRouter>
+     <ToastContainer/>
       <Routes>
-     
+        
         <Route path="/products" element={<Products />} />
         <Route path="/products/:Id" element={<ProductDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+       
       </Routes>
 
    </BrowserRouter>

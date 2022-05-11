@@ -7,6 +7,8 @@ export const CLEAR_CART="CLEAR_CART";
 export const INCRESAMOUNT="INCRESAMOUNT";
 export const DICRESAMOUNT="DICRESAMOUNT";
 export const AMOUNT_PRODUCT="DICRESAMOUNT";
+export const LOGIN="LOGIN";
+
 
 
 
