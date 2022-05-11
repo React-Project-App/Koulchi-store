@@ -41,7 +41,7 @@ const [Amount, setAmount] = useState(1);
           <div className="col-12 big w-auto">
             <img src={pic ? pic : Photo} className="img-fluid" alt={Title} />
           </div>
-          Name
+          
           <div className="col-12 d-flex justify-content-around pucadm pt-4">
             {MorePhoto &&
               MorePhoto.map((pic) => {
@@ -56,15 +56,15 @@ const [Amount, setAmount] = useState(1);
           <span className="old-price text-dark ">44000</span>
           <div className="pt-3 ps-1 row">
             <p className="col-12">QUANTITÉ</p>
-            <div className="quantité col-5 pt-1">
-              <a className="pe-4" onClick={handelDecAmount}>
+            <div className="quantité col-5 pt-2  row">
+              <a className=" col-5 text-center" onClick={handelDecAmount}>
                 -
               </a>
               {Amount}
-              <a className="ps-4" onClick={handelInAmount}>
+              <a className="col-5 text-center" onClick={handelInAmount}>
                 +
               </a>
-              <hr className="quantité" />
+              <hr className=" ms-4 col-8" />
             </div>
             <div className="col-5 ps-5 adto">
               <Link

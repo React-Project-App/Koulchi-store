@@ -1,76 +1,51 @@
-import {
-  ADD_TO_CART,
-  CLEAR_CART,
-  DICRESAMOUNT,
-  INCRESAMOUNT,
-  REMOVE_FROM_CART,
-} from "../actionconstants/ActionCn";
-export const Cart = (cart = [], { type, payload }) => {
-  switch (type) {
-    case ADD_TO_CART:
-      // const { id } = payload;
+import React from 'react'
+import { useDispatch } from 'react-redux';
+import { DicresAmount, IncresAmount, RemoveFromCart } from '../../Actions/Cart';
 
-      const cartItem = cart.find((item) => item.id === payload.id);
+const CartItems = ({item}) => {
+ const {Price,Amount,SubTotal,Title,id} =item
+ 
+ const dispatch=useDispatch() ;
 
-      console.log(cartItem);
-      if (cartItem) {
-        const newCart = cart.map((item) => {
-          if (item.id === payload.id) {
-            return {
-              ...item,
-              Amount: item.Amount + 1,
-              SubTotal: item.Amount * payload.Price,
-            };
-          }
-          return item;
-        });
+const  HandleRemoveFromCart=()=>{
+  dispatch(RemoveFromCart(id))
+}
+const  HandleIncresAmount=()=>{
+  console.log("dd")
+  dispatch(IncresAmount(id))
+}
+const  HandleDicresAmount=()=>{
+  dispatch(DicresAmount(id))
 
-        return [...newCart];
-      }
+}
+  
+    return (
 
-      return [...cart, payload];
-    case REMOVE_FROM_CART:
-      const cartItemm = cart.filter((item) => {
-        return item.id !== payload;
-      });
-      return [...cartItemm];
-    case CLEAR_CART:
-      return [];
-    case INCRESAMOUNT:
-      const ID = payload;
-      console.log(payload);
-      const newCart = cart.map((item) => {
-        if (item.id === ID) {
-          return {
-            ...item,
-            Amount: item.Amount + 1,
-            SubTotal: (item.Amount + 1) * item.Price,
-          };
-        }
-        return item;
-      });
-      return [...newCart];
-    case DICRESAMOUNT:
-      const newCartt = cart.map((item) => {
-        if (item.id === payload) {
-          if (item.Amount > 1) {
-            return {
-              ...item,
-              Amount: item.Amount - 1,
-              SubTotal: (item.Amount - 1) * item.Price,
-            };
-          }
-        }
+      <div   className='shadow'>
+        
+        <p> {Amount}</p>
+        <p>{SubTotal}</p>
+        <p>{Title}</p>
+        <button 
+        onClick={HandleRemoveFromCart}
+        >
+          remove
+        </button>
+        <button 
+        onClick={HandleIncresAmount} 
+        className=" ms-5 btn btn-outline-success"
+        >+
+        </button>
+        <button 
+        onClick={HandleDicresAmount}  
+        className="ms-2 btn btn-outline-danger"
+        >-
+        </button>
+        
+      </div>
+    )
 
-        return {
-          ...item,
-          Amount: 1,
-          SubTotal: item.Price,
-        };
-      });
-      return [...newCartt];
+  
+}
 
-    default:
-      return cart;
-  }
-};
+export default CartItems
