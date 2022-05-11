@@ -57,11 +57,12 @@ const [Amount, setAmount] = useState(1);
           <div className="pt-3 ps-1 row">
             <p className="col-12">QUANTITÉ</p>
             <div className="quantité col-5 pt-2  row">
-              <a className=" col-5 text-center" onClick={handelDecAmount}>
+              <a className=" col-4 text-center" onClick={handelDecAmount}>
                 -
               </a>
-              {Amount}
-              <a className="col-5 text-center" onClick={handelInAmount}>
+              <p className="col-4 text-center">{Amount}</p>
+              
+              <a className="col-4 text-center"  onClick={handelInAmount}>
                 +
               </a>
               <hr className=" ms-4 col-8" />
