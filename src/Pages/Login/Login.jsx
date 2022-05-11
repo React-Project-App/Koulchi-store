@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CheckLogin_User, LoginWithmailAndPassword,Logout } from '../../Actions/Auth'
+import { CheckLogin_User, LoginWithGoogle, LoginWithmailAndPassword,Logout } from '../../Actions/Auth'
 
 const Login = () => {
     const dispatch =useDispatch()
@@ -30,6 +30,11 @@ const [Password,setPassword]=useState("")
   useEffect(_=>{
   setUser(state)
   },[state])
+  const handelLogInWithGoogle= () => {
+    //e.preventDefault();
+    dispatch(LoginWithGoogle())
+}
+
   return (
     <div>
         <div class="mb-3" >
@@ -37,10 +42,10 @@ const [Password,setPassword]=useState("")
           <input type="text"class="form-control" onChange={handelEmailChnage} name="Email"   id="" aria-describedby="helpId" placeholder="Email"/>
           <input type="text"class="form-control" onChange={handelPasswordChnage}  name="Password" id="" aria-describedby="helpId" placeholder="password"/>
           <button  className='btn btn-success '  onClick={handelLogin} > Login</button>
+          <button  className='btn btn-warning '  onClick={handelLogInWithGoogle} >Login With Google</button>
           {user&&(
             <button  className='btn btn-danger ' onClick={handelLogOut}> LogOut</button>   
           )
-
           }
         </div>
     </div>
