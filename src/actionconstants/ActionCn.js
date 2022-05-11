@@ -8,6 +8,8 @@ export const INCRESAMOUNT="INCRESAMOUNT";
 export const DICRESAMOUNT="DICRESAMOUNT";
 export const AMOUNT_PRODUCT="DICRESAMOUNT";
 export const LOGIN="LOGIN";
+export const LOGOUT="LOGOUT";
+export const CHECK_LOGIN_USER="CHECKLOGINUSER";
 
 
 

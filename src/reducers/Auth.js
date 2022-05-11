@@ -1,4 +1,4 @@
-import { LOGIN } from "../actionconstants/ActionCn";
+import { CHECK_LOGIN_USER, LOGIN, LOGOUT } from "../actionconstants/ActionCn";
 
 export default function Auth(state = [], { type, payload }) {
     switch (type) {
@@ -6,6 +6,8 @@ export default function Auth(state = [], { type, payload }) {
         case LOGIN:
             return payload.user;
         case LOGOUT:
+            return ;
+        case CHECK_LOGIN_USER:
             return payload;
         default:
             return state;
