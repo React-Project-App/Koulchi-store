@@ -1,65 +1,89 @@
+
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { GETDETAILSPRODUCT } from "../../Actions/Poroducts";
+import { AMOUNTPRODUCT, GETDETAILSPRODUCT } from "../../Actions/Poroducts";
 
 import { Link } from "react-router-dom";
 import { AddTocart } from "../../Actions/Cart";
+import "../../CssFiles/style.css";
 const ProductDetails = () => {
   const { Id } = useParams();
-
   const [pic, setpic] = useState("");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GETDETAILSPRODUCT(Id));
   }, []);
-  const {Title, Description, Price, Photo, MorePhoto} = useSelector((state) => state.products);
-  console.log(Title);
+  const { Title, Price, Photo, MorePhoto } = useSelector(
+    (state) => state.products
+  )
+
+const [Amount, setAmount] = useState(1);
+
+  const handelInAmount = () => {
+    setAmount(Amount +1);
+
+    console.log(Amount);
+  }
+
+  const handelDecAmount = () => {
+    if(Amount > 1){
+    setAmount(Amount - 1)
+  }
+  }
+
   const changeImg = (e) => {
     setpic(e.currentTarget.src);
-  };
-  return Title  ? (
-    <div className="container">
-      <div className="card shadow h-75 col-10">
-        <div className="card-body">
-          <div className="w-100 border border-primary rounded rounded-5 d-flex justify-content-center">
-            <img
-              className="card-img-top w-50 "
-              width="300px"
-              src={pic ? pic : Photo}
-              alt={Title}
-            />
+  }
+  return Title ? (
+    <main className="container">
+      <div className="row pt-5">
+        <div className="col-lg-5 col-sm-12 col-md-8 row pt-3">
+          <div className="col-12 big w-auto">
+            <img src={pic ? pic : Photo} className="img-fluid" alt={Title} />
           </div>
-          <dir className="my-4">
-            <h1 className="card-title d-inline text">{Title}</h1>
-            <h4 className="text-primary ps-4 d-inline">({Price}$)</h4>
-            <span className="text-primary d-block mt-3">Description :</span>
-            <p className="card-text">{Description}</p>
-          </dir>
-          <div className="container d-flex flex-wrap align-content-center">
-            {MorePhoto&&(MorePhoto.map((pic) => {
-              return (
-                <img
-                  className="card-img-top h-75 w-25  border border-primary rounded rounded-5 me-2"
-                  src={pic}
-                  alt={pic.id}
-                  onClick={changeImg}
-                />
-              );
-            }))}
+          Name
+          <div className="col-12 d-flex justify-content-around pucadm pt-4">
+            {MorePhoto &&
+              MorePhoto.map((pic) => {
+                return <img src={pic} alt={Title} onClick={changeImg} />;
+              })}
           </div>
         </div>
-        <Link
-          to="/Cart"
-          onClick={() => dispatch(AddTocart(Id))}
-          className="btn btn-primary"
-        >
-          Add to cart
-        </Link>
+        <div className="col-lg-6 col-sm-12 col-md-4 pt-3 ps-5">
+          <h3 className="fw-bold pb-4 pt-3">{Title}</h3>
+          <hr />
+          <span className="product-price">{Price}</span>
+          <span className="old-price text-dark ">44000</span>
+          <div className="pt-3 ps-1 row">
+            <p className="col-12">QUANTITÉ</p>
+            <div className="quantité col-5 pt-1">
+              <a className="pe-4" onClick={handelDecAmount}>
+                -
+              </a>
+              {Amount}
+              <a className="ps-4" onClick={handelInAmount}>
+                +
+              </a>
+              <hr className="quantité" />
+            </div>
+            <div className="col-5 ps-5 adto">
+              <Link
+                to="/Cart"
+                onClick={() => dispatch(AddTocart(Id,Amount))}
+                className="btn btn-primary"
+              >
+                Add to cart
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  ) :  <>Loading</>
-
+    </main>
+  ) : (
+    <>Loading</>
+  );
 };
 
 export default ProductDetails;

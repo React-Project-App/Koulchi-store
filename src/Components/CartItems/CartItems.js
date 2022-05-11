@@ -1,52 +1,29 @@
 
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { DicresAmount, IncresAmount, RemoveFromCart } from '../../Actions/Cart';
 
-const CartItems = ({item}) => {
- const {Price,Amount,SubTotal,Title,id} =item
- 
- const dispatch=useDispatch() ;
+import { doc, getDoc } from "firebase/firestore";
+import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART ,INCRESAMOUNT, DICRESAMOUNT} from "../actionconstants/ActionCn";
+import { db } from "../FirebaseConfig/FirebaseConfig";
 
-const  HandleRemoveFromCart=()=>{
-  dispatch(RemoveFromCart(id))
+export const AddTocart =(Id,Amount)=>async (dispatch)=>{
+    const Product= await getDoc(doc(db,"Product",Id));
+       const { id } = Product;
+       const {  Title, Price, Photo } =Product.data()
+
+       const product ={ Title, Price, Photo ,id,Amount,SubTotal: Price} 
+    
+
+    dispatch({type:ADD_TO_CART,payload:product});
 }
-const  HandleIncresAmount=()=>{
-  console.log("dd")
-  dispatch(IncresAmount(id))
+export const RemoveFromCart =(id)=>async (dispatch)=>{
+    console.log("ACtion",id)
+    dispatch({type:REMOVE_FROM_CART,payload:id});
 }
-const  HandleDicresAmount=()=>{
-  dispatch(DicresAmount(id))
-
+export const ClearCart =()=>async (dispatch)=>{
+    dispatch({type:CLEAR_CART});
 }
-  
-    return (
-
-      <div>
-        
-        <p> {Amount}</p>
-        <p>{SubTotal}</p>
-        <p>{Title}</p>
-        <button 
-        onClick={HandleRemoveFromCart}
-        >
-          remove
-        </button>
-        <button 
-        onClick={HandleIncresAmount} 
-        className=" ms-5 btn btn-outline-success"
-        >+
-        </button>
-        <button 
-        onClick={HandleDicresAmount}  
-        className="ms-2 btn btn-outline-danger"
-        >-
-        </button>
-        <hr/>
-      </div>
-    )
-
-  
+export const IncresAmount =(Id)=>async (dispatch)=>{
+    dispatch({type:INCRESAMOUNT,payload:Id});
 }
-
-export default CartItems
+export const DicresAmount =(Id)=>async (dispatch)=>{
+    dispatch({type:DICRESAMOUNT,payload:Id});
+}

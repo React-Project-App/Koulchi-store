@@ -1,10 +1,18 @@
+
+
 import { doc, getDoc } from "firebase/firestore";
 import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART ,INCRESAMOUNT, DICRESAMOUNT} from "../actionconstants/ActionCn";
 import { db } from "../FirebaseConfig/FirebaseConfig";
 
-export const AddTocart =(Id)=>async (dispatch)=>{
+export const AddTocart =(Id,Amount)=>async (dispatch)=>{
     const Product= await getDoc(doc(db,"Product",Id));
-    dispatch({type:ADD_TO_CART,payload:Product});
+       const { id } = Product;
+       const {  Title, Price, Photo } =Product.data()
+
+       const product ={ Title, Price, Photo ,id,Amount,SubTotal: Price} 
+    
+
+    dispatch({type:ADD_TO_CART,payload:product});
 }
 export const RemoveFromCart =(id)=>async (dispatch)=>{
     console.log("ACtion",id)
@@ -14,8 +22,6 @@ export const ClearCart =()=>async (dispatch)=>{
     dispatch({type:CLEAR_CART});
 }
 export const IncresAmount =(Id)=>async (dispatch)=>{
-    // const Product= await getDoc(doc(db,"Product",Id));
-    console.log(Id);
     dispatch({type:INCRESAMOUNT,payload:Id});
 }
 export const DicresAmount =(Id)=>async (dispatch)=>{
