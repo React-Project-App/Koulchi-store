@@ -3,34 +3,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetAllProduct } from '../../Actions/Poroducts';
 
 
-
-
 import ProductsListe from '../../Components/ProductsListe';
 
 const Products = () => {
     const dispatch= useDispatch()
     useEffect(() => {
         dispatch(GetAllProduct())
-       
       }, [])
       const products= useSelector(state=>state.products)
   
  
  
   return products.length>0? (
-    <div className='container'>
-      <div className="row">
+    <main class="row d-flex justify-content-center ps-5 pe-5">
       {(
        products.map(product=>{
 
-          return <ProductsListe product={product} key={product.id}/>
+          return (
+            <ProductsListe product={product} key={product.id}/>
+          )
+          
        })
 
 
     ) }
-      </div>
-    
-    </div>
+         </main>
+
   ):<h1>Loading</h1>
 }
 
