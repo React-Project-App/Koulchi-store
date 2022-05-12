@@ -16,6 +16,7 @@ import Login from './Pages/Login/Login';
 
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './Pages/SignUp/SignUp';
+import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 function App() {
   
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Signup" element={<SignUp />} />
+        <Route path="/UpdateProfile" element={<UpdateProfile />} />
        
       </Routes>
 
