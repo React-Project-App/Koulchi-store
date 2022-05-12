@@ -30,7 +30,6 @@ const [Password,setPassword]=useState("")
   const [user,setUser]=useState(null)
   dispatch(CheckLogin_User())
   const state=useSelector(state=>state.Auth)
-  console.log(state)
   useEffect(_=>{
   setUser(state)
   },[state])

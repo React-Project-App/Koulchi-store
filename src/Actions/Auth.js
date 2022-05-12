@@ -48,7 +48,7 @@ export const CheckLogin_User = () => async (dispatch) => {
     toast.error("Invalid Information");
   }
 };
-export const LoginWithGoogle = () => async (dispatch) => {
+export const LoginWithGoogle = () =>  (dispatch) => {
   signInWithPopup(auth, googleProvider)
     .then((result) => {
       dispatch({ type: LOGIN_WITH_GOOGLE, payload: result.user });
@@ -72,7 +72,7 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
     try {
       const user = await createUserWithEmailAndPassword(auth, Email, Password);
 
-      updateProfile(user, {
+     await updateProfile(auth.currentUser, {
         displayName: Name,
       })
       dispatch({ type: CREAET_USER_ACOUNT, payload: user });
