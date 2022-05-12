@@ -1,6 +1,6 @@
 
-import  React ,{useEffect}from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import  React from 'react'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -16,6 +16,7 @@ import Login from './Pages/Login/Login';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './Pages/SignUp/SignUp';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
+import Navbar from './Components/Navbar/Navbar';
 function App() {
   
 
@@ -23,10 +24,12 @@ function App() {
   return (
     <BrowserRouter>
      <ToastContainer/>
+     <Navbar/>
       <Routes>
         
-        <Route path="/products" element={<Products />} />
+        <Route path="/store" element={<Products />} />
         <Route path="/products/:Id" element={<ProductDetails />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />

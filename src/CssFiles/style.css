@@ -60,10 +60,6 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 }
 
 
-
-
-
-
 .brands{
     --bs-gutter-x: 0 !important;
 }
@@ -191,9 +187,3 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
     color: #1363E2 !important;
 }
 
-.brand-list{
-    width: 90vw !important;
-    display: flex;
-    justify-content: space-between !important;
-    margin: 20px auto;
-}
