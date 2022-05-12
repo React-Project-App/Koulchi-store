@@ -38,7 +38,6 @@ export const Cart = (cart = [], { type, payload }) => {
       return [];
     case INCRESAMOUNT:
       const ID = payload;
-      console.log(payload);
       const newCart = cart.map((item) => {
         if (item.id === ID) {
           return {
@@ -51,6 +50,8 @@ export const Cart = (cart = [], { type, payload }) => {
       });
       return [...newCart];
     case DICRESAMOUNT:
+      
+
       const newCartt = cart.map((item) => {
         if (item.id === payload) {
           if (item.Amount > 1) {
@@ -60,13 +61,17 @@ export const Cart = (cart = [], { type, payload }) => {
               SubTotal: (item.Amount - 1) * item.Price,
             };
           }
+          else{
+            return {
+              ...item,
+              Amount: 1,
+              SubTotal: item.Price,
+            };
+          }
         }
-
-        return {
-          ...item,
-          Amount: 1,
-          SubTotal: item.Price,
-        };
+        
+        return item;
+        
       });
       return [...newCartt];
 

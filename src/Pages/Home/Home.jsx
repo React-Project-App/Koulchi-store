@@ -13,7 +13,6 @@ const dispatch =useDispatch();
     }, [])
 
     const FeaturedProducts = useSelector(state => state.products)
-    console.log(FeaturedProducts)
   return (
     <div className='container'>
         <div className="row">

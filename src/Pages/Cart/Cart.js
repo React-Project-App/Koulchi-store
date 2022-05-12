@@ -14,7 +14,7 @@ const Cart = () => {
      console.log(ProductTotal)
      setTotal(ProductTotal);
    }, [CartProducts]);
-     console.log(CartProducts)
+   
      const dispatch=useDispatch();
       const Clear=_=>{
           dispatch(ClearCart());
