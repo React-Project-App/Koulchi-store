@@ -1,12 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-}
-body{
-    width: 100vw !important;
-}
 span{
     color: #1363E2;
 }
@@ -31,8 +22,8 @@ a{
     color: #fff !important;
 }
 nav{
-    -webkit-box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50); 
-box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
+    -webkit-box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.20); 
+box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.20);
 }
 .crtp{
     background-color: #FF6120 !important;
@@ -41,48 +32,33 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
     left: 15px !important;
     bottom: 10px !important;
 }
-.Register{
-    color: #FF6120 !important;
-}
-.pointer{
-    cursor: pointer;
-}
-.big-title{
-    margin:  0 auto;
-    text-align: center;
-    padding-top: 20px;
-}
-.hr-title{
-    margin: 0 auto;
-    width: 260px;
-    padding: 2px;
-    color: #1363E2;
-}
+
+
+
+
+
+/* cart product */
 
 
 
 
 
 
-.brands{
+
+main{
     --bs-gutter-x: 0 !important;
+} 
+.product-item:hover{
+    -webkit-box-shadow: 0px 0px 16px -6px rgba(0,0,0,70) !important; 
+    box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.70) !important;
 }
-.brand img{
-    width: 240px;
-    height: 170px;
-    border: #000 solid 1px;
-    border-radius: 40px;
-}
-
-
-
-
-
 .product-item{
     border: 1px solid rgb(219, 219, 219);
     -webkit-box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23); 
     box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23);
     border-radius: 20px;
+    width: 240px !important;
+    height: 400px !important;
 }
 .product-img{
     position: relative;
@@ -161,39 +137,4 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
     font-size: 25px;
     padding-right: 15px;
     font-weight: 700;
-}
-.quantité{
-    width: 200px;
-}
-.adto button{
-    border: none;
-    background-color: #000000;
-    padding: 10px;
-    border-radius: 30px;
-    width: 150px;
-}
-.adto button:hover{
-    background-color: #1363E2;
-}
-.adto a{
-    color: #fff !important;
-    font-weight: 600;
-    font-size: 17px;
-}
-.heart{
-    border-radius: 50px;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    border: none;
-}
-.heart svg:hover{
-    color: #1363E2 !important;
-}
-
-.brand-list{
-    width: 90vw !important;
-    display: flex;
-    justify-content: space-between !important;
-    margin: 20px auto;
 }
