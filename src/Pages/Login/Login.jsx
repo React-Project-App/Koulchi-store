@@ -5,7 +5,6 @@ import { AiFillFacebook ,AiFillGoogleCircle} from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
-
 const Login = () => {
     const dispatch =useDispatch()
 
@@ -37,7 +36,6 @@ const [Password,setPassword]=useState("")
     //e.preventDefault();
     dispatch(LoginWithGoogle())
 }
-
   return (
     <div className='container mt-5'>
         <div class="mb-3 " >

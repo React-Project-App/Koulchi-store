@@ -4,6 +4,7 @@ import {
   LOGIN_WITH_FACEBOOK,
   LOGIN_WITH_GOOGLE,
   LOGOUT,
+  RESET_PASSWORD,
 } from "../actionconstants/ActionCn";
 
 export default function Auth(state = [], { type, payload }) {
@@ -17,8 +18,9 @@ export default function Auth(state = [], { type, payload }) {
       return payload;
     case LOGIN_WITH_GOOGLE:
       return payload;
-    case LOGIN_WITH_FACEBOOK:
-      return payload;
+    case RESET_PASSWORD:
+      return state;
+
     default:
       return state;
   }

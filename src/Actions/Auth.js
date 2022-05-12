@@ -6,6 +6,7 @@ import {
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -19,6 +20,7 @@ import {
   LOGIN_WITH_GOOGLE,
   LOGIN_WITH_FACEBOOK,
   CREAET_USER_ACOUNT,
+  RESET_PASSWORD,
 } from "../actionconstants/ActionCn";
 
 export const LoginWithmailAndPassword =
@@ -81,3 +83,12 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
       toast.error("Invalid Information");
     }
   };
+export const ResetPasswordd=(email)=>async(dispatch)=>{
+  try {
+  await sendPasswordResetEmail(auth,email)
+    dispatch({type:RESET_PASSWORD})
+    toast.success("Password Has been Changed");
+  } catch (error) {
+    toast.error(error);
+  }
+}
