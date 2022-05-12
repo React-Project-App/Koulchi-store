@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import Login from './Pages/Login/Login';
 
 import 'react-toastify/dist/ReactToastify.css';
+import SignUp from './Pages/SignUp/SignUp';
 function App() {
   
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Signup" element={<SignUp />} />
        
       </Routes>
 
