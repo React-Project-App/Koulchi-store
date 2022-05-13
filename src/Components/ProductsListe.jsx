@@ -8,9 +8,9 @@ import '../CssFiles/StyleProduct.css'
 const ProductsListe = ({product}) => {
     const{Title,Price,Photo,id}=product
   return (
-    <div className="col-3 product-item m-4">
+    <div className="col-3 product-item mx-2 mt-4">
         <div className="product-img">
-            <img src={Photo} alt="" className="img-fluid d-block mx-auto"/>
+            <img src={Photo} alt={Title} className="img-fluid d-block mx-auto tansparence"/>
             <span className="heart-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart"
                     viewBox="0 0 16 16">

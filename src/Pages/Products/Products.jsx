@@ -15,7 +15,7 @@ const Products = () => {
  
  
   return products.length>0? (
-    <main class="row d-flex justify-content-center ps-5 pe-5">
+    <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 ">
       {(
        products.map(product=>{
 
@@ -27,7 +27,7 @@ const Products = () => {
 
 
     ) }
-         </main>
+         </div>
 
   ):<h1>Loading</h1>
 }

@@ -1,11 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 
-}
-body{
-    width: 100vw !important;
 }
 span{
     color: #1363E2;
@@ -60,25 +58,40 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 }
 
 
-.brands{
-    --bs-gutter-x: 0 !important;
+
+
+
+
+
+
+/* test */
+/* .all-product::-webkit-scrollbar{
+    height: 30px;
 }
-.brand img{
-    width: 240px;
-    height: 170px;
-    border: #000 solid 1px;
-    border-radius: 40px;
+.all-product{
+    display: grid;
+    grid-auto-flow:column;
+    gap: 50px;
+    max-height: 500px ;
+    justify-items: center;
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 60px;
+} */
+.row{
+    --bs-gutter-x: 1.5rem !important;
 }
 
-
-
-
-
+.heart-icon:hover{
+    color: #FF6120;
+}
 .product-item{
     border: 1px solid rgb(219, 219, 219);
     -webkit-box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23); 
     box-shadow: 0px 0px 13px -6px rgba(0,0,0,0.23);
     border-radius: 20px;
+    width: 300px !important; 
+    padding: 0 !important;
 }
 .product-img{
     position: relative;
@@ -86,21 +99,29 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
     border-radius:20px 20px 0px 0px;
 }
 .btns{
+    background-color: rgba(0, 0, 0, 0.228);
     position: absolute;
     left: 0;
-    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
     font-size: 15px;
     font-weight: 300;
     transition: all 0.3s ease-in-out;
 }
 .btns button{
+    position: absolute;
     border: none;
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(0, 0, 0);
     color: #fff;
     transition: all 0.3s ease-in-out;
+    top: 50%;
+    left: 25%;
+    border-radius: 10px;
 }
-.btns a:hover{
-    color: #FF6120 !important;
+.btns a:hover,.btns button:hover{
+    /* color: #FF6120 !important; */
+    background-color: #1363E2;
 }
 
 .product-img:hover .btns{
@@ -133,9 +154,6 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 .rating{
     font-size: 13px;
 }
-.product-item{
-    width: 300px;
-}
 
 .big img{
     border-radius: 20px;
@@ -147,7 +165,6 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
     border-radius: 20px;
     border: rgba(0, 0, 0, 0.158) 1px solid;
     margin-left: 20px;
-    overflow: hidden;
 }
 .act{
     border: 2px solid#1362e29c !important;
@@ -161,17 +178,18 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 .quantité{
     width: 200px;
 }
-.adto button{
+.btn1{
     border: none;
     background-color: #000000;
-    padding: 10px;
+    padding: 7px;
     border-radius: 30px;
     width: 150px;
+    max-height: 47px;
 }
-.adto button:hover{
+.btn1:hover{
     background-color: #1363E2;
 }
-.adto a{
+.btn1 a{
     color: #fff !important;
     font-weight: 600;
     font-size: 17px;
@@ -186,4 +204,20 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 .heart svg:hover{
     color: #1363E2 !important;
 }
+/* test */
+.brands{
+    --bs-gutter-x: 0 !important;
+}
+.brand img{
+    width: 240px;
+    height: 170px;
+    border-radius: 40px;
+}
+.big-title{
+    font-family: 'Concert One', cursive;
+}
+
+
+
+
 

@@ -80,7 +80,7 @@ main{
     transition: all 0.3s ease-in-out;
 }
 .btns a:hover{
-    color: #FF6120 !important;
+    color: #fff !important;
 }
 
 .product-img:hover .btns{
@@ -102,7 +102,7 @@ main{
     transition: all 0.3s ease-in-out;
 }
 .product-name:hover{
-    color: #FF6120!important;
+    color: #fff!important;
 }
 .product-price{
     color: #FF6120;
@@ -121,6 +121,7 @@ main{
     border-radius: 20px;
     border: rgba(0, 0, 0, 0.158) 1px solid;  
 }
+
 .pucadm img{
     width: 100px;
     height: 100px;
