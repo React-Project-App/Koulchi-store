@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { GetFeaturedProduct } from '../../Actions/Poroducts';
 import Carousel from '../../Components/carousel/Carousel';
+
 import ProductsListe from '../../Components/ProductsListe';
 
 const Home = () => {
