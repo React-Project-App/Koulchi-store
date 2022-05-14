@@ -38,7 +38,7 @@ function App() {
         <Route path="/UpdateProfile" element={<UpdateProfile />} />
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
    </BrowserRouter>
     
    
