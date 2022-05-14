@@ -9,14 +9,15 @@ import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import Products from './Pages/Products/Products';
 import Home from './Pages/Home/Home';
 import Cart from './Pages/Cart/Cart';
-
 import { ToastContainer } from 'react-toastify';
 import Login from './Pages/Login/Login';
-
+import Footer from './Components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './Pages/SignUp/SignUp';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 import Navbar from './Components/Navbar/Navbar';
+import FavoriteProduct from './Pages/FavoriteProducts/FavoriteProduct';
+
 function App() {
   
 
@@ -35,9 +36,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/UpdateProfile" element={<UpdateProfile />} />
-       
+       <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
       </Routes>
-
+      <Footer/>
    </BrowserRouter>
     
    
