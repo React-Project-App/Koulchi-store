@@ -20,7 +20,9 @@ const ProductsListe = ({product}) => {
                 </button>
                 <button type="button" className="col-6 py-2 ">
                     {/* <a href="Product page.html" className="text-decoration-none text-white">View</a> */}
-                <Link to={`/products/${id}`} className='text-decoration-none text-light'>View</Link>
+                <Link to={`/products/${id}`} className='text-decoration-none text-light'>
+                    View
+                    </Link>
                 </button>
 
             </div>

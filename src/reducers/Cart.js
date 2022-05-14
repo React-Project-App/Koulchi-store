@@ -19,7 +19,7 @@ export const Cart = (cart = [], { type, payload }) => {
             return {
               ...item,
               Amount: item.Amount + 1,
-              SubTotal: item.Amount * payload.Price,
+              SubTotal: (item.Amount+1) * payload.Price,
             };
           }
           return item;

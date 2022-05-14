@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../CssFiles/style.css"
 import {BsFacebook} from "react-icons/bs"
 import {BsTwitter} from "react-icons/bs"
 import {BsGoogle} from "react-icons/bs"
 import {BsInstagram} from "react-icons/bs"
 import {BsGithub} from "react-icons/bs"
+import { useSelector } from 'react-redux'
 function Footer() {
+  const CartProducts= useSelector(state=>state.Cart)
+  const [loading,setloading]=useState(true);
+
+  useEffect(()=>{
+    if(CartProducts.length>0) setloading(false)
+    else setloading(!loading)
+
+  },[CartProducts])
+     
   return (
-    <footer className="bg-dark text-center text-white">
+    <footer className={loading?`bg-dark text-center text-white  w-100`:`bg-dark text-center text-white   position-fixed w-100 bottom-0`}>
     {/* <!-- Grid container --> */}
-    <div className="container p-4">
+    <div className="container p-4 ">
       {/* <!-- Section: Social media --> */}
       <section className="mb-4">
         {/* <!-- Facebook --> */}
