@@ -23,16 +23,16 @@ const  HandleDicresAmount=()=>{
 
   <div class="Cart-Items my-4 row">
       <div class="image-box col-md-4 col-sm-12 d-flex justify-content-center">
-      <img src={Photo} className="image-fluid rounded-4" style={{ height:"120px" }} />
+      <img src={Photo} className="image-fluid rounded" style={{ height:"120px" }} />
       </div>
       <div class="about col-md-4 col-sm-12 d-flex justify-content-center">
       <h1 class="title ">{Title}</h1>
       {/* <h3 class="subtitle">250ml</h3> */}
       </div>
       <div class="counter col-md-4 d-flex justify-content-center col-sm-12">
-        <div class="btn " onClick={HandleIncresAmount} >+</div>
+        <div class="btnCart " onClick={HandleIncresAmount} >+</div>
         <div class="count px-4">{Amount}</div>
-        <div class="btn" onClick={HandleDicresAmount}>-</div>
+        <div class="btnCart" onClick={HandleDicresAmount}>-</div>
       </div>
       <div class="prices">
         <div class="amount">{SubTotal} DH</div>

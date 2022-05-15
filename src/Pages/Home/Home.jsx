@@ -15,20 +15,32 @@ const dispatch =useDispatch();
     }, [])
 
     const FeaturedProducts = useSelector(state => state.products)
-  return (
-    <>
+    if (FeaturedProducts.length>0) {
+      return (
+        <>
+            
+              <Carousel/>
+              <div className='container'>
+              <div className=' row'>
+    
+            {
+              FeaturedProducts.map(product => {
+    
+                return <ProductsListe key={product.id} product={product} />
+              })
+          }
+              </div>
+              </div>
+            
+         
+        </>
         
-          <Carousel/>
-        {
-          FeaturedProducts.map(product => {
-
-            return <ProductsListe key={product.id} product={product} />
-          })
-      }
-        
-     
-    </>
-  )
+      )
+    }
+    return <div className='d-flex justify-content-center align-items-center load'>
+<div className='loader'></div>
+    </div> 
+  
 }
 
 export default Home

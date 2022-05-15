@@ -17,6 +17,8 @@ import SignUp from './Pages/SignUp/SignUp';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 import Navbar from './Components/Navbar/Navbar';
 import FavoriteProduct from './Pages/FavoriteProducts/FavoriteProduct';
+import PageNotFound from './Pages/PageNotFound/PageNotFound';
+import ResetPassword from './Components/ResetPassword/ResetPassword';
 
 function App() {
   
@@ -34,9 +36,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/UpdateProfile" element={<UpdateProfile />} />
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
+       <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
       {/* <Footer/> */}
    </BrowserRouter>

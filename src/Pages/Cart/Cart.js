@@ -28,7 +28,7 @@ const Cart = () => {
 
      
           <div class="Header mt-5 pt-5">
-        <h3 class="Heading">Shopping Cart</h3>
+        <h3 class="Heading lineSpan"><span className=''>K</span>oulchi Cart</h3>
         <h5 class="Action" onClick={Clear}>Remove all</h5>
         </div>
       {
