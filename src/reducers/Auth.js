@@ -12,7 +12,7 @@ export default function Auth(state = [], { type, payload }) {
     case LOGIN:
       return payload.user;
     case LOGOUT:
-      localStorage.clear();
+   
       return;
     case CHECK_LOGIN_USER:
       return payload;
