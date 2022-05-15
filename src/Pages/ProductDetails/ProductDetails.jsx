@@ -34,7 +34,7 @@ const [Amount, setAmount] = useState(1);
     setAmount(Amount - 1)
   }
   }
-
+  
   const changeImg = (e) => {
     setpic(e.currentTarget.src);
   }
