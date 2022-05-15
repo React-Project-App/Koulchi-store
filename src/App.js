@@ -14,7 +14,7 @@ import Login from './Pages/Login/Login';
 import Footer from './Components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './Pages/SignUp/SignUp';
-import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
+import Profile from './Pages/Profile/Profile';
 import Navbar from './Components/Navbar/Navbar';
 import FavoriteProduct from './Pages/FavoriteProducts/FavoriteProduct';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
@@ -38,7 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/Signup" element={<SignUp />} />
-        <Route path="/UpdateProfile" element={<UpdateProfile />} />
+        <Route path="/Profile" element={<Profile />} />
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>

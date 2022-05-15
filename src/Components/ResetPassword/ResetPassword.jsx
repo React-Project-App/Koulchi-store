@@ -15,7 +15,7 @@ function ResetPassword() {
       onChange={e=>{setEmail(e.currentTarget.value)}}
       />
       <button 
-      className='btn btn-primary' 
+      className='btn btn-primary mt-3' 
       onClick={()=>{dispatch(ResetPasswordd(email))}}
       >Reset</button>
     </div>
