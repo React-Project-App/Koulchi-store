@@ -76,6 +76,7 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
 
      await updateProfile(auth.currentUser, {
         displayName: Name,
+        photoURL:"https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/ProfileImage%2Ficons8-male-user-60.png?alt=media&token=80a42db7-ed3b-4829-91ba-f45fc3ad4513"
       })
       dispatch({ type: CREAET_USER_ACOUNT, payload: user });
       toast.success(`Welcome ${Name}`);
