@@ -28,7 +28,7 @@ const Cart = () => {
 
      
           <div class="Header mt-5 pt-5">
-        <h3 class="Heading">Shopping Cart</h3>
+        <h3 class="Heading lineSpan"><span className=''>K</span>oulchi Cart</h3>
         <h5 class="Action" onClick={Clear}>Remove all</h5>
         </div>
       {
@@ -55,7 +55,19 @@ const Cart = () => {
       <Link to={"/store"}>Add More Product</Link> */}
     </div>
 
-  ):<h1>Cart Empty</h1>
+  ):(
+    <div className='container  d-flex align-items-center justify-content-center ' style={{height:'100vh'}}>
+      <div className='row border py-5 shadow'>
+      <div className=' text-center pb-3'>
+        <h1 className='text-primary col-12'>Empty Cart</h1>
+      </div>
+      <div className='text-center'>
+      <Link to="/store" className='btn btn-outline-primary '>Add Product</Link>
+      </div>
+      </div>
+
+    </div>
+  )
 }
 
 export default Cart

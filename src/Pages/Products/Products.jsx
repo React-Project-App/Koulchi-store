@@ -15,7 +15,7 @@ const Products = () => {
  
  
   return products.length>0? (
-    <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 ">
+    <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 pt-5 ">
       {(
        products.map(product=>{
 
@@ -29,7 +29,10 @@ const Products = () => {
     ) }
          </div>
 
-  ):<h1>Loading</h1>
+  ):(
+  <div className='d-flex justify-content-center align-items-center load'>
+<div className='loader'></div>
+    </div> )
 }
 
 export default Products
