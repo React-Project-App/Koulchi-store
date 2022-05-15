@@ -29,7 +29,10 @@ const Products = () => {
     ) }
          </div>
 
-  ):<h1>Loading</h1>
+  ):(
+  <div className='d-flex justify-content-center align-items-center load'>
+<div className='loader'></div>
+    </div> )
 }
 
 export default Products
