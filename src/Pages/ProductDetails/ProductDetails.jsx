@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { AddTocart } from "../../Actions/Cart";
 import "../../CssFiles/style.css";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import { motion } from "framer-motion";
 
 const ProductDetails = () => {
   const navigate=useNavigate();
@@ -52,7 +53,20 @@ return
             <div className="col-12 d-flex justify-content-around pucadm py-4 ">
               {MorePhoto &&
                 MorePhoto.map((pic) => {
-                  return <img src={pic} alt={Title} className="col-3 mt-4" onClick={changeImg} />;
+                  return (
+                    <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    whileHover={{ scale: 1.2 }}
+            
+                    
+                    >
+                  <img src={pic} alt={Title} className="col-3 mt-4 pointer" onClick={changeImg} />
+                  </motion.div>
+                  
+                  );
                 })}
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../CssFiles/StyleProduct.css'
 import {BsHeartFill} from 'react-icons/bs'
 import {BsHeart} from 'react-icons/bs'
+import { motion,AnimatePresence } from 'framer-motion'
 
 
 
@@ -10,7 +11,21 @@ const ProductsListe = ({product}) => {
     const [heart,setheart]=useState(false);
     const{Title,Price,Photo,id}=product
   return (
-    <div className="col-3 product-item  m-4">
+      
+    // <div className="col-3 product-item  m-4">
+        <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        whileHover={{ scale: 1.2 }}
+
+        className="col-3 product-item  m-4 pointer"
+        >
+
+{/* <Link to={`/products/${id}`} className='text-decoration-none text-light'> */}
+                   
+                   
         <div className="product-img">
             <img src={Photo} alt={Title} className="img-fluid d-block mx-auto tansparence"/>
            
@@ -40,7 +55,9 @@ const ProductsListe = ({product}) => {
             <span className="product-price">{Price} DH</span>
             <span className="old-price text-dark ">200.50 DH</span>
         </div>
-    </div>
+        {/* </Link> */}
+        </motion.div>
+    // </div>
 
     // <div classNameName='col-4'>
        

@@ -1,5 +1,5 @@
 
-import  React from 'react'
+import  React ,{useEffect} from 'react'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,8 +19,13 @@ import Navbar from './Components/Navbar/Navbar';
 import FavoriteProduct from './Pages/FavoriteProducts/FavoriteProduct';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
+import axios from 'axios';
 
 function App() {
+
+
+
+  
   
 
 
