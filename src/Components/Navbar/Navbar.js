@@ -1,6 +1,6 @@
 import React from 'react'
 import {BsFillCartFill,BsHeartFill,BsFillPersonFill} from 'react-icons/bs'
-
+import "../../CssFiles/style.css"
 
 import { Link } from 'react-router-dom';
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link className="nav-link "  to="/Home">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Store">Store</Link>
+            <Link className="nav-link " to="/Store">Store</Link>
           </li>
          
         </ul>
