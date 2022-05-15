@@ -72,9 +72,11 @@ export const LoginWithFacebook = () => async (dispatch) => {
 };
 export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (dispatch) => {
     try {
-      const user = await createUserWithEmailAndPassword(auth, Email, Password);
+      const user = await createUserWithEmailAndPassword(auth, Email, Password,Name);
 
      await updateProfile(auth.currentUser, {
+      //  email:Email,
+      //  password:Password,
         displayName: Name,
         photoURL:"https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/ProfileImage%2Ficons8-male-user-60.png?alt=media&token=80a42db7-ed3b-4829-91ba-f45fc3ad4513"
       })
