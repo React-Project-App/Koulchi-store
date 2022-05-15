@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { GetAllProduct } from '../../Actions/Poroducts';
@@ -16,6 +17,9 @@ const Products = () => {
  
   return products.length>0? (
     <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 pt-5 ">
+      <AnimatePresence>
+
+     
       {(
        products.map(product=>{
 
@@ -27,6 +31,7 @@ const Products = () => {
 
 
     ) }
+     </AnimatePresence>
          </div>
 
   ):(
