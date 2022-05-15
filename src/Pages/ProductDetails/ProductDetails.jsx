@@ -13,7 +13,6 @@ const ProductDetails = () => {
   const { Id } = useParams();
   const [pic, setpic] = useState("");
   const [heart,setheart]=useState(false);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GETDETAILSPRODUCT(Id));
@@ -35,7 +34,7 @@ const [Amount, setAmount] = useState(1);
     setAmount(Amount - 1)
   }
   }
-
+  
   const changeImg = (e) => {
     setpic(e.currentTarget.src);
   }
@@ -61,7 +60,7 @@ return
             <h3 className="fw-bold pb-4 pt-3">{Title}</h3>
             <hr />
             <span className="product-price">{Price}</span>
-            <span className="old-price text-dark ">44000</span>
+            <span className="old-price text-dark ">{Amount+50}</span>
             <div className="pt-3 ps-1 row">
              
               <div className="pt-2 ps-1 row col-12 d-flex justify-content-around">
