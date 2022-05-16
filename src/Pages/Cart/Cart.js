@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { ClearCart } from '../../Actions/Cart'
 import CartItems from '../../Components/CartItems/CartItems'
 import '../../CssFiles/CartStyle.css'
+import Payement from '../../Components/Payement/Payement'
+
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
      const [Total,setTotal]=useState(0);
@@ -49,6 +51,7 @@ const Cart = () => {
             <div class="total-amount">{Total}DH</div>
           </div>
             <Link to={"/store"} class="button ">Add More Product</Link>
+            <Payement Total={Total}/>
           </div>
         {/* <button >Clear Cart</button> */}
         {/* <p>{Total}</p>
@@ -63,7 +66,9 @@ const Cart = () => {
       </div>
       <div className='text-center'>
       <Link to="/store" className='btn btn-outline-primary '>Add Product</Link>
+      
       </div>
+      
       </div>
 
     </div>
