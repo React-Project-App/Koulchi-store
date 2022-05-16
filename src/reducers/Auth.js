@@ -7,7 +7,7 @@ import {
   RESET_PASSWORD,
 } from "../actionconstants/ActionCn";
 
-export default function Auth(state = [], { type, payload }) {
+export default function Auth(state = null, { type, payload }) {
   switch (type) {
     case LOGIN:
       return payload.user;
