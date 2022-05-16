@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
-
 function  App( {Total}) {
 //   const [state,setState]=useState(0)
   return (
     <div>
+
         {/* <input 
         type="number" 
         value={Total}
@@ -12,7 +12,7 @@ function  App( {Total}) {
         // //   setState(e.target.value)
         // }} 
         /> */}
-    
+
         <PayPalButton
         options={{
           clientId: 
@@ -22,12 +22,10 @@ function  App( {Total}) {
             amount={Total}
             onSuccess={(details, data) => {
               alert("Transaction completed by " + details.payer.name.given_name);
-              console.log({details,data});
+              // console.log({details,data});
             }}
-            
           />
        </div>
   );
 }
-
 export default App;

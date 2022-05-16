@@ -1,4 +1,4 @@
-.Cart-Container{
+/* .Cart-Container{
     width: 70%;
     height: 85%;
     background-color: #ffffff;
@@ -18,8 +18,8 @@
     font-family: ‘Open Sans’;
     font-weight: 700;
     color: #2F3841;
-   }
-   .Action{
+   } */
+   /* .Action{
     font-size: 14px;
     font-family: ‘Open Sans’;
     font-weight: 600;
@@ -37,12 +37,12 @@
    }
    .image-box{
     /* width: 15%; */
-    text-align: center;
-   }
+    
+   /* }
    .about{
     height: 100%;
-   }
-   .title{
+   } */ 
+   /* .title{
     padding-top: 5px;
     line-height: 10px;
     font-size: 32px;
@@ -61,9 +61,9 @@
     /* width: 15%; */
     /* display: flex;
     justify-content: space-between; */
-    align-items: center;
-   }
-   .btnCart{
+    
+   
+   /* .btnCart{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -82,9 +82,9 @@
     font-family: ‘Open Sans’;
     font-weight: 900;
     color: #202020;
-   }
+   } */ 
 
-   .prices{
+   /* .prices{
     height: 100%;
     text-align: right;
    }
@@ -102,8 +102,8 @@
     font-weight: 600;
     color: #1687d9;
     cursor: pointer;
-   }
-   .remove{
+   } */
+   /* .remove{
     padding-top: 5px;
     font-size: 14px;
     font-family: ‘Open Sans’;
@@ -158,4 +158,42 @@
     font-family: ‘Open Sans’;
     font-weight: 600;
     color: #202020;
-   }
+   } */
+   /* .items-list{
+    margin-top: 80px !important;
+}
+.item{
+    border-bottom: 1px solid #1362e232
+}
+.item-img{
+    width: 120px !important;
+    height: 120px !important;
+}
+
+
+.item-cunt{
+    margin: auto 0 !important;
+}
+.item-cunt .a{
+    text-decoration: none;
+    color: #fff !important;
+    font-size: 17px;
+    font-weight: 900;
+}
+/* .item-cunt .btn2{
+    background-color: #1363E2;
+    width: 60px !important;
+    height: 30px;
+    border: none;
+} */
+/* .item-inp{
+    width: 60px !important;
+    height: 30px;
+}
+
+.price-cunt{
+    text-align: center;
+}  */
+.kk{
+    text-align: center;
+}
