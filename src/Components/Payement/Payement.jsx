@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
+
 import { toast } from "react-toastify";
+
 
 function  App( {Total}) {
 //   const [state,setState]=useState(0)
@@ -16,8 +18,10 @@ function  App( {Total}) {
             amount={Total}
             onSuccess={(details, data) => {
 
+
               toast.success("Transaction completed by " + details.payer.name.given_name);
               console.log({details,data});
+
 
             }}
           />

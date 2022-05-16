@@ -287,7 +287,12 @@ box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 .big-title{
     font-family: 'Concert One', cursive;
 }
-
+.log{
+    color: #1362e29c !important;
+}
+.log:hover{
+    color: #FF6120 !important;
+}
 
 
 /* cart */

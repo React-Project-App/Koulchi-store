@@ -9,7 +9,7 @@
    
   .box {
     position: relative;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     height: auto;
     max-height: 70vh;
@@ -27,14 +27,14 @@
     content: 'X';
     cursor: pointer;
     position: fixed;
-    right: calc(15% + 15px);
-    top: calc(100vh - 85vh - 30px);
-    background: firebrick;
+    right: calc(15% + 120px);
+    top: calc(100vh - 85vh - 5px);
+    /* background: firebrick; */
     width: 25px;
     height: 25px;
     border-radius: 50%;
     line-height: 20px;
     text-align: center;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
     font-size: 20px;
   }

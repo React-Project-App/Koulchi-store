@@ -21,9 +21,9 @@ const  HandleDicresAmount=()=>{
     return (
 
       <section class="row item justify-content-lg-center pt-2 pb-2">
-      <img class="item-img col-1 d-none d-lg-block d-md-block" src={Photo} alt="" />
+      <img class="item-img col-1 d-none d-lg-block d-md-block" src={Photo} alt={Title} />
       <div class="col-3 d-block d-lg-none d-md-none ms-4">
-          <img class="item-img me-2" src="images/1 (1).jpg" alt="" />
+          <img class="item-img me-2" src={Photo} alt={Title}  />
           <p class="">Price :<span class="fw-bold">{Price}</span></p>
           <a  class="link pointer" onClick={HandleRemoveFromCart}>Remove</a>
       </div>
@@ -36,7 +36,7 @@ const  HandleDicresAmount=()=>{
           <button class="btn2 col-2" onClick={HandleDicresAmount}><a class="a" >-</a></button>
           <h3 class="item-inp col-1 text-center mt-1">{Amount}</h3>
           <button class="btn2" onClick={HandleIncresAmount}><a class="a col-2" >+</a></button>
-          <span class="fw-bold text-dark col-1 price-cunt ps-4 col-4 text-end" >{SubTotal}</span>
+          <span class="fw-bold text-dark col-1 price-cunt ps-5 col-4 text-end pt-1  fs-4" >{SubTotal}</span>
       </div>
   </section>
         // {/* <p> </p>

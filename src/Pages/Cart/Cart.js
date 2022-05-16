@@ -23,9 +23,6 @@ const Cart = () => {
       }
       const [isOpen, setIsOpen] = useState(false);
  
-      const togglePopup = () => {
-        setIsOpen(!isOpen);
-      }
 
      return CartProducts.length>0?
    (
@@ -52,37 +49,16 @@ const Cart = () => {
          <section class=" row justify-content-lg-center justify-content-md-center">
             <div class="col-7 d-none d-lg-block d-md-block"></div>
             <div class="row col-12 col-md-5 col-lg-5 cart-total">
-                <button class="btn-total col-12 "><a class="a" onClick={Clear}>Remove All</a></button>
-                <div class="col-12 row pt-2">
+                <button class="btn-total col-6 "><a class="a" onClick={Clear}>Remove All</a></button>
+                <button class="btn-total col-6"> <Link class="a" to={"/store"}>Add More Product</Link></button>
+                <div class="col-12 row pt-3">
                     <h4 class="col-6 text-center">Total :</h4>
                 <p class="price-total col-6 text-center">{Total}</p>
                 </div>
-                <button class="btn-total"><a class="a" onClick={togglePopup}>Checkout</a></button>
-                {isOpen && <Popup
-      // content={<Payement/>}
-      handleClose={togglePopup}
-    />}
-                <button class="btn-total col-12"> <Link class="a" to={"/store"}>Add More Product</Link></button>
-{/* <Payement/> */}
+               <Popup Total={Total}/>
             </div>
         </section>
-        {/* <hr/> 
-          <div class="checkout ">
-            <div class="total">
-            <div>
-            <div class="Subtotal">Sub-Total</div>
-            <div class="items">{CartProducts.length} items</div>
-          </div>
-            <div class="total-amount">{Total}DH</div>
-          </div>
-            <Link to={"/store"} class="button ">Add More Product</Link>
-            <Payement Total={Total}/>
-          </div> */}
-        {/* <button >Clear Cart</button> */}
-        {/* <p>{Total}</p>
-      <Link to={"/store"}>Add More Product</Link> */}
     </div>
-
   ):(
     <div className='container  d-flex align-items-center justify-content-center ' style={{height:'100vh'}}>
       <div className='row border py-5 shadow'>
