@@ -19,7 +19,7 @@ import Navbar from './Components/Navbar/Navbar';
 import FavoriteProduct from './Pages/FavoriteProducts/FavoriteProduct';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
-import axios from 'axios';
+import PrivateRoute1 from './Components/PriviteRoutes/PrivateRoute1';
 
 function App() {
 
@@ -40,7 +40,15 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<PrivateRoute1 />} >
+
+
+
+        </Route> */}
+        <Route path="/login" element={<PrivateRoute1> <Login/> </PrivateRoute1>} />
+        {/* <Route path="/login" element={<Login />}/>  */}
+
+        
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/Profile" element={<Profile />} />

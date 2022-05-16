@@ -18,7 +18,7 @@ const ProductsListe = ({product}) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.1 }}
 
         className="col-3 product-item  m-4 pointer"
         >
