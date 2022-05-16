@@ -54,6 +54,7 @@ export const LoginWithGoogle = () =>  (dispatch) => {
   signInWithPopup(auth, googleProvider)
     .then((result) => {
       dispatch({ type: LOGIN_WITH_GOOGLE, payload: result.user });
+      localStorage.setItem("user", JSON.stringify(result.user));
       toast.success(`Welcome ${result.user.displayName}`);
     })
     .catch((error) => {
