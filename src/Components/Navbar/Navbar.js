@@ -19,7 +19,7 @@ const Navbar = () => {
           className="navbar-brand bg-white fw-bold ms-4 logo pb-3"
           href="#"
         >
-          <span>K</span>OLCHI<span>.</span>
+          <span>K</span>OULCHI<span>.</span>
         </Link>
         <div className="ms-5 d-lg-none ms-auto ">
           <Link to="/FavoriteProducts" className="me-3">
@@ -32,13 +32,38 @@ const Navbar = () => {
               <span className="visually-hidden"></span>
             </div>
           </Link>
-          <Link to="/Profile">
+        
+          {/* <Link to="/Profile">
+
           {
               state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
 
 
           }
-          </Link>
+          </Link> */}
+          <a class="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>}
+
+ </a>
+
+  <div class="row text-start mt-1" style={{position:'absolute',right:'calc(10%)'}}>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body ">
+          <ul className="ps-0"  style={{listStyle:"none"}}>
+            <li >
+              <Link to="/profile" className="log">Your Profile</Link>               
+            </li>
+            <hr />
+            <li>
+              <Link to="/login" className="log">Log out</Link>               
+            </li>
+
+          </ul>
+      </div>
+    </div>
+  </div>
+  </div>
         </div>
         <button
           className="navbar-toggler shadow-none"
@@ -79,16 +104,45 @@ const Navbar = () => {
               <span className="visually-hidden"></span>
             </div>
           </Link>
-          <Link to="/Profile">
+          {/* <Link to="/Profile">
           {
               state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
 
 
           }
-          </Link>
-          <Link to="/Profile" className="me-3">
+          </Link> */}
             
-          </Link>
+  {/* <Link to="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+  {
+              state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
+          }
+  </Link> */}
+ <a class="position-fixed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>}
+
+ </a>
+
+  <div class="row text-start mt-1" style={{position:'absolute',right:'calc(10%)'}}>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body ">
+          <ul className="ps-0"  style={{listStyle:"none"}}>
+            <li>
+              <Link to="/profile" className="log">Your Profile</Link>               
+            </li>
+            <hr/>
+            <li>
+              <Link to="/login" className="log" >Log out</Link>               
+            </li>
+
+          </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+          {/* <Link to="/Profile" className="me-3">
+            
+          </Link> */}
         </div>
       </div>
     </nav>
