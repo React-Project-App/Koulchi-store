@@ -1,17 +1,12 @@
 import { useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
+import { toast } from "react-toastify";
 
 function  App( {Total}) {
 //   const [state,setState]=useState(0)
   return (
     <div>
-        {/* <input 
-        type="number" 
-        value={Total}
-        // onChange={e=>{
-        // //   setState(e.target.value)
-        // }} 
-        /> */}
+     
     
         <PayPalButton
         options={{
@@ -21,7 +16,7 @@ function  App( {Total}) {
         }}
             amount={Total}
             onSuccess={(details, data) => {
-              alert("Transaction completed by " + details.payer.name.given_name);
+              toast.success("Transaction completed by " + details.payer.name.given_name);
               console.log({details,data});
             }}
             

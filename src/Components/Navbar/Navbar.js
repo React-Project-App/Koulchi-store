@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CheckLogin_User } from "../../Actions/Auth";
 import { useDispatch, useSelector } from "react-redux";
 const Navbar = () => {
+  
   const dispatch =useDispatch()
   dispatch(CheckLogin_User())
   const state=useSelector(state=>state.Auth)
