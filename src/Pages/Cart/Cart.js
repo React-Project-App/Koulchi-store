@@ -5,7 +5,7 @@ import { ClearCart } from '../../Actions/Cart'
 import CartItems from '../../Components/CartItems/CartItems'
 import '../../CssFiles/CartStyle.css'
 import Payement from '../../Components/Payement/Payement'
-
+import Popup from '../../Components/Popup/Popup'
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
      const [Total,setTotal]=useState(0);
@@ -21,18 +21,26 @@ const Cart = () => {
       const Clear=_=>{
           dispatch(ClearCart());
       }
-
+      const [isOpen, setIsOpen] = useState(false);
+ 
+      const togglePopup = () => {
+        setIsOpen(!isOpen);
+      }
 
      return CartProducts.length>0?
    (
-    <div className=' container '>
-   
-
-     
+    <div className='items-list container-fluid'>
+{/*    
+  
           <div class="Header mt-5 pt-5">
         <h3 class="Heading lineSpan"><span className=''>K</span>oulchi Cart</h3>
         <h5 class="Action" onClick={Clear}>Remove all</h5>
-        </div>
+        </div> */}
+        <section class="row">
+            <div class="col-4 text-center list-title">Product</div>
+            <div class="col-4 text-center list-title ">Quantity</div>
+            <div class="col-4 text-center list-title">Subtotal</div>
+        </section> 
       {
         CartProducts.map(Item=>{
 
@@ -41,7 +49,24 @@ const Cart = () => {
         })
         
         }
-        <hr/> 
+         <section class=" row justify-content-lg-center justify-content-md-center">
+            <div class="col-7 d-none d-lg-block d-md-block"></div>
+            <div class="row col-12 col-md-5 col-lg-5 cart-total">
+                <button class="btn-total col-12 "><a class="a" onClick={Clear}>Remove All</a></button>
+                <div class="col-12 row pt-2">
+                    <h4 class="col-6 text-center">Total :</h4>
+                <p class="price-total col-6 text-center">{Total}</p>
+                </div>
+                <button class="btn-total"><a class="a" onClick={togglePopup}>Checkout</a></button>
+                {isOpen && <Popup
+      // content={<Payement/>}
+      handleClose={togglePopup}
+    />}
+                <button class="btn-total col-12"> <Link class="a" to={"/store"}>Add More Product</Link></button>
+{/* <Payement/> */}
+            </div>
+        </section>
+        {/* <hr/> 
           <div class="checkout ">
             <div class="total">
             <div>
@@ -52,7 +77,7 @@ const Cart = () => {
           </div>
             <Link to={"/store"} class="button ">Add More Product</Link>
             <Payement Total={Total}/>
-          </div>
+          </div> */}
         {/* <button >Clear Cart</button> */}
         {/* <p>{Total}</p>
       <Link to={"/store"}>Add More Product</Link> */}

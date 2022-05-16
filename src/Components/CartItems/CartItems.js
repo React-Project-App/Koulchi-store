@@ -16,29 +16,29 @@ const  HandleIncresAmount=()=>{
 }
 const  HandleDicresAmount=()=>{
   dispatch(DicresAmount(id))
-
 }
   
     return (
 
-  <div class="Cart-Items my-4 row">
-      <div class="image-box col-md-4 col-sm-12 d-flex justify-content-center">
-      <img src={Photo} className="image-fluid rounded" style={{ height:"120px" }} />
+      <section class="row item justify-content-lg-center pt-2 pb-2">
+      <img class="item-img col-1 d-none d-lg-block d-md-block" src={Photo} alt="" />
+      <div class="col-3 d-block d-lg-none d-md-none ms-4">
+          <img class="item-img me-2" src="images/1 (1).jpg" alt="" />
+          <p class="">Price :<span class="fw-bold">{Price}</span></p>
+          <a  class="link pointer" onClick={HandleRemoveFromCart}>Remove</a>
       </div>
-      <div class="about col-md-4 col-sm-12 d-flex justify-content-center">
-      <h1 class="title ">{Title}</h1>
-      {/* <h3 class="subtitle">250ml</h3> */}
+      <div class="col-3 item-dcp d-none d-lg-block d-md-block">
+          <p class="">{Title}</p>
+          <p>Price :<span class="fw-bold">{Price}</span></p>
+          <a  class="link pointer"  onClick={HandleRemoveFromCart}>Remove</a>
       </div>
-      <div class="counter col-md-4 d-flex justify-content-center col-sm-12">
-        <div class="btnCart " onClick={HandleIncresAmount} >+</div>
-        <div class="count px-4">{Amount}</div>
-        <div class="btnCart" onClick={HandleDicresAmount}>-</div>
+      <div class="col-7 item-cunt row justify-content-center">
+          <button class="btn2 col-2" onClick={HandleDicresAmount}><a class="a" >-</a></button>
+          <h3 class="item-inp col-1 text-center mt-1">{Amount}</h3>
+          <button class="btn2" onClick={HandleIncresAmount}><a class="a col-2" >+</a></button>
+          <span class="fw-bold text-dark col-1 price-cunt ps-4 col-4 text-end" >{SubTotal}</span>
       </div>
-      <div class="prices">
-        <div class="amount">{SubTotal} DH</div>
-        <div class="remove" onClick={HandleRemoveFromCart}><u>Remove</u></div>
-      </div>
- </div>
+  </section>
         // {/* <p> </p>
         // <p>{SubTotal}</p>
         // <p></p> */}
