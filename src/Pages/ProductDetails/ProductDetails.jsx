@@ -73,7 +73,7 @@ return
           <div className="col-lg-7 col-sm-12 col-md-6 pt-3 ps-lg-5">
             <h3 className="fw-bold pb-4 pt-3">{Title}</h3>
             <hr />
-            <span className="product-price">{Price}</span>
+            <span className="product-price">{Price} Dh</span>
             <span className="old-price text-dark ">{Amount+50}</span>
             <div className="pt-3 ps-1 row">
              

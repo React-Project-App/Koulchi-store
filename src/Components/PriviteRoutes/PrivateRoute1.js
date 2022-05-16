@@ -11,8 +11,7 @@ const PrivateRoute1 = ({children}) => {
     dispatch(CheckLogin_User())
   const state=useSelector(state=>state.Auth)
     console.log(state)
-    if(state) console.log(state)
-  return  state==[] ?<Navigate to="/home"/> :children
+  return  state ? <Navigate to="/home"/>:<output/>
 }
 
 export default PrivateRoute1

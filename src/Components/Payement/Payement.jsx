@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
+import { toast } from "react-toastify";
 
 function  App( {Total}) {
 //   const [state,setState]=useState(0)

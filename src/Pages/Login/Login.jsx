@@ -4,10 +4,18 @@ import { CheckLogin_User, LoginWithFacebook, LoginWithGoogle, LoginWithmailAndPa
 // import { AiFillFacebook ,AiFillGoogleCircle} from "react-icons/ai";
 import {BsGoogle,BsFacebook} from 'react-icons/bs'
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Login = () => {
     const dispatch =useDispatch()
+    dispatch(CheckLogin_User())
+    const state=useSelector(state=>state.Auth)
+
+    useEffect(_=>{
+
+    setUser(state)
+
+    },[state])
 
 
 const [Email,setEmail]=useState("")
@@ -28,15 +36,14 @@ const [Password,setPassword]=useState("")
       dispatch(Logout())
   }
   const [user,setUser]=useState(null)
-  dispatch(CheckLogin_User())
-  const state=useSelector(state=>state.Auth)
-  useEffect(_=>{
-  setUser(state)
-  },[state])
+  
   const handelLogInWithGoogle= () => {
     //e.preventDefault();
     dispatch(LoginWithGoogle())
 }
+
+console.log(state)
+
   return (
     <div className='container'>
     <main class="  row">
