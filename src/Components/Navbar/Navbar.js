@@ -3,15 +3,19 @@ import { BsFillCartFill, BsHeartFill, BsFillPersonFill } from "react-icons/bs";
 import "../../CssFiles/style.css";
 
 import { Link } from "react-router-dom";
-import { CheckLogin_User } from "../../Actions/Auth";
+import { CheckLogin_User, Logout } from "../../Actions/Auth";
 import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../FirebaseConfig/FirebaseConfig";
 const Navbar = () => {
   
   const dispatch =useDispatch()
   dispatch(CheckLogin_User())
   const state=useSelector(state=>state.Auth)
-  console.log()
- 
+  const handelLogOut= () => {
+    //e.preventDefault();
+    dispatch(Logout())
+}
+ const user=auth.currentUser
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div className="container">
@@ -133,7 +137,11 @@ const Navbar = () => {
             </li>
             <hr/>
             <li>
-              <Link to="/login" className="log" >Log out</Link>               
+              {/* <Link to="/login" className="log" >Log out</Link>     */}
+              {user?(
+                 <a type="button" className='log' onClick={handelLogOut}> Log out</a>   
+          ):(<Link to="/login" className="log" >Log in</Link>) 
+          }           
             </li>
 
           </ul>

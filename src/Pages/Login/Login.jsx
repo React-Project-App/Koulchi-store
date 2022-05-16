@@ -67,10 +67,10 @@ console.log(state)
                 <button type="button" class="btn btn-outline-info mb-2 mt-3"  onClick={handelLogin}>Sign in</button>
                 <button type="button" class="btn btn-outline-danger mb-2 "  onClick={handelLogInWithGoogle}>Google<BsGoogle className='ms-2'/></button>
                 <button type="button" class="btn btn-outline-primary mb-3 "  onClick={()=>dispatch(LoginWithFacebook())}>Facebook<BsFacebook className='ms-2'/></button>
-                {user&&(
+                {/* {user&&(
                  <button type="button" className='btn btn-outline-warning ' onClick={handelLogOut}> LogOut</button>   
           )
-          }
+          } */}
                 <p>Dont'have an account?<Link to="/Signup" class="link ms-2 text-decoration-underline">Create Account</Link></p>
             </form>
         </section>

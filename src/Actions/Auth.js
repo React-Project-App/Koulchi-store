@@ -37,7 +37,9 @@ export const LoginWithmailAndPassword =
 export const Logout = () => async (dispatch) => {
   try {
     signOut(auth);
+    localStorage.clear();
     dispatch({ type: LOGOUT });
+  
     toast.success("Logout succefuly");
   } catch (error) {}
 };
