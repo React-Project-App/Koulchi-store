@@ -47,7 +47,7 @@ const Navbar = () => {
           }
           </Link> */}
           <a class="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>}
+{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill />}
 
  </a>
 
@@ -55,16 +55,20 @@ const Navbar = () => {
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
-          <ul className="ps-0"  style={{listStyle:"none"}}>
-            <li >
-              <Link to="/profile" className="log">Your Profile</Link>               
-            </li>
-            <hr />
-            <li>
-              <Link to="/login" className="log">Log out</Link>               
-            </li>
+      {user?(
+                  <ul className="ps-0"  style={{listStyle:"none"}}>
+                                <li>
+            <Link to="/profile" className="log">Your Profile</Link>               
+          </li>
+          <hr/>
+                 <li> <a type="button" className='log' onClick={handelLogOut}> Log out</a>   </li></ul>
+          ):(
+            <ul className="ps-0"  style={{listStyle:"none"}}>
 
+          <li><Link to="/login" className="log" >Log in</Link> </li>
           </ul>
+          ) 
+          }          
       </div>
     </div>
   </div>
@@ -123,28 +127,35 @@ const Navbar = () => {
           }
   </Link> */}
  <a class="position-fixed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>}
+{state? <img src={state.photoURL} className="rounded-pill  " width="33%"/>:<BsFillPersonFill/>}
 
  </a>
 
-  <div class="row text-start mt-1" style={{position:'absolute',right:'calc(10%)'}}>
+  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'calc(12%)',top:'calc(6%)'}}>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
-          <ul className="ps-0"  style={{listStyle:"none"}}>
-            <li>
-              <Link to="/profile" className="log">Your Profile</Link>               
-            </li>
-            <hr/>
-            <li>
+         
+          
+           
               {/* <Link to="/login" className="log" >Log out</Link>     */}
               {user?(
-                 <a type="button" className='log' onClick={handelLogOut}> Log out</a>   
-          ):(<Link to="/login" className="log" >Log in</Link>) 
-          }           
-            </li>
+                  <ul className="ps-0"  style={{listStyle:"none"}}>
+                                <li>
+            <Link to="/profile" className="log">Your Profile</Link>               
+          </li>
+          <hr/>
+                 <li> <a type="button" className='log' onClick={handelLogOut}> Log out</a>   </li></ul>
+          ):(
+            <ul className="ps-0"  style={{listStyle:"none"}}>
 
+          <li><Link to="/login" className="log" >Log in</Link> </li>
           </ul>
+          ) 
+          }           
+            
+
+          
       </div>
     </div>
   </div>
