@@ -5,6 +5,7 @@ import { GetAllProduct } from '../../Actions/Poroducts';
 
 
 import ProductsListe from '../../Components/ProductsListe';
+import SideBar from '../../Components/SideBar/SideBar';
 
 const Products = () => {
     const dispatch= useDispatch()
@@ -12,16 +13,19 @@ const Products = () => {
         dispatch(GetAllProduct())
       }, [])
       const products= useSelector(state=>state.products)
-  
- 
- 
+      const FilterdProducts= useSelector(state=>state.Filter)
+      
+ const prod=(FilterdProducts.length>0)?FilterdProducts:products
   return products.length>0? (
+    <>
+    <SideBar  />
     <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 pt-5 ">
-      <AnimatePresence>
+      {/* <AnimatePresence> */}
 
      
       {(
-       products.map(product=>{
+        
+         prod.map(product=>{
 
           return (
             <ProductsListe product={product} key={product.id}/>
@@ -31,8 +35,9 @@ const Products = () => {
 
 
     ) }
-     </AnimatePresence>
+     {/* </AnimatePresence> */}
          </div>
+         </>
 
   ):(
   <div className='d-flex justify-content-center align-items-center load'>
