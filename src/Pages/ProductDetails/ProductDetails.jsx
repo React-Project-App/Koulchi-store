@@ -74,7 +74,7 @@ return
             <h3 className="fw-bold pb-4 pt-3">{Title}</h3>
             <hr />
             <span className="product-price">{Price} Dh</span>
-            <span className="old-price text-dark ">{Amount+50}</span>
+            <span className="old-price text-dark ">{Price+50}</span>
             <div className="pt-3 ps-1 row">
              
               <div className="pt-2 ps-1 row col-12 d-flex justify-content-around">
@@ -94,9 +94,9 @@ return
                 >
                   Add to cart
                 </Link>
-                { (heart  ?  
+                {/* { (heart  ?  
                   <BsHeartFill className='heart-fill pointer col-3 heart' onClick={_=>setheart(!heart)}/> :
-                  <BsHeart className='heart-fill pointer col-3  heart' onClick={_=>setheart(!heart)}/>)}
+                  <BsHeart className='heart-fill pointer col-3  heart' onClick={_=>setheart(!heart)}/>)} */}
                 
               </div>
             </div>

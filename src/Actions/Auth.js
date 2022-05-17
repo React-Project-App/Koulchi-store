@@ -36,8 +36,6 @@ export const LoginWithmailAndPassword =
       window.location.pathname="/home"
 
       toast.success(`Welcome ${user.user.displayName}`);
-
-
     } catch (error) {
       toast.error(error.message);
     }
@@ -47,10 +45,7 @@ export const Logout = () => async (dispatch) => {
     signOut(auth);
     localStorage.clear();
     dispatch({ type: LOGOUT });
-
     window.location.pathname="/home"
-
-  
     toast.success("Logout succefuly");
   } catch (error) {}
 };

@@ -41,12 +41,12 @@ const ProductsListe = ({product}) => {
                 </button>
 
             </div>
-            <span className="heart-icon">
+            {/* <span className="heart-icon">
                
                 { (heart  ?  
                 <BsHeartFill className='heart-fill' onClick={_=>setheart(!heart)}/> :
                 <BsHeart className='heart-fill' onClick={_=>setheart(!heart)}/>)}
-            </span>
+            </span> */}
         </div>
 
         <div className="product-info p-3">
