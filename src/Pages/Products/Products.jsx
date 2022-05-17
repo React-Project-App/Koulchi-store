@@ -17,9 +17,15 @@ const Products = () => {
       
  const prod=(FilterdProducts.length>0)?FilterdProducts:products
   return products.length>0? (
-    <>
-    <SideBar  />
-    <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 pt-5 ">
+    <div className='container-fluid'>
+
+    <div className='row mt-5 pt-5'>
+        <SideBar  />
+    <div className='row d-flex justify-content-center  col-12 mt-3'>
+
+    
+    
+    {/* <div class="row d-flex justify-content-center w-100 mt-5 pt-2 mb-4 ps-4 pt-5 "> */}
       {/* <AnimatePresence> */}
 
      
@@ -36,8 +42,10 @@ const Products = () => {
 
     ) }
      {/* </AnimatePresence> */}
+         {/* </div> */}
+    </div>
          </div>
-         </>
+         </div>
 
   ):(
   <div className='d-flex justify-content-center align-items-center load'>
