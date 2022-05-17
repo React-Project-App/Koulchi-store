@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ClearCart } from '../../Actions/Cart'
 import CartItems from '../../Components/CartItems/CartItems'
 import '../../CssFiles/CartStyle.css'
 import Payement from '../../Components/Payement/Payement'
 import Popup from '../../Components/Popup/Popup'
+import { auth } from '../../FirebaseConfig/FirebaseConfig'
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
      const [Total,setTotal]=useState(0);
@@ -22,8 +23,8 @@ const Cart = () => {
           dispatch(ClearCart());
       }
       const [isOpen, setIsOpen] = useState(false);
- 
-
+ const user =auth.currentUser;
+const navigate=useNavigate();
      return CartProducts.length>0?
    (
     <div className='items-list container-fluid'>
@@ -55,7 +56,12 @@ const Cart = () => {
                     <h4 class="col-6 text-center">Total :</h4>
                 <p class="price-total col-6 text-center">{Total}</p>
                 </div>
-               <Popup Total={Total}/>
+                {user?
+              ( <Popup Total={Total}/>)
+              :(
+                <button className='btn-total col-12 text-white fw-bold' onClick={_=>{navigate('/login')}}>Log in</button>
+              )  
+                }
             </div>
         </section>
     </div>
