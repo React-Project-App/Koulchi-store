@@ -1,11 +1,13 @@
+import { clear } from '@testing-library/user-event/dist/clear'
 import React ,{useState}from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link,useLocation,useNavigate } from 'react-router-dom'
 import { CreateUserWithEmailAndPassword } from '../../Actions/Auth'
 
 const SignUp = () => {
     const dispatch =useDispatch()
-
+    
+    const navigate = useNavigate();
     const [Email,setEmail]=useState("")
 const [Password,setPassword]=useState("")
 const [Name,setName]=useState("")
@@ -20,10 +22,18 @@ const handelPasswordChnage = (e) => {
 const handelNameChnage = (e) => {
     setName(e.target.value);
 }
+
 const handelLogin = () => {
     // e.preventDefault();
+    if(!localStorage.getItem("user")){
     dispatch(CreateUserWithEmailAndPassword(Email,Password,Name))
+    return
+    }
+    navigate("/home")
+
+    
 }
+
   return (
     <div className='container'>
 
@@ -50,8 +60,8 @@ const handelLogin = () => {
                     <label  class="form-label">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" onChange={handelPasswordChnage}/>
                 </div>
-                <button type="button" class="btn btn-primary mb-3">CREATE ACCOUNT</button>
-                <p>Aleardy have an account?<Link class="link" to="/login"  onClick={handelLogin}>Sign in</Link></p>
+                <button type="button" class="btn btn-primary mb-3"  onClick={handelLogin}>CREATE ACCOUNT</button>
+                <p>Aleardy have an account?<Link class="link" to="/login" >Sign in</Link></p>
             </form>
         </section>
     </main>
