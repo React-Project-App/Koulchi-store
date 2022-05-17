@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FilterSearch } from '../../Actions/Filter';
 import {FaFilter} from 'react-icons/fa'
-const SideBar=(props)=> {
+const SideBar=()=> {
 
   const dispatch=useDispatch();
   const [title,settitle]=useState("");

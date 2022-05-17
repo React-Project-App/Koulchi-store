@@ -103,9 +103,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="ms-5 d-lg-block d-none">
-          <Link to="/FavoriteProducts" className="me-3">
+          {/* <Link to="/FavoriteProducts" className="me-3">
             <BsHeartFill />
-          </Link>
+          </Link> */}
           <Link to="/Cart" className="me-3 position-relative ">
             <BsFillCartFill />
 
