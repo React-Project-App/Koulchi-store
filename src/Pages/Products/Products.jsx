@@ -12,14 +12,23 @@ const Products = () => {
     useEffect(() => {
         dispatch(GetAllProduct())
       }, [])
-      const products= useSelector(state=>state.products)
+      const Products= useSelector(state=>state.products)
       const FilterdProducts= useSelector(state=>state.Filter)
-      
- const prod=(FilterdProducts.length>0)?FilterdProducts:products
-  return products.length>0? (
+      const FilterCategorie=useSelector(state=>state.FilterCategorie)
+      // console.log(FilterCategorie)
+      let prod=Products
+      if (FilterdProducts.length>0) {
+         prod=FilterdProducts
+      }
+       if (FilterCategorie.length>0) {
+         prod=FilterCategorie
+         
+      }
+  return Products.length>0? (
     <div className='container-fluid'>
 
     <div className='row mt-5 pt-5'>
+   
         <SideBar  />
     <div className='row d-flex justify-content-center  col-12 mt-3'>
 

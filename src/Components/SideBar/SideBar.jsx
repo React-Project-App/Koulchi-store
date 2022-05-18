@@ -1,30 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FilterSearch } from '../../Actions/Filter';
 import {FaFilter} from 'react-icons/fa'
+import {  GetCategories } from '../../Actions/Categorie';
+import { FilterCategorie } from '../../Actions/FilterCategorie';
 const SideBar=()=> {
 
   const dispatch=useDispatch();
   const [title,settitle]=useState("");
   const Search=title=>{
+    
    dispatch(FilterSearch(title))
-    
-    
   }
 
+  const filterCat=(cat)=>{
+    dispatch(FilterCategorie(cat))
+  }
+  const filterCatt=()=>{
+    dispatch(FilterCategorie(""))
+  }
   const AllProduct=_=>{
     dispatch(FilterSearch(""))
     settitle("")
    }
+useEffect(()=>{
   
-  const products= useSelector(state=>state.Filter)
+  dispatch(GetCategories());
+  
+},[])
+const categories=useSelector(state=>state.Categories)
+// console.log(categories)
+// console.log(categories)
+// categories.map(cat=>{
+// })
+  // const products= useSelector(state=>state.Filter)
   return (
+    
     <div className='container   text-center'>
     <a class="btn btn-primary col-12 w-25 mx-auto fit-btn shadow-none " data-bs-toggle="offcanvas" href="#sidebar" role="button" aria-controls="offcanvasExample">
             <FaFilter/> Filter
           </a>
     {/* ------------------------------------ */}
-    <section id="sidebar"  class="col-6 col-lg-2 pt-4 offcanvas offcanvas-star" tabindex="-1"   aria-labelledby="offcanvasExampleLabel">
+    <section id="sidebar"  class="col-6 col-lg-2 pt-4 offcanvas offcanvas-star " tabindex="-1"   aria-labelledby="offcanvasExampleLabel">
             <div class="list-group pt-3">
                 <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded  active-filter" 
                 onClick={()=>{
@@ -33,14 +50,20 @@ const SideBar=()=> {
                 <li><input className='form-control shadow-none' type="text" value={title}  onChange={e=>settitle(e.target.value)}
                 placeholder="Search..."
                 /></li>
-                <li><a href="#" class="list-group-item list-group-item-action mt-2 rounded  active-filter" onClick={()=>Search(title)}>Search</a></li>
+                <li><a href="#" class="list-group-item list-group-item-action mt-2 rounded  active-filter" onClick={()=>{filterCatt();Search(title)}}>Search</a></li>
                 <h6 class="p-1 border-bottom mt-5">Category</h6>
                 <ul class="list-group">
-                    <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded ">Living</a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded">Dining</a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded ">Office</a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded ">Bedroom</a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded ">Kitchen</a></li>
+                  {
+                    categories.map(cat=>{
+                     return  <li><a class="list-group-item list-group-item-action mb-2 rounded " 
+                     onClick={e=>
+                      filterCat(e.target.innerText)}
+                     
+                     >{cat.CatName}</a></li>
+                    })
+                  }
+                   
+                    
                 </ul>
             </div>
           

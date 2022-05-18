@@ -8,8 +8,8 @@ import { motion,AnimatePresence } from 'framer-motion'
 
 
 const ProductsListe = ({product}) => {
-    const [heart,setheart]=useState(false);
-    const{Title,Price,Photo,id}=product
+    // const [heart,setheart]=useState(false);
+    const{Title,Price,Photo,id,Categorie}=product
   return (
       
     // <div className="col-3 product-item  m-4">
@@ -50,7 +50,7 @@ const ProductsListe = ({product}) => {
         </div>
 
         <div className="product-info p-3">
-            <span className="product-type">Categorie</span>
+            <span className="product-type">{Categorie}</span>
             <a href="#" className="d-block text-dark text-decoration-none py-2 product-name">{Title}</a>
             <span className="product-price">{Price} DH</span>
             <span className="old-price text-dark ">200.50 DH</span>
