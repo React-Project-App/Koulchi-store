@@ -396,40 +396,42 @@ padding: 10px 5px 0px 5px;
     text-decoration: none !important;
 }
 #sidebar{
-    background-color: #f7f7f7;
+    background-color: #fff;
     border-right: rgb(189, 189, 189) solid 0.5px;
     border-bottom: rgb(189, 189, 189) solid 0.5px;
     padding: 10px !important;
     top: 82px;
     position: absolute !important;
-    overflow-y: scroll;
+    overflow-y: auto;
+    left: 0;
 }
 .fa-circle{
     font-size: 20px;
 }
-.card{
+/* .cardd{
     width: 250px;
     display: inline-block;
     height: 300px;
-}
+} */
 .card-img-top{
     width: 250px;
     height: 210px;
 }
-.card-body p{
+/* .card-body p{
     margin: 2px;
-}
-.card-body{
+} */
+/* .card-body{
     padding: 0;
     padding-left: 2px;
-}
+} */
 .filter{
     display: none;
     padding: 0;
     margin: 0;
 }
 
-.modal-backdrop{
+.offcanvas-backdrop.show{
+ /* opacity: O,5; */
     margin-top: 83px !important;
 }
 

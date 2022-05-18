@@ -1,4 +1,4 @@
-import { FILTER_SEARCH } from "../actionconstants/ActionCn";
+import { FILTER_SEARCH ,ORDER_PRODUCT} from "../actionconstants/ActionCn";
 
 
 
@@ -8,8 +8,7 @@ export default function Filter(state = [], {type,payload}) {
             // console.log(payload)
             const Products=payload.docs.map(doc=>({...doc.data(),id:doc.id}))
             return Products;
-
-        
+    
         default:
             return state;
     }

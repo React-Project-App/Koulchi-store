@@ -51,7 +51,7 @@ const Navbar = () => {
 
  </a>
 
-  <div class="row text-start mt-1" style={{position:'absolute',right:'calc(10%)'}}>
+  <div class="row text-start mt-1 " style={{position:'absolute',right:'calc(13%)',top:'calc(56%)'}}>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
@@ -131,7 +131,7 @@ const Navbar = () => {
 
  </a>
 
-  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'calc(12%)',top:'calc(5%)'}}>
+  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'calc(12%)',top:'calc(13%)'}}>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
