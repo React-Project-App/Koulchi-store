@@ -43,14 +43,15 @@ const categories=useSelector(state=>state.Categories)
     {/* ------------------------------------ */}
     <section id="sidebar"  class="col-6 col-lg-2 pt-4 offcanvas offcanvas-star " tabindex="-1"   aria-labelledby="offcanvasExampleLabel">
             <div class="list-group pt-3">
-                <li><a href="#" class="list-group-item list-group-item-action mb-2 rounded  active-filter" 
+                <li><a class="list-group-item list-group-item-action mb-2 rounded  active-filter" 
                 onClick={()=>{
+                  filterCatt();
                   AllProduct()}}
                 >All</a></li>
                 <li><input className='form-control shadow-none' type="text" value={title}  onChange={e=>settitle(e.target.value)}
                 placeholder="Search..."
                 /></li>
-                <li><a href="#" class="list-group-item list-group-item-action mt-2 rounded  active-filter" onClick={()=>{filterCatt();Search(title)}}>Search</a></li>
+                <li><a  class="list-group-item list-group-item-action mt-2 rounded  active-filter" onClick={()=>{filterCatt();Search(title)}}>Search</a></li>
                 <h6 class="p-1 border-bottom mt-5">Category</h6>
                 <ul class="list-group">
                   {
@@ -67,16 +68,7 @@ const categories=useSelector(state=>state.Categories)
                 </ul>
             </div>
           
-            <div className='mt-5 pt-2'>
-                <h6>Filter By Price</h6>
-                <form class="ml-md-2 row w-100 justify-content-center">
-                    <div>
-                        <input type="range" id="volume" name="volume"
-                               min="100" max="10000" step="100"/>
-                        <label for="volume">Price</label>
-                      </div>
-                </form>
-            </div>
+         
             <div className='mt-5 pt-5'>
               <img style={{width:'100%'}} src="https://raw.githubusercontent.com/rachid-wanmid/DESIGN_ECO_POJ/main/LOGO.png" alt='LOGO Koulchi'  />
             </div>

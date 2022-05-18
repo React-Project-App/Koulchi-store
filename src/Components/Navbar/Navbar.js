@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link
           to="/home"
           className="navbar-brand bg-white fw-bold ms-4 logo pb-3"
-          href="#"
+          
         >
           <span>K</span>OULCHI<span>.</span>
         </Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
  </a>
 
-  <div class="row text-start mt-1 " style={{position:'absolute',right:'calc(13%)',top:'calc(56%)'}}>
+  <div class="row text-start mt-1 " style={{position:'absolute',right:'calc(14%)',top:'calc(60%)'}}>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
@@ -131,7 +131,7 @@ const Navbar = () => {
 
  </a>
 
-  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'calc(12%)',top:'calc(13%)'}}>
+  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'14%',top:'5%'}}>
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body ">
