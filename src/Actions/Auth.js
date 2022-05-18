@@ -2,6 +2,7 @@ import {
   auth,
   googleProvider,
   facebookProvider,
+  db,
 } from "../FirebaseConfig/FirebaseConfig";
 import {
   createUserWithEmailAndPassword,
@@ -23,6 +24,7 @@ import {
   CREAET_USER_ACOUNT,
   RESET_PASSWORD,
 } from "../actionconstants/ActionCn";
+import { doc, setDoc } from "firebase/firestore";
 
 
 export const LoginWithmailAndPassword =
@@ -30,12 +32,19 @@ export const LoginWithmailAndPassword =
 
     try {
       const user = await signInWithEmailAndPassword(auth, Email, Password);
-      localStorage.setItem("user", JSON.stringify(user.user));
-      
-      toast.success(`Welcome ${user.user.displayName}`);
 
+      console.log(user);
+      localStorage.setItem("user", JSON.stringify(user.user));
+      await setDoc(doc(db,"User",user.user.uid),{
+        uid:user.user.uid,
+        name:user.user.displayName,
+        email:user.user.email,
+        Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
+      })
+      toast.success(`Welcome ${user.user.displayName}`);
+        
       dispatch({ type: LOGIN, payload: user })
-     setTimeout(()=>window.location.pathname="/home",7000) 
+    //  setTimeout(()=>window.location.pathname="/home",2000) 
 
     } catch (error) {
       toast.error(error.message);
@@ -70,9 +79,19 @@ export const LoginWithGoogle = () =>  (dispatch) => {
     .then((result) => {
       dispatch({ type: LOGIN_WITH_GOOGLE, payload: result.user });
       localStorage.setItem("user", JSON.stringify(result.user));
+
+
+
+
+       setDoc(doc(db,"User",result.user.uid),{
+        uid:result.user.uid,
+        name:result.user.displayName,
+        email:result.user.email,
+        Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
+      })
       toast.success(`Welcome ${result.user.displayName}`);
 
-      setTimeout(()=>window.location.pathname="/home",7000) 
+    //   setTimeout(()=>window.location.pathname="/home",7000) 
 
 
 
@@ -86,6 +105,16 @@ export const LoginWithGoogle = () =>  (dispatch) => {
 export const LoginWithFacebook = () => async (dispatch) => {
   try {
     const user = await signInWithPopup(auth, facebookProvider);
+    localStorage.setItem("user", JSON.stringify(user.user));
+
+
+    
+    await setDoc(doc(db,"User",user.user.uid),{
+        uid:user.user.uid,
+        name:user.user.displayName,
+        email:user.user.email,
+        Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
+      })
     dispatch({ type: LOGIN_WITH_FACEBOOK, payload: user });
     toast.success(`Welcome ${user.user.displayName}`);
 
@@ -99,7 +128,13 @@ export const LoginWithFacebook = () => async (dispatch) => {
 export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (dispatch) => {
     try {
       const user = await createUserWithEmailAndPassword(auth, Email, Password,Name);
-
+          
+    await setDoc(doc(db,"User",user.user.uid),{
+        uid:user.user.uid,
+        name:Name,
+        email:user.user.email,
+        Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
+      })
      await updateProfile(auth.currentUser, {
       //  email:Email,
       //  password:Password,

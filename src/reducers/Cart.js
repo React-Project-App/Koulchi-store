@@ -5,7 +5,7 @@ import {
   INCRESAMOUNT,
   REMOVE_FROM_CART,
 } from "../actionconstants/ActionCn";
-export const Cart = (cart = [], { type, payload }) => {
+export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[], { type, payload }) => {
   switch (type) {
     case ADD_TO_CART:
       // const { id } = payload;

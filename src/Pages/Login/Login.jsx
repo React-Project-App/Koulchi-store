@@ -5,6 +5,9 @@ import { CheckLogin_User, LoginWithFacebook, LoginWithGoogle, LoginWithmailAndPa
 import {BsGoogle,BsFacebook} from 'react-icons/bs'
 import { FcGoogle } from "react-icons/fc";
 import { Link, Navigate } from 'react-router-dom';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../../FirebaseConfig/FirebaseConfig';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const dispatch =useDispatch()
@@ -26,9 +29,20 @@ const [Password,setPassword]=useState("")
     const handelPasswordChnage = (e) => {
         setPassword(e.target.value);
     }
-    const handelLogin = () => {
+    const handelLogin =   () => {
         // e.preventDefault();
         dispatch(LoginWithmailAndPassword(Email,Password))
+        
+        console.log(state)
+        if(localStorage.getItem('user')){
+            toast.success("Login Successfully")
+        }
+        // if(state){
+        //     await setDoc(doc(db,"users",state.uid),{
+        //         name:user.user.displayName,
+        //         email:user.user.email,
+        //       })
+        // }
     }
 
     const handelLogOut= () => {
