@@ -7,7 +7,7 @@ import { CheckLogin_User } from '../../Actions/Auth';
 import ResetPassword from '../../Components/ResetPassword/ResetPassword'
 import { auth } from '../../FirebaseConfig/FirebaseConfig';
 // import { auth } from '../../FirebaseConfig/FirebaseConfig'
-import FileBase64 from 'react-file-base64';
+// import FileBase64 from 'react-file-base64';
 
 function Profile() {
   const dispatch=useDispatch();
