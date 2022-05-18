@@ -127,7 +127,7 @@ const Navbar = () => {
           }
   </Link> */}
  <a class="position-fixed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-{state? <img src={state.photoURL} className="rounded-pill  " width="33%"/>:<BsFillPersonFill/>}
+{state? <img src={state.photoURL} className="rounded-pill  " width="50%"/>:<BsFillPersonFill/>}
 
  </a>
 

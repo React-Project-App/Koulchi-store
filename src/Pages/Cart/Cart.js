@@ -6,7 +6,8 @@ import CartItems from '../../Components/CartItems/CartItems'
 import '../../CssFiles/CartStyle.css'
 import Payement from '../../Components/Payement/Payement'
 import Popup from '../../Components/Popup/Popup'
-import { auth } from '../../FirebaseConfig/FirebaseConfig'
+import { auth, db } from '../../FirebaseConfig/FirebaseConfig'
+import { doc, setDoc } from 'firebase/firestore'
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
      const [Total,setTotal]=useState(0);
@@ -16,6 +17,14 @@ const Cart = () => {
      },0);
      console.log(ProductTotal)
      setTotal(ProductTotal);
+     localStorage.setItem("Cart", JSON.stringify( CartProducts))
+    //  if(localStorage.getItem("user")){
+    //   setDoc(doc(db,"User", JSON.parse( localStorage.getItem("user")).uid),{
+    //     name:JSON.parse( localStorage.getItem("user")).displayName,
+    //     email:JSON.parse( localStorage.getItem("user")).email,
+    //     Cart:CartProducts
+    //   })
+    //  }
    }, [CartProducts]);
    
      const dispatch=useDispatch();
