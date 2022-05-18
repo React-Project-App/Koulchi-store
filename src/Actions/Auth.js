@@ -31,11 +31,12 @@ export const LoginWithmailAndPassword =
     try {
       const user = await signInWithEmailAndPassword(auth, Email, Password);
       localStorage.setItem("user", JSON.stringify(user.user));
-
-      dispatch({ type: LOGIN, payload: user });
-      window.location.pathname="/home"
-
+      
       toast.success(`Welcome ${user.user.displayName}`);
+
+      dispatch({ type: LOGIN, payload: user })
+     setTimeout(()=>window.location.pathname="/home",7000) 
+
     } catch (error) {
       toast.error(error.message);
     }
@@ -44,15 +45,21 @@ export const Logout = () => async (dispatch) => {
   try {
     signOut(auth);
     localStorage.clear();
-    dispatch({ type: LOGOUT });
-    window.location.pathname="/home"
     toast.success("Logout succefuly");
+
+    setTimeout(()=>window.location.pathname="/home",7000) 
+
+
+    dispatch({ type: LOGOUT });
   } catch (error) {}
 };
 export const CheckLogin_User = () => async (dispatch) => {
   try {
     onAuthStateChanged(auth, (currentUser) => {
-      dispatch({ type: CHECK_LOGIN_USER, payload: currentUser });
+      if(currentUser){
+        dispatch({ type: CHECK_LOGIN_USER, payload: currentUser });
+
+      }  
     });
   } catch (error) {
     toast.error("Invalid Information");
@@ -63,9 +70,11 @@ export const LoginWithGoogle = () =>  (dispatch) => {
     .then((result) => {
       dispatch({ type: LOGIN_WITH_GOOGLE, payload: result.user });
       localStorage.setItem("user", JSON.stringify(result.user));
-      window.location.pathname="/home"
-
       toast.success(`Welcome ${result.user.displayName}`);
+
+      setTimeout(()=>window.location.pathname="/home",7000) 
+
+
 
 
     })
@@ -78,9 +87,11 @@ export const LoginWithFacebook = () => async (dispatch) => {
   try {
     const user = await signInWithPopup(auth, facebookProvider);
     dispatch({ type: LOGIN_WITH_FACEBOOK, payload: user });
-    window.location.pathname="/home"
-
     toast.success(`Welcome ${user.user.displayName}`);
+
+    setTimeout(()=>window.location.pathname="/home",7000) 
+
+
   } catch (error) {
     toast.error("Invalid Information");
   }
@@ -97,9 +108,11 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
       })
 
       dispatch({ type: CREAET_USER_ACOUNT, payload: user.user });
-      window.location.pathname="/home"
-
       toast.success(`Welcome ${Name}`);
+
+      setTimeout(()=>window.location.pathname="/home",7000) 
+
+
     } catch {
       toast.error("Invalid Information");
     }
