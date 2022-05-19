@@ -8,18 +8,20 @@ import {
 export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[], { type, payload }) => {
   switch (type) {
     case ADD_TO_CART:
-      // const { id } = payload;
-
+      // const { id } = payloa
+      
+      console.log(payload);
       const cartItem = cart.find((item) => item.id === payload.id);
 
       console.log(cartItem);
       if (cartItem) {
         const newCart = cart.map((item) => {
           if (item.id === payload.id) {
+            console.log(item.Amount)
             return {
               ...item,
               Amount: item.Amount + 1,
-              SubTotal: (item.Amount+1) * payload.Price,
+              SubTotal: (item.Amount+1) * item.Curprice,
             };
           }
           return item;
@@ -43,7 +45,7 @@ export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage
           return {
             ...item,
             Amount: item.Amount + 1,
-            SubTotal: (item.Amount + 1) * item.Price,
+            SubTotal: (item.Amount + 1) * item.Curprice,
           };
         }
         return item;
@@ -58,14 +60,15 @@ export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage
             return {
               ...item,
               Amount: item.Amount - 1,
-              SubTotal: (item.Amount - 1) * item.Price,
+              SubTotal: (item.Amount - 1) * item.Curprice,
             };
           }
           else{
+            console.log(item.Curprice)
             return {
               ...item,
               Amount: 1,
-              SubTotal: item.Price,
+              SubTotal: item.Curprice,
             };
           }
         }

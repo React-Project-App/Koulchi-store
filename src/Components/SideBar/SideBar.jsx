@@ -43,7 +43,7 @@ const categories=useSelector(state=>state.Categories)
     {/* ------------------------------------ */}
     <section id="sidebar"  class="col-6 col-lg-2 pt-4 offcanvas offcanvas-star " tabindex="-1"   aria-labelledby="offcanvasExampleLabel">
             <div class="list-group pt-3">
-                <li><a class="list-group-item list-group-item-action mb-2 rounded  active-filter" 
+                <li><a class=" pointer list-group-item list-group-item-action mb-2 rounded  active-filter" 
                 onClick={()=>{
                   filterCatt();
                   AllProduct()}}
@@ -56,7 +56,7 @@ const categories=useSelector(state=>state.Categories)
                 <ul class="list-group">
                   {
                     categories.map(cat=>{
-                     return  <li><a class="list-group-item list-group-item-action mb-2 rounded " 
+                     return  <li className='pointer'><a class="  Active-cat list-group-item list-group-item-action mb-2 rounded " 
                      onClick={e=>
                       filterCat(e.target.innerText)}
                      

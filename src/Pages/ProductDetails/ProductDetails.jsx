@@ -18,10 +18,10 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(GETDETAILSPRODUCT(Id));
   }, []);
-  const { Title, Price, Photo, MorePhoto } = useSelector(
+  const { Title, Prevprice,Curprice, Photo, MorePhoto } = useSelector(
     (state) => state.products
   )
-const Product={ Title, Price, Photo, MorePhoto }
+const Product={ Title, Curprice, Prevprice,Photo, MorePhoto }
 const [Amount, setAmount] = useState(1);
 
   const handelInAmount = () => {
@@ -73,8 +73,8 @@ return
           <div className="col-lg-7 col-sm-12 col-md-6 pt-3 ps-lg-5">
             <h3 className="fw-bold pb-4 pt-3">{Title}</h3>
             <hr />
-            <span className="product-price">{Price} Dh</span>
-            <span className="old-price text-dark ">{Price+50}</span>
+            <span className="product-price">{Curprice} Dh</span>
+            <span className="old-price text-dark ">{Prevprice}</span>
             <div className="pt-3 ps-1 row">
              
               <div className="pt-2 ps-1 row col-12 d-flex justify-content-around">
@@ -111,14 +111,14 @@ return
               vel faucibus sem pulvinar vel. Curabitur viverra nisl dui, a venenatis felis pellentesque id. Donec non
               lacus diam.
             </p>
-            <div className="d-flex justify-content-start review mt-4 align-items-center">
+            {/* <div className="d-flex justify-content-start review mt-4 align-items-center">
              <BsStarFill/>
              <BsStarFill/>
              <BsStarFill/>
              <BsStarFill/>
              <BsStarFill/>
               <span className="ps-2">(review 150)</span>
-            </div>
+            </div> */}
             </div>
           </div>
         </div>

@@ -10,10 +10,12 @@ import { auth, db } from '../../FirebaseConfig/FirebaseConfig'
 import { doc, setDoc } from 'firebase/firestore'
 const Cart = () => {
      const CartProducts= useSelector(state=>state.Cart)
+     console.log("fff",CartProducts)
      const [Total,setTotal]=useState(0);
   useEffect(() => {
     const  ProductTotal = CartProducts.reduce((Product, item) => {
-       return Product + Number(item.SubTotal);
+      console.log(item)
+       return Product + (Number(item.Curprice) * Number(item.Amount));
      },0);
      console.log(ProductTotal)
      setTotal(ProductTotal);

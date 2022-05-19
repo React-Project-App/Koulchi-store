@@ -7,9 +7,9 @@ import { db } from "../FirebaseConfig/FirebaseConfig";
 export const AddTocart =(Id,Amount)=>async (dispatch)=>{
     const Product= await getDoc(doc(db,"Product",Id));
        const { id } = Product;
-       const {  Title, Price, Photo } =Product.data()
+       const {  Title,  Photo , Prevprice,Curprice} =Product.data()
 
-       const product ={ Title, Price, Photo ,id,Amount,SubTotal: Price} 
+       const product ={ Title,  Prevprice,Curprice, Photo ,id,Amount,SubTotal: Curprice} 
     
 
     dispatch({type:ADD_TO_CART,payload:product});
