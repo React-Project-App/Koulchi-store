@@ -37,9 +37,9 @@ export const LoginWithmailAndPassword =
       localStorage.setItem("user", JSON.stringify(user.user));
       await setDoc(doc(db,"User",user.user.uid),{
         uid:user.user.uid,
-        name:auth.currentUser,
-        email:JSON.parse(auth.currentUser),
-        user:user.user,
+        name:user.user.displayName,
+        email:user.user.email,
+        user:JSON.stringify(auth.currentUser),
 
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
@@ -89,7 +89,7 @@ export const LoginWithGoogle = () =>  (dispatch) => {
         uid:result.user.uid,
         name:result.user.displayName,
         email:result.user.email,
-        user:auth.currentUser,
+        user:JSON.stringify(auth.currentUser),
 
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
@@ -117,7 +117,8 @@ export const LoginWithFacebook = () => async (dispatch) => {
         uid:user.user.uid,
         name:user.user.displayName,
         email:user.user.email,
-        user:auth.currentUser,
+        user:JSON.stringify(auth.currentUser),
+
 
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
