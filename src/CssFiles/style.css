@@ -33,9 +33,9 @@ nav{
 box-shadow: 0px 16px 12px -20px rgba(0,0,0,0.50);
 }
 .crtp{
-    background-color: #FF6120 !important;
-    width: 15px !important;
-    height: 15px !important;
+    /* background-color: #FF6120 !important; */
+    /* width: 15px !important;
+    height: 15px !important; */
     left: 15px !important;
     bottom: 10px !important;
 }
@@ -439,12 +439,13 @@ padding: 10px 5px 0px 5px;
     width: 20px;
 }
 .fit-btn{
-    background-color: #a1a1a1 !important;
+    background-color: #3b84fa !important;
     border: none !important;
+    color: #fff !important;
 }
 
 .fit-btn:hover{
-    background-color: #3b84fa !important;
+    background-color: #FF6120 !important;
 }
 
 
@@ -464,4 +465,21 @@ padding: 10px 5px 0px 5px;
     flex-direction: row;
     align-items: center !important;
     padding-left: 20px !important;
+}
+.Active-cat:active{
+    background-color: #FF6120 !important;
+    color: #fff !important;
+}
+
+/* .NumberItems{
+    left: 4px;
+    top: -4px;
+} */
+.NumberItems{
+    background-color: #FF6120 !important;
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 50px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect,useState} from "react";
 import { BsFillCartFill, BsHeartFill, BsFillPersonFill } from "react-icons/bs";
 import "../../CssFiles/style.css";
 
@@ -7,10 +7,17 @@ import { CheckLogin_User, Logout } from "../../Actions/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../FirebaseConfig/FirebaseConfig";
 const Navbar = () => {
+
+  const [ItemsNumber, setItemsNumber] = useState(0);
   
   const dispatch =useDispatch()
   dispatch(CheckLogin_User())
   const state=useSelector(state=>state.Auth)
+  const CartItems=useSelector(state=>state.Cart)
+  useEffect(()=>{
+
+setItemsNumber(CartItems.length)
+  },[CartItems])
   const handelLogOut= () => {
     //e.preventDefault();
     dispatch(Logout())
@@ -33,9 +40,9 @@ const Navbar = () => {
           <Link to="/cart" className="me-3 position-relative ">
             <BsFillCartFill />
 
-            <div className="spinner-grow crtp position-absolute" role="status">
+            {/* <div className="spinner-grow crtp position-absolute" role="status">
               <span className="visually-hidden"></span>
-            </div>
+            </div> */}
           </Link>
         
           {/* <Link to="/Profile">
@@ -102,15 +109,15 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="ms-5 d-lg-block d-none">
+        <div className="ms-5 d-lg-block d-none ">
           {/* <Link to="/FavoriteProducts" className="me-3">
             <BsHeartFill />
           </Link> */}
-          <Link to="/Cart" className="me-3 position-relative ">
+          <Link to="/Cart" className="me-4 position-relative  ">
             <BsFillCartFill />
 
-            <div className="spinner-grow crtp position-absolute" role="status">
-              <span className="visually-hidden"></span>
+            <div className=" crtp position-absolute " >
+              <span className=" NumberItems position-absolute">{ItemsNumber}</span>
             </div>
           </Link>
           {/* <Link to="/Profile">

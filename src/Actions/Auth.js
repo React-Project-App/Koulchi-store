@@ -39,12 +39,14 @@ export const LoginWithmailAndPassword =
         uid:user.user.uid,
         name:user.user.displayName,
         email:user.user.email,
+        user:JSON.stringify(auth.currentUser),
+
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
       toast.success(`Welcome ${user.user.displayName}`);
         
       dispatch({ type: LOGIN, payload: user })
-    //  setTimeout(()=>window.location.pathname="/home",2000) 
+     setTimeout(()=>window.location.pathname="/home",2000) 
 
     } catch (error) {
       toast.error(error.message);
@@ -56,7 +58,7 @@ export const Logout = () => async (dispatch) => {
     localStorage.clear();
     toast.success("Logout succefuly");
 
-    setTimeout(()=>window.location.pathname="/home",7000) 
+    setTimeout(()=>window.location.pathname="/home",2000) 
 
 
     dispatch({ type: LOGOUT });
@@ -87,6 +89,8 @@ export const LoginWithGoogle = () =>  (dispatch) => {
         uid:result.user.uid,
         name:result.user.displayName,
         email:result.user.email,
+        user:JSON.stringify(auth.currentUser),
+
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
       toast.success(`Welcome ${result.user.displayName}`);
@@ -113,12 +117,15 @@ export const LoginWithFacebook = () => async (dispatch) => {
         uid:user.user.uid,
         name:user.user.displayName,
         email:user.user.email,
+        user:JSON.stringify(auth.currentUser),
+
+
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
     dispatch({ type: LOGIN_WITH_FACEBOOK, payload: user });
     toast.success(`Welcome ${user.user.displayName}`);
 
-    setTimeout(()=>window.location.pathname="/home",7000) 
+    setTimeout(()=>window.location.pathname="/home",2000) 
 
 
   } catch (error) {
@@ -133,6 +140,7 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
         uid:user.user.uid,
         name:Name,
         email:user.user.email,
+        user :JSON.stringify(auth.currentUser),
         Cart:localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[]
       })
      await updateProfile(auth.currentUser, {
@@ -145,11 +153,11 @@ export const CreateUserWithEmailAndPassword =(Email, Password,Name) => async (di
       dispatch({ type: CREAET_USER_ACOUNT, payload: user.user });
       toast.success(`Welcome ${Name}`);
 
-      setTimeout(()=>window.location.pathname="/home",7000) 
+      setTimeout(()=>window.location.pathname="/home",2000) 
 
 
-    } catch {
-      toast.error("Invalid Information");
+    } catch (e) {
+      toast.error(e);
     }
   };
 export const ResetPasswordd=(email)=>async(dispatch)=>{
