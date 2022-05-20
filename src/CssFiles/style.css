@@ -483,3 +483,11 @@ padding: 10px 5px 0px 5px;
     padding: 2px 5px;
     border-radius: 50px;
 }
+
+.content{
+    min-height: calc(100vh - 308px)
+}
+
+.sweetPagination .paginationUL .pageItem .pageButton{
+    margin-bottom: 30px  !important;
+}

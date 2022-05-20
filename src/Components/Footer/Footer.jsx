@@ -17,7 +17,8 @@ function Footer() {
   },[CartProducts])
      
   return (
-    <footer className={loading?`bg-dark text-center text-white  w-100`:`bg-dark text-center text-white   position-fixed w-100 bottom-0`}>
+    // min-height: calc(100vh - 356px)  ;
+    <footer className="bg-dark text-center text-white ">
     {/* <!-- Grid container --> */}
     <div className="container p-4 ">
       {/* <!-- Section: Social media --> */}

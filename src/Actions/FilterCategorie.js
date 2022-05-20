@@ -7,7 +7,8 @@ import { db } from "../FirebaseConfig/FirebaseConfig";
 
 export const FilterCategorie=(cat)=>async (dispatch)=>{
     try {
-    const qr=query(collection(db,"Product"),where("Categorie","==",cat))
+    const qr=query(collection(db,"Product"),where("Category","==",cat))
+    // console.log(cat);
     const doc =await getDocs(qr);
     dispatch({type:FILTER_CATEGORIE,payload:doc});
     } catch (error) {

@@ -61,7 +61,7 @@ function App() {
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
    </BrowserRouter>
     
    

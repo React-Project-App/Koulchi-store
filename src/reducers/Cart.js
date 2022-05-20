@@ -20,7 +20,7 @@ export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage
             console.log(item.Amount)
             return {
               ...item,
-              Amount: item.Amount + 1,
+              Amount: item.Amount + payload.Amount,
               SubTotal: (item.Amount+1) * item.Curprice,
             };
           }
