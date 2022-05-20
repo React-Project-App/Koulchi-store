@@ -15,6 +15,7 @@ const SideBar=()=> {
 
   const filterCat=(cat)=>{
     dispatch(FilterCategorie(cat))
+    // console.log(cat)
   }
   const filterCatt=()=>{
     dispatch(FilterCategorie(""))

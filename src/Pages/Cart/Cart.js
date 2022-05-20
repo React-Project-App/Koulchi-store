@@ -38,7 +38,7 @@ const Cart = () => {
 const navigate=useNavigate();
      return CartProducts.length>0?
    (
-    <div className='items-list container-fluid'>
+    <div className='items-list container-fluid' style={{minHeight:"calc(100vh - 308px)"}}>
 {/*    
   
           <div class="Header mt-5 pt-5">

@@ -1,16 +1,22 @@
 import { AnimatePresence } from 'framer-motion';
 import React,{useEffect} from 'react'
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Sweetpagination from 'sweetpagination';
 import { GetAllProduct } from '../../Actions/Poroducts';
+import Pagination from '../../Components/Pagination/Pagination';
 
 
 import ProductsListe from '../../Components/ProductsListe';
 import SideBar from '../../Components/SideBar/SideBar';
 
 const Products = () => {
+  const [currentPageData, setCurrentPageData] = useState([]);
+  
     const dispatch= useDispatch()
     useEffect(() => {
         dispatch(GetAllProduct())
+        console.log(currentPageData)
       }, [])
       const Products= useSelector(state=>state.products)
       const FilterdProducts= useSelector(state=>state.Filter)
@@ -25,7 +31,8 @@ const Products = () => {
          
       }
   return Products.length>0? (
-    <div className='container-fluid'>
+    <>
+    <div className='container-fluid content'>
 
     <div className='row mt-5 pt-5'>
    
@@ -40,21 +47,37 @@ const Products = () => {
      
       {(
         
-         prod.map(product=>{
+         currentPageData.map(product=>{
 
           return (
             <ProductsListe product={product} key={product.id}/>
           )
           
        })
+       
 
 
     ) }
+    
      {/* </AnimatePresence> */}
          {/* </div> */}
     </div>
+   
          </div>
+        
          </div>
+         
+
+         <Sweetpagination
+          currentPageData={setCurrentPageData}
+          dataPerPage={1}
+          getData={prod}
+          navigation={true}
+        />
+         
+
+         </>
+        
 
   ):(
   <div className='d-flex justify-content-center align-items-center load'>

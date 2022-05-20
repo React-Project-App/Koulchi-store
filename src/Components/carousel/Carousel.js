@@ -11,13 +11,13 @@ const Carousel = () => {
     </div>
     <div class="carousel-inner mt-4">
       <div class="carousel-item active pointer">
-        <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Products%2Fban-e-co-instit.jpg?alt=media&token=9ab6b157-fdd6-4445-9087-c74915784ad3" class="d-block w-100" alt="..." />
+        <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Brands%2FUntitled-1.png?alt=media&token=9abf087e-ae15-4d72-9739-fdec6a0cfae4" class="d-block w-100" alt="..." />
       </div>
       <div class="carousel-item pointer">
         <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Products%2FMontre-connect_e-Apple.-.jpg?alt=media&token=3645d2aa-1536-4542-8596-6f50232560b5" class="d-block w-100" alt="..." />
       </div>
       <div class="carousel-item pointer">
-        <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Products%2FK-M-_-M-H-BOSCH.jpg?alt=media&token=e9f12ae9-e9eb-4cc8-b580-e3e0345548c6" class="d-block w-100" alt="..." />
+        {/* <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Products%2FK-M-_-M-H-BOSCH.jpg?alt=media&token=e9f12ae9-e9eb-4cc8-b580-e3e0345548c6" class="d-block w-100" alt="..." /> */}
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
