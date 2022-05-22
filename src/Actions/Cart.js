@@ -15,7 +15,7 @@ export const AddTocart =(Id,Amount)=>async (dispatch)=>{
     dispatch({type:ADD_TO_CART,payload:product});
 }
 export const RemoveFromCart =(id)=>async (dispatch)=>{
-    console.log("ACtion",id)
+    // console.log("ACtion",id)
     dispatch({type:REMOVE_FROM_CART,payload:id});
 }
 export const ClearCart =()=>async (dispatch)=>{

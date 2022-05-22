@@ -1,7 +1,6 @@
 import React from "react";
 import '../../CssFiles/PopupStyle.css' 
-import {FcNext} from 'react-icons/fc'
-import {Popup} from 'reactjs-popup'
+
 import Payement from'../Payement/Payement'
 
 export default ({Total}) => (

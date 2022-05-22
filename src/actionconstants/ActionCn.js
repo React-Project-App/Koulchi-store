@@ -20,7 +20,7 @@ export const FILTER_SEARCH="FILTER_SEARCH";
 export const CATEGORIE="CATEGORIE";
 export const FILTER_CATEGORIE="FILTER_CATEGORIE";
 export const INPUT_TEXT ="FILTRED_Text";
-
+export const RATE_PRODUCT="RATE_PRODUCT";
 
 
 

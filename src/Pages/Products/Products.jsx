@@ -70,7 +70,7 @@ const Products = () => {
 
          <Sweetpagination
           currentPageData={setCurrentPageData}
-          dataPerPage={1}
+          dataPerPage={15}
           getData={prod}
           navigation={true}
         />
