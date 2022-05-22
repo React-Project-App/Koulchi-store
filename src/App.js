@@ -21,6 +21,7 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
 import PrivateRoute1 from './Components/PriviteRoutes/PrivateRoute1';
 import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './FirebaseConfig/FirebaseConfig';
 
 function App() {
 
@@ -51,12 +52,12 @@ function App() {
 
 
         {/* Route</>  */}
-        <Route path="/login" element={localStorage.getItem("user") ? <Navigate to="/home"/> :<Login/>} />
+          {<Route path="/login" element={state ? <Navigate to="/home"/> :<Login/>} />}
         {/* <Route path="/login" element={<Login />}/>  */}
 
         
         <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/Signup" element={<SignUp />} />
+        <Route path="/Signup" element={ state ? <Navigate to="/home"/> :<SignUp />} />
         <Route path="/Profile" element={<Profile />} />
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
        <Route path='/*' element={<PageNotFound/>}/>

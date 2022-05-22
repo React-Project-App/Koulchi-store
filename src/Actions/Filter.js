@@ -11,7 +11,7 @@ export const FilterSearch= (title)=>async (dispatch)=>{
     try {
         const qr =query(collection(db,"Product"),where("Title","==",title));
         const doc =await getDocs(qr);
-        console.log(doc)
+        // console.log(doc)
         if(doc.empty &&title){toast.warning("Product deos not exist")}
         dispatch({type:FILTER_SEARCH,payload:doc});
     } catch (error) {

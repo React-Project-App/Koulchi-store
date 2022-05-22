@@ -33,7 +33,7 @@ export const LoginWithmailAndPassword =
     try {
       const user = await signInWithEmailAndPassword(auth, Email, Password);
 
-      console.log(user);
+      // console.log(user);
       localStorage.setItem("user", JSON.stringify(user.user));
       await setDoc(doc(db,"User",user.user.uid),{
         uid:user.user.uid,

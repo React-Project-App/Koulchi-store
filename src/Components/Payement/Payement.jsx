@@ -3,8 +3,11 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { collection, addDoc } from "firebase/firestore"; 
 import { toast } from "react-toastify";
 import {db} from "../../FirebaseConfig/FirebaseConfig"
+import { useNavigate } from "react-router-dom";
 
 function  App( {Total}) {
+
+ const navigate= useNavigate()
 //   const [state,setState]=useState(0)
   return (
     <div>
@@ -19,7 +22,6 @@ function  App( {Total}) {
             onSuccess= { async(details, data) => {
 
               
-              toast.success("Transaction completed by " + details.payer.name.given_name);
               const docRef = await addDoc(collection(db, "Orders"), {
                 orderId: data.orderID,
                 email: details.payer.email_address,
@@ -30,6 +32,9 @@ function  App( {Total}) {
                 cart: JSON.stringify(localStorage.getItem("Cart"))
 
               });
+              toast.success("Transaction completed by " + details.payer.name.given_name);
+              navigate("/store")
+
 
 
             }}
