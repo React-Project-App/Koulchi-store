@@ -15,7 +15,7 @@ function Pagination() {
 
       <SweetPagination
         currentPageData={setCurrentPageData}
-        dataPerPage={3}
+        dataPerPage={15}
         getData={items}
         navigation={true}
       />

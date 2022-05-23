@@ -107,6 +107,11 @@ setItemsNumber(CartItems.length)
                 Store
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/Blog">
+                Blog
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="ms-5 d-lg-block d-none ">
