@@ -22,6 +22,7 @@ import ResetPassword from './Components/ResetPassword/ResetPassword';
 import PrivateRoute1 from './Components/PriviteRoutes/PrivateRoute1';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './FirebaseConfig/FirebaseConfig';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
 
@@ -59,7 +60,8 @@ function App() {
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/Signup" element={ state ? <Navigate to="/home"/> :<SignUp />} />
         <Route path="/Profile" element={<Profile />} />
-       <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>
+       <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>Blog
+       <Route path='/Blog' element={<Blog/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>
