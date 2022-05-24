@@ -665,7 +665,7 @@ img{
 	.middel-header .menu-icon .cart .dropdown-menu .button a {
 		margin-left: 4px;
 		margin-right: 4px;
-	}
+	} 
 	/* - Footer Main */
 	.footer-main .col-sm-6 {
 		width: 100%;
@@ -682,7 +682,7 @@ img{
 aside{
 	display: block;
 }
-* - Widget Tags */
+* 
 .widget-area .widget_tags .tags-box {
 	padding: 25px 20px 10px;
 }
