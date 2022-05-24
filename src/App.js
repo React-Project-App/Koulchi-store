@@ -23,6 +23,7 @@ import PrivateRoute1 from './Components/PriviteRoutes/PrivateRoute1';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './FirebaseConfig/FirebaseConfig';
 import Blog from './Pages/Blog/Blog';
+import DetailPost from './Pages/DetailsPost/DetailPost';
 
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>Blog
        <Route path='/Blog' element={<Blog/>}/>
+       <Route path='/DetailPost/:Id' element={<DetailPost/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>

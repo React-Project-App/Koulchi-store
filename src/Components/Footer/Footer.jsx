@@ -6,6 +6,7 @@ import {BsGoogle} from "react-icons/bs"
 import {BsInstagram} from "react-icons/bs"
 import {BsGithub} from "react-icons/bs"
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 function Footer() {
   const CartProducts= useSelector(state=>state.Cart)
   const [loading,setloading]=useState(true);
@@ -24,20 +25,20 @@ function Footer() {
       {/* <!-- Section: Social media --> */}
       <section className="mb-4">
         {/* <!-- Facebook --> */}
-        <a className="btn btn-outline-light btn-floating m-1 bg-white" href="#!" role="button">
+        <a className="shadow-none btn btn-outline-light btn-floating m-1 bg-white" href="#" role="button">
         <BsFacebook/></a>
         {/* <!-- Twitter --> */}
-        <a className="btn btn-outline-light btn-floating m-1 bg-white" href="#!" role="button">
+        <a className=" shadow-none btn btn-outline-light btn-floating m-1 bg-white" href="#" role="button">
           <BsTwitter/></a>
         {/* <!-- Google --> */}
-        <a className="btn btn-outline-light btn-floating m-1 bg-white" href="#!" role="button">
+        <a className="shadow-none btn btn-outline-light btn-floating m-1 bg-white" href="#" role="button">
           <BsGoogle/></a>
         {/* <!-- Instagram --> */}
-        <a className="btn btn-outline-light btn-floating pb-2 bg-white" href="#!" role="button">
+        <a className="shadow-none btn btn-outline-light btn-floating pb-2 bg-white" href="#" role="button">
           <BsInstagram/></a>
 
         {/* <!-- Github --> */}
-        <a className="btn btn-outline-light btn-floating m-1 bg-white" href="#!" role="button">
+        <a className="shadow-none btn btn-outline-light btn-floating m-1 bg-white" href="#" role="button">
          <BsGithub/></a>
       </section>
       <section className="row">
@@ -45,9 +46,9 @@ function Footer() {
           <p className="pt-2">
             <strong>Register for free</strong>
           </p>
-          <button type="submit" className="btn btn-outline-light mb-4 ms-3">
-            SING UP!
-          </button>
+          {/* <button type="button" className=""> */}
+            <Link to="/Signup" className='shadow-none text-light btn btn-outline-warning mb-4 ms-3'>SIGN UP!</Link> 
+          {/* </button> */}
         </div>
       </section>
       <section className="mb-4">
