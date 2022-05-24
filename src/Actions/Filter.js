@@ -1,6 +1,6 @@
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { FILTER_SEARCH, ORDER_PRODUCT } from "../actionconstants/ActionCn";
+import { FILTER_SEARCH } from "../actionconstants/ActionCn";
 import { db } from "../FirebaseConfig/FirebaseConfig";
 
 
