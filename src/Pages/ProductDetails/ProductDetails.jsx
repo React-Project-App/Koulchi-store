@@ -18,11 +18,41 @@ const ProductDetails = () => {
   const [heart, setheart] = useState(false);
   const dispatch = useDispatch();
 
-    dispatch(GETDETAILSPRODUCT(Id));
+useEffect(() => {
+  dispatch(GETDETAILSPRODUCT(Id));
 
-  const { Title, Prevprice, Curprice, Photo, MorePhoto,Reviews } = useSelector(
+
+}, []);
+  const { Title, Prevprice, Curprice, Photo, MorePhoto,Reviews,Usersrate } = useSelector(
     (state) => state.products
   );
+
+   
+   
+console.log(Usersrate)
+const UserLenght= Usersrate &&  Usersrate.length
+console.log(UserLenght)
+
+
+  const RateBefoure=()=>{
+
+    const userId=auth.currentUser.uid;
+    if(userId!=null)  {
+    // console.log(userId)
+    // console.log(Usersrate)
+
+        const rate =Usersrate.filter(userID=>userID===userId)
+        console.log(rate)
+        if(rate.length>0){
+          return true
+        }
+      return  false
+    }
+       return  false;
+   
+  }
+
+  
   const Product = { Title, Curprice, Prevprice, Photo, MorePhoto };
   const [Amount, setAmount] = useState(1);
 
@@ -44,6 +74,7 @@ const ProductDetails = () => {
   if (Product.length === 0) {
     return;
   }
+  
   return Title ? (
     <main className="container mt-5 pt-4">
       <div className="row pt-5 ps-4">
@@ -135,7 +166,8 @@ const ProductDetails = () => {
               <span className="ps-2">(review 150)</span>
             </div> */}
           
-            {auth.currentUser ? <Rating rate="rate" ProductId={Id} />:<Link to="/login">Please login to rate this product</Link>}
+            {auth.currentUser  && !RateBefoure()  && <Rating rate="rate" ProductId={Id} UserRate={UserLenght} />}
+            
             {/* <Rating /> */}
           </div>
         </div>
