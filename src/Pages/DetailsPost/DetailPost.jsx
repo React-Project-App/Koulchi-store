@@ -12,7 +12,7 @@ function DetailPost() {
   useEffect(() => {
     dispatch(GetPost(Id));
   }, []);
-  const { Titre, Article, Photo, Auteur, DatePost,Introduction } = useSelector(
+  const { Title, Article, Photo, Auteur, DatePost,Introduction } = useSelector(
     (state) => state.Post
   );
   let datePost = new Date(null);
@@ -41,7 +41,7 @@ function DetailPost() {
                 </span>
               </div>
               <div class="blog-content">
-                <h3 class="entry-title">{Titre}</h3>
+                <h3 class="entry-title">{Title}</h3>
                 <div class="entry-meta">
                   <span class="post-admin">
                     <i class="fa fa-user"></i>Posted By
