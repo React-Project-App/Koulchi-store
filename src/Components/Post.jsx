@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDoubleRight } from "react-icons/fa";
-
+import parse  from 'html-react-parser'
+ import {ReactHtmlParser,convertNodeToElement}  from 'react-html-parser'
 function Post(post) {
-  const { Titre, Article, Photo, Auteur, DatePost, id } = post.post;
+  const { Titre, Article, Photo, Auteur, DatePost, id,Introduction } = post.post;
   let datePost = new Date(null);
   datePost.setTime(DatePost.seconds * 1000);
 
@@ -40,7 +41,7 @@ function Post(post) {
             </span>
           </div>
           <div class="entry-content">
-            <p>{Article}</p>
+            <p>{Introduction}</p>
             <Link
               to={`/DetailPost/${id}`}
               title="Read More"
