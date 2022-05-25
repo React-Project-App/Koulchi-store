@@ -4,7 +4,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import parse  from 'html-react-parser'
  import {ReactHtmlParser,convertNodeToElement}  from 'react-html-parser'
 function Post(post) {
-  const { Titre, Article, Photo, Auteur, DatePost, id,Introduction } = post.post;
+  const { Title,  Photo, Auteur, DatePost, id,Introduction } = post.post;
   let datePost = new Date(null);
   datePost.setTime(DatePost.seconds * 1000);
 
@@ -27,7 +27,7 @@ function Post(post) {
             <a
               title="new Collectios are imported In Our shop."
             >
-              {Titre}
+              {Title}
             </a>
           </h3>
           <div class="entry-meta">
