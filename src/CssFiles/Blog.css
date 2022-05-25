@@ -50,11 +50,14 @@
     padding: 0 5px;
 }
 
-img {
+.entry-cover  img {
     max-width: 100%;
-	height: auto;
+	height: 320px;
 }
-
+img{
+	max-width: 100%;
+	
+}
 /* - Blog Section */
 .blog-section {
 	margin-bottom: 30px;
@@ -848,4 +851,7 @@ aside{
     font-size: 12px;
     letter-spacing: 0.48px;
     padding-right: 10px;
+}
+.type-post .entry-cover {
+    position: relative;
 }

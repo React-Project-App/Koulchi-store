@@ -21,7 +21,14 @@ export const CATEGORIE="CATEGORIE";
 export const FILTER_CATEGORIE="FILTER_CATEGORIE";
 export const INPUT_TEXT ="FILTRED_Text";
 export const RATE_PRODUCT="RATE_PRODUCT";
+
 export const LIST_USERS ="LIST_USERS";
+
+export const GET_ALL_POSTS="GET_ALL_POSTS";
+export const GET_POST="GET_POST";
+export const SEARCH_POST="SEARCH_POST";
+export const RECENT_POST="RECENT_POST";
+
 
 
 
