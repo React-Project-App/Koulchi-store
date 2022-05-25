@@ -21,7 +21,7 @@ const dispatch =useDispatch();
             
               <Carousel/>
               <div className='container'>
-              <div className=' row'>
+              <div className=' row justify-content-center'>
     
             {
               FeaturedProducts.map(product => {
