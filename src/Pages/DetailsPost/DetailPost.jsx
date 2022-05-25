@@ -12,7 +12,7 @@ function DetailPost() {
   useEffect(() => {
     dispatch(GetPost(Id));
   }, []);
-  const { Titre, Article, Photo, Auteur, DatePost } = useSelector(
+  const { Titre, Article, Photo, Auteur, DatePost,Introduction } = useSelector(
     (state) => state.Post
   );
   let datePost = new Date(null);
@@ -29,8 +29,8 @@ function DetailPost() {
           <div class="content-area blog-section blog-post col-md-12 col-sm-12">
             <article class="type-post">
               <div class="entry-cover ">
-                <div>
-                  <img src={Photo} alt="blog" className="col-12" />
+                <div className=" text-center ">
+                  <img src={Photo} alt="blog" className="img-fluid " />
                 </div>
 
                 <span class="post-date">
@@ -46,17 +46,16 @@ function DetailPost() {
                   <span class="post-admin">
                     <i class="fa fa-user"></i>Posted By
                     <a href="" title="Max" className="text-primary">
-                      {" "}
                       {Auteur}
                     </a>
                   </span>
                 </div>
                 <div class="entry-content">
+                <blockquote>
+								    {Introduction}
+								</blockquote>
                   <p>{Article}</p>
-                  {/* <blockquote>
-									<i class="fa fa-quote-left"></i>
-									Were gonna pay a call on the Addams Family. I have always wanted to have a question            neighbor just like you. I've wanted to live in a neighborhood with you.
-								</blockquote> */}
+                  
                   {/* <p>Give us any rule we'll break it. We're gonna make our dreams come true. Here he comes Here comes Speed Racer. He's a demon on wheels. Makin' your way in the world today takes everything you've got. Takin' a break from all your worries sure would help a lot. Believe it or not I'm walking on air. I never thought I could feel so free. Flying away on a wing and a prayer. Who could it be? Believe it or not its just me.</p> */}
                   {/* <p>Give us any rule we'll break it. We're gonna make our dreams come true. Here he comes Here comes Speed Racer. He's a demon on wheels. Makin' your way in the world today takes everything you've got. </p> */}
                   <div class="tags ">
