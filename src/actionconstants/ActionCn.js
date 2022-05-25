@@ -21,6 +21,7 @@ export const CATEGORIE="CATEGORIE";
 export const FILTER_CATEGORIE="FILTER_CATEGORIE";
 export const INPUT_TEXT ="FILTRED_Text";
 export const RATE_PRODUCT="RATE_PRODUCT";
+export const LIST_USERS ="LIST_USERS";
 
 
 

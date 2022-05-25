@@ -6,5 +6,6 @@ import Auth from "./Auth";
 import Filter from "./Filter"
 import Categories from "./Categories"
 import FilterCategorie from "./FilterCategorie"
+import ListUsers from "./ListUsers";
 
-export const   Red = combineReducers({products,Cart,Auth,Filter,Categories,FilterCategorie});
+export const   Red = combineReducers({products,Cart,Auth,Filter,Categories,FilterCategorie,ListUsers});

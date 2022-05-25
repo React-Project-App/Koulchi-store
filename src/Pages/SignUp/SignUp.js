@@ -25,10 +25,10 @@ const handelNameChnage = (e) => {
 
 const handelLogin = () => {
     // e.preventDefault();
-    if(!localStorage.getItem("user")){
+    // if(!localStorage.getItem("user")){
     dispatch(CreateUserWithEmailAndPassword(Email,Password,Name))
-    return
-    }
+    // return
+    // }
     navigate("/home")
 
     
