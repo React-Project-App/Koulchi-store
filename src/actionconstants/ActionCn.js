@@ -30,6 +30,11 @@ export const SEARCH_POST="SEARCH_POST";
 export const RECENT_POST="RECENT_POST";
 
 
+export const GET_TEAM="GET_TEAM";
+
+
+
+
 
 
 
