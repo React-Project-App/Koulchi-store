@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.team-section {
+	background-color: #fbfbfb;
+	padding: 150px 0;
+}
+.team-section .team-box {
+	position: relative;
+}
+.team-section .team-box h3 {
+	background-color: rgb(0 0 0 / 64%);
+    color: #fbfbfb;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	letter-spacing: 0.84px;
+	line-height: 26px;
+	font-size: 14px;
+	margin: 0;
+	margin: 0 auto;
+	padding: 10px 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+.team-section .team-content {
+	text-align: center;
+}
+.team-section .team-content h5 {
+	color: #333 ;
+    font-family: 'montserratlight' !important;
+    letter-spacing: 0.56px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.team-section .team-content p {
+	color: #777;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 0.56px;
+	line-height: 22px;
+    height: 50px;
+}
+.team-section .team-content ul {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.team-section .team-content ul li {
+	display: inline-block;
+	margin-right: 25px;
+}
+.team-section .team-content ul li:last-child {
+	margin-right: 0;
+}
+
+.team-section .team-content li a .bs {
+	color: #3b84fa;
+	-webkit-transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+	transition: all 1s ease 0s;
+}
+
+.team-section .team-content li a .bs:hover {
+	color: #333;
+}
+.team-header{
+	color: #3b84fa ;
+    font-family: 'montserratlight' !important;
+    letter-spacing: 0.56px;
+    line-height: 24px;
+}

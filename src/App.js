@@ -24,6 +24,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './FirebaseConfig/FirebaseConfig';
 import Blog from './Pages/Blog/Blog';
 import DetailPost from './Pages/DetailsPost/DetailPost';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import './CssFiles/About.css'
 
 function App() {
 
@@ -64,6 +66,7 @@ function App() {
        <Route path='/FavoriteProducts' element={<FavoriteProduct/>}/>Blog
        <Route path='/Blog' element={<Blog/>}/>
        <Route path='/DetailPost/:Id' element={<DetailPost/>}/>
+       <Route path='/AboutUs' element={<AboutUs/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>

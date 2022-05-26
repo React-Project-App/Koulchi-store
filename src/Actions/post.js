@@ -19,7 +19,7 @@ export const GetPost = (id) => async (dispatch) => {
 export const SearchPost=(titre)=>async (dispatch)=>{
   try {
 
-  const qr=query(collection(db, "Post"),where("Titre","==",titre))
+  const qr=query(collection(db, "Post"),where("Title","==",titre))
   const doc =await getDocs(qr);
   // console.log(doc)
   dispatch({type:SEARCH_POST,payload:doc});
