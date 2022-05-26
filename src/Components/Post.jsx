@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaAngleDoubleRight } from "react-icons/fa";
+import { FaAngleDoubleRight,FaUser } from "react-icons/fa";
 import parse  from 'html-react-parser'
  import {ReactHtmlParser,convertNodeToElement}  from 'react-html-parser'
 function Post(post) {
@@ -33,7 +33,8 @@ function Post(post) {
           <div class="entry-meta">
             {/* <span class="post-like"><a href="#" title="224 Likes"><i class="fa fa-heart-o"></i>224 Likes</a></span> */}
             <span class="post-admin">
-              <i class="fa fa-user"></i><span className="text-primary">Posted By </span> 
+              {/* <i class="fa fa-user"></i> */}
+              <span className="text-primary">Posted By </span> 
               <a  title="Max">
                 
                 {Auteur}

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 function RecentPosts(post) {
   
   
-  const { Titre,  Photo, Auteur, DatePost, id }=post.post
+  const { Titre,  Photo, Auteur, DatePost, id ,Title}=post.post
 //   console.log()
 let datePost = new Date(null);
   if(DatePost){
   datePost.setTime(DatePost.seconds * 1000);}
   return (
     
-      <div class="latest-box">
+      <div class="latest-box recent-title">
         <div class=" ">
           <div className="row">
             <Link to={`/DetailPost/${id}`} className="col-sm-6">
@@ -22,8 +22,8 @@ let datePost = new Date(null);
             </Link>
             <div className="col-sm-6">
               <h5 className="pt-3">
-                <Link to={`/DetailPost/${id}`} title="need max shop.">
-                  {Titre}
+                <Link to={`/DetailPost/${id}`} className="fs-6 fw-bold text-muted " title="need max shop.">
+                  {Title}
                 </Link>
               </h5>
             </div>
