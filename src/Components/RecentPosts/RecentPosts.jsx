@@ -11,7 +11,7 @@ let datePost = new Date(null);
   datePost.setTime(DatePost.seconds * 1000);}
   return (
     
-      <div class="latest-box">
+      <div class="latest-box recent-title">
         <div class=" ">
           <div className="row">
             <Link to={`/DetailPost/${id}`} className="col-sm-6">
@@ -22,7 +22,7 @@ let datePost = new Date(null);
             </Link>
             <div className="col-sm-6">
               <h5 className="pt-3">
-                <Link to={`/DetailPost/${id}`} title="need max shop.">
+                <Link to={`/DetailPost/${id}`} className="fs-6 fw-bold text-muted " title="need max shop.">
                   {Title}
                 </Link>
               </h5>

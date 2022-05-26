@@ -491,3 +491,8 @@ padding: 10px 5px 0px 5px;
 .sweetPagination .paginationUL .pageItem .pageButton{
     margin-bottom: 30px  !important;
 }
+.recent-title{
+	font-family: 'montserratlight';
+    font-size: 12px;
+    letter-spacing: 0.48px;
+}
