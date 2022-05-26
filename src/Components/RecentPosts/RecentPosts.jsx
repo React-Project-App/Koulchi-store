@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function RecentPosts(post) {
   
   
-  const { Titre,  Photo, Auteur, DatePost, id }=post.post
+  const { Titre,  Photo, Auteur, DatePost, id ,Title}=post.post
 //   console.log()
 let datePost = new Date(null);
   if(DatePost){
@@ -23,7 +23,7 @@ let datePost = new Date(null);
             <div className="col-sm-6">
               <h5 className="pt-3">
                 <Link to={`/DetailPost/${id}`} title="need max shop.">
-                  {Titre}
+                  {Title}
                 </Link>
               </h5>
             </div>
