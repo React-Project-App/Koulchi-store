@@ -8,7 +8,7 @@ export default function RecentPosts(state = [], {type,payload}) {
             ...doc.data(),
             id: doc.id,
           }));
-          console.log(RecentPost)
+          // console.log(RecentPost)
           return RecentPost;
         default:
           return state;

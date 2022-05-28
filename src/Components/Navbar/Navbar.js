@@ -24,7 +24,7 @@ setItemsNumber(CartItems.length)
 }
  const user=auth.currentUser
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white ">
       <div className="container">
         <Link
           to="/home"
@@ -34,9 +34,7 @@ setItemsNumber(CartItems.length)
           <span>K</span>OULCHI<span>.</span>
         </Link>
         <div className="ms-5 d-lg-none ms-auto ">
-          <Link to="/FavoriteProducts" className="me-3">
-            <BsHeartFill />
-          </Link>
+          
           <Link to="/cart" className="me-3 position-relative ">
             <BsFillCartFill />
 
@@ -117,6 +115,11 @@ setItemsNumber(CartItems.length)
                 About us
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/Contact">
+                Contact us
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="ms-5 d-lg-block d-none ">
@@ -143,7 +146,7 @@ setItemsNumber(CartItems.length)
               state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
           }
   </Link> */}
- <a class="position-fixed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+ <a class="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
 {state? <img src={state.photoURL} className="rounded-pill  " width="50%"/>:<BsFillPersonFill/>}
 
  </a>

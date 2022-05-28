@@ -1,10 +1,47 @@
 /* * Page Banner */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.wrapper {
+	animation: scroll 70s linear infinite;
+	/* transform: rotate(90deg); */
+	background:  url("https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Logo%2Fpage-title.jpg?alt=media&token=e26447b1-fc60-40e2-86b0-f4623f711519");
+	/* transform: translateY(-50%); */
+	background-position:  50%;
+	color: #eee;
+	/* height: 100vh; */
+	padding: 100px 0;
+	
+	/* perspective: 1000px; */
+	/* perspective-origin: 50% 0%; */
+	
+  }
+  
+  @keyframes scroll {
+	 100%{
+	  background-position:0px -3000px;
+	  
+	}
+  }
 .page-banner {
-	background-color: #2f7cf86e;
+	/* background-color: #2f7cf86e;
+	 */
+	 background-image: url("");
 	position: relative;
 	margin-bottom: 100px;
-	padding: 100px 0;
+	
 	z-index: 1;
+	background-size: cover;
+    background-repeat: repeat-x;
+    background-position: center;
+	/* animation-duration: 100s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: slide;
+	animation: slide 100s linear infinite;
+	-webkit-animation: slide 100s linear infinite; */
 }
 .page-banner .banner-content {
 	display: inline-block;
@@ -738,8 +775,8 @@ aside{
 	margin-bottom: 40px;
 }
 .widget-area h3.widget-title {
-	background-color: #2f7cf86e;
-	color: #fff;
+	background-color: #EDF0F5;
+	color: #333;
 	font-family: 'montserratsemi_bold';
 	font-size: 17px;
 	line-height: 26px;
@@ -854,4 +891,8 @@ aside{
 }
 .type-post .entry-cover {
     position: relative;
+}
+.title-header{
+    font-family: 'montserratlight' !important;
+
 }

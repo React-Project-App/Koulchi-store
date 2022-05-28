@@ -35,7 +35,7 @@ const handelLogin = () => {
 }
 
   return (
-    <div className='container'>
+    <div className='container content'>
 
     
     <main class="row">

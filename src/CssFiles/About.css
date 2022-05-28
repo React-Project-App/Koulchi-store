@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 .team-section {
-	background-color: #fbfbfb;
-	padding: 150px 0;
+	background-color: #fff;
+	padding: 50px 0;
 }
 .team-section .team-box {
 	position: relative;
 }
 .team-section .team-box h3 {
 	background-color: rgb(0 0 0 / 64%);
-    color: #fbfbfb;
+    color: #fff;
 	position: absolute;
 	bottom: 0;
 	left: 0;
