@@ -13,9 +13,9 @@ function Contact() {
     
     
   return (
-  <>
+  <div className="content">
   <HeaderBlog title="CONTACT US"/>
-    <div className="container content  ">
+    <div className="container  mb-5 ">
       
     <div>
 {/* 
@@ -31,7 +31,7 @@ function Contact() {
     </div>
 
     </div>
-  </>
+  </div>
 
   );
 }
