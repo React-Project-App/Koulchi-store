@@ -10,7 +10,7 @@ let datePost = new Date(null);
   if(DatePost){
   datePost.setTime(DatePost.seconds * 1000);}
   return (
-    
+    <>
       <div class="latest-box recent-title">
         <div class=" ">
           <div className="row">
@@ -39,6 +39,9 @@ let datePost = new Date(null);
           </span>
         </div>
       </div>
+       <hr className="col-10 text-center ms-4" />
+       </>
+
     
   );
 }

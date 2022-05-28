@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetTeam } from '../../Actions/AboutTeam';
+import HeaderBlog from '../../Components/HeaderBlog/HeaderBlog';
 import Member from '../../Components/Member/Member'
 
 
@@ -14,13 +15,14 @@ function AboutUs() {
     // console.log(team)
   return team.length>0?(
     <div className='content'>
-      <div class="team-section container-fluid">
+      <HeaderBlog title="About Us "/>
+      <div className="team-section container-fluid mb-3 ">
 				{/* <!-- Container --> */}
-				<div class="container">
+				<div className="container">
 					{/* <!-- Section Header --> */}
-					<div class="text-center team-header ">
-						<h3 >Our Excellent Team</h3>
-						
+					<div className="text-center team-header ">
+						<h3 className='text-dark fw-bold'>Our Excellent Team</h3>
+						{/* <img src="https://firebasestorage.googleapis.com/v0/b/ecommerceapp-b46e6.appspot.com/o/Logo%2Fseparator-1.png?alt=media&token=d4cde925-a9a0-4ba7-8dfb-0bfa8025bff2"  /> */}
 					</div>
                     <div className='row mt-5'>
                     {

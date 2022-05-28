@@ -26,6 +26,7 @@ import Blog from './Pages/Blog/Blog';
 import DetailPost from './Pages/DetailsPost/DetailPost';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import './CssFiles/About.css'
+import Contact from './Pages/Contact/Contact';
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
  
     const state = useSelector(state=>state.Auth)
 
-    console.log(state)
+    // console.log(state)
 
   
 
@@ -52,7 +53,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
          {/* <Route path="/login" element={<PrivateRoute1 />} > */}
-
+         
 
 
         {/* Route</>  */}
@@ -67,6 +68,7 @@ function App() {
        <Route path='/Blog' element={<Blog/>}/>
        <Route path='/DetailPost/:Id' element={<DetailPost/>}/>
        <Route path='/AboutUs' element={<AboutUs/>}/>
+       <Route path='/Contact' element={<Contact/>}/>
        <Route path='/*' element={<PageNotFound/>}/>
       </Routes>
       <Footer/>

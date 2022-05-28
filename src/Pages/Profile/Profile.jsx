@@ -29,7 +29,7 @@ function Profile() {
          const user = await updateProfile(auth.currentUser,{
             displayName :Name,
           })
-          console.log(user)
+        //   console.log(user)
 
 
           toast.success("Information has been updated successfully")
@@ -40,7 +40,7 @@ function Profile() {
   }
 
   return  (
-      <div className='container'>{user?(    <main class="row">
+      <div className='container content'>{user?(    <main class="row">
       <section class="col-lg-6 col-12 sing p-5">
           <form class="p-5 d-flex flex-column align-content-center ms-lg-5">
               <div class="mb-3 mt-5 text-center row">

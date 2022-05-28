@@ -21,7 +21,7 @@ function DetailPost() {
   }
 
   return DatePost ? (
-    <div className="mt-5 pt-3">
+    <div className="">
       <HeaderBlog />
 
       <div className="container content  ">
@@ -34,8 +34,7 @@ function DetailPost() {
                 </div>
 
                 <span class="post-date">
-                  <a href="#">
-                    <i class="fa fa-calendar-o"></i>
+                  <a className="text-dark fw-bold">
                     {datePost.toDateString()}
                   </a>
                 </span>
@@ -44,9 +43,9 @@ function DetailPost() {
                 <h3 class="entry-title">{Title}</h3>
                 <div class="entry-meta">
                   <span class="post-admin">
-                    <i class="fa fa-user"></i>Posted By
-                    <a href="" title="Max" className="text-primary">
-                      {Auteur}
+                    Posted By
+                    <a  title="Max" className="text-primary">
+                       {Auteur}
                     </a>
                   </span>
                 </div>
@@ -61,18 +60,18 @@ function DetailPost() {
                   <div class="tags ">
                     <ul class="social pb-3">
                       <li>
-                        <a title="facebook">
-                          <FaFacebook />
+                        <a title="facebook" >
+                          <FaFacebook className="pointer"/>
                         </a>
                       </li>
                       <li>
-                        <a title="facebook">
-                          <FaInstagram />
+                        <a title="Instagram">
+                          <FaInstagram className="pointer"/>
                         </a>
                       </li>
                       <li>
-                        <a title="facebook">
-                          <FaTwitter />
+                        <a title="Twitter" >
+                          <FaTwitter className="pointer"/>
                         </a>
                       </li>
                     </ul>
