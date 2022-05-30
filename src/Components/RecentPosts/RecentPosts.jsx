@@ -12,8 +12,8 @@ let datePost = new Date(null);
   return (
 
     
-      <div className="latest-box">
-        <div className=" ">
+      // <div className="latest-box">
+      //   <div className=" ">
 
     <>
       <div class="latest-box recent-title">

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Sweetpagination from 'sweetpagination';
 import { GetAllProduct } from '../../Actions/Poroducts';
-import Pagination from '../../Components/Pagination/Pagination';
+// import Pagination from '../../Components/Pagination/Pagination';
 
 
 import ProductsListe from '../../Components/ProductsListe';
