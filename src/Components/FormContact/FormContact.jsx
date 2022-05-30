@@ -7,7 +7,7 @@ function FormContact() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState([]);
-  const Answer = "NotAnswered";
+  const Answer = "NotViewed";
   const obj = {
     Name,
     Email,
