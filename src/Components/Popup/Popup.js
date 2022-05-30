@@ -5,21 +5,21 @@ import Payement from'../Payement/Payement'
 
 export default ({Total}) => (
     <div className="text-center mt-2">
-                <button class="btn-total " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a class="a">Checkout</a>
+                <button className="btn-total " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a className="a">Checkout</a>
                     </button>
 
 {/* <!-- Modal --> */}
-        <div class="modal-dialog modal-dialog-centered">
+        <div className="modal-dialog modal-dialog-centered">
 
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">CheckOut</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">CheckOut</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <Payement Total={Total}/>
                         </div>
                         {/* <div class="modal-footer">

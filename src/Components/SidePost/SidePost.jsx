@@ -17,21 +17,20 @@ function SidePost() {
       const  posts= useSelector(
         (state) => state.RecentPosts
       );
-    // console.log(posts)
   return (
-    <div class="col-md-3 col-sm-12 widget-area order-sm-1 ">
+    <div className="col-md-3 col-sm-12 widget-area order-sm-1 ">
       {/* search */}
-      <aside class="widget widget_search">
-        <h3 class="widget-title">Search</h3>
-        <div class="input-group">
+      <aside className="widget widget_search">
+        <h3 className="widget-title">Search</h3>
+        <div className="input-group">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             onChange={(e)=>settitre(e.target.value)}
             placeholder="Search Post. . ."
           />
-          <span class="input-group-btn">
-            <button class="btn btn-search" title="Search" type="button"
+          <span className="input-group-btn">
+            <button className="btn btn-search" title="Search" type="button"
             onClick={Search}
             >
               <BsSearch />
@@ -43,15 +42,15 @@ function SidePost() {
 
       {/* recent Post */}
 
-      <aside class="widget widget_latest_post">
-        <h3 class="widget-title">recent posts</h3>
+      <aside className="widget widget_latest_post">
+        <h3 className="widget-title">recent posts</h3>
         {
-            (posts.length>0)?posts.map(post=>{
+            (posts.length>0)?posts.map((post,key)=>{
                 return(
-                    <>
+                    <div key={key} >
                     <RecentPosts post={post}/>
                     <hr className="col-10 text-center ms-4"/>
-                    </>
+                    </div>
                 )
             }):console.log("sss")
         }

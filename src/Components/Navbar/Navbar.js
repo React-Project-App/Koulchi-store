@@ -1,4 +1,4 @@
-import React ,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import { BsFillCartFill, BsHeartFill, BsFillPersonFill } from "react-icons/bs";
 import "../../CssFiles/style.css";
 
@@ -7,29 +7,25 @@ import { CheckLogin_User, Logout } from "../../Actions/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../FirebaseConfig/FirebaseConfig";
 const Navbar = () => {
-
   const [ItemsNumber, setItemsNumber] = useState(0);
-  
-  const dispatch =useDispatch()
-  dispatch(CheckLogin_User())
-  const state=useSelector(state=>state.Auth)
-  const CartItems=useSelector(state=>state.Cart)
-  useEffect(()=>{
 
-setItemsNumber(CartItems.length)
-  },[CartItems])
-  const handelLogOut= () => {
-    //e.preventDefault();
-    dispatch(Logout())
-}
- const user=auth.currentUser
+  const dispatch = useDispatch();
+  dispatch(CheckLogin_User());
+  const state = useSelector((state) => state.Auth);
+  const CartItems = useSelector((state) => state.Cart);
+  useEffect(() => {
+    setItemsNumber(CartItems.length);
+  }, [CartItems]);
+  const handelLogOut = () => {
+    dispatch(Logout());
+  };
+  const user = auth.currentUser;
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div className="container">
         <Link
           to="/home"
           className="navbar-brand bg-white fw-bold ms-4 logo pb-3"
-          
         >
           <span>K</span>OULCHI<span>.</span>
         </Link>
@@ -39,47 +35,66 @@ setItemsNumber(CartItems.length)
           </Link>
           <Link to="/cart" className="me-3 position-relative ">
             <BsFillCartFill />
-
-            {/* <div className="spinner-grow crtp position-absolute" role="status">
-              <span className="visually-hidden"></span>
-            </div> */}
           </Link>
-        
-          {/* <Link to="/Profile">
 
-          {
-              state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
+          <a
+            class=""
+            data-bs-toggle="collapse"
+            href="#multiCollapseExample1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1"
+          >
+            {state ? (
+              <img src={state.photoURL} className="rounded-pill w-25 " />
+            ) : (
+              <BsFillPersonFill />
+            )}
+          </a>
 
-
-          }
-          </Link> */}
-          <a class="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-{state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill />}
-
- </a>
-
-  <div class="row text-start mt-1 " style={{position:'absolute',right:'calc(14%)',top:'calc(60%)'}}>
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body ">
-      {user?(
-                  <ul className="ps-0"  style={{listStyle:"none"}}>
-                                <li>
-            <Link to="/profile" className="log">Your Profile</Link>               
-          </li>
-          <hr/>
-                 <li> <a type="button" className='log' onClick={handelLogOut}> Log out</a>   </li></ul>
-          ):(
-            <ul className="ps-0"  style={{listStyle:"none"}}>
-
-          <li><Link to="/login" className="log" >Log in</Link> </li>
-          </ul>
-          ) 
-          }          
-      </div>
-    </div>
-  </div>
-  </div>
+          <div
+            className="row text-start mt-1 "
+            style={{
+              position: "absolute",
+              right: "calc(14%)",
+              top: "calc(60%)",
+            }}
+          >
+            <div className="col">
+              <div
+                className="collapse multi-collapse"
+                id="multiCollapseExample1"
+              >
+                <div className="card card-body ">
+                  {user ? (
+                    <ul className="ps-0" style={{ listStyle: "none" }}>
+                      <li>
+                        <Link to="/profile" className="log">
+                          Your Profile
+                        </Link>
+                      </li>
+                      <hr />
+                      <li>
+                        {" "}
+                        <a type="button" className="log" onClick={handelLogOut}>
+                          {" "}
+                          Log out
+                        </a>{" "}
+                      </li>
+                    </ul>
+                  ) : (
+                    <ul className="ps-0" style={{ listStyle: "none" }}>
+                      <li>
+                        <Link to="/login" className="log">
+                          Log in
+                        </Link>{" "}
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <button
           className="navbar-toggler shadow-none"
@@ -115,66 +130,73 @@ setItemsNumber(CartItems.length)
           </ul>
         </div>
         <div className="ms-5 d-lg-block d-none ">
-          {/* <Link to="/FavoriteProducts" className="me-3">
-            <BsHeartFill />
-          </Link> */}
           <Link to="/Cart" className="me-4 position-relative  ">
             <BsFillCartFill />
 
-            <div className=" crtp position-absolute " >
-              <span className=" NumberItems position-absolute">{ItemsNumber}</span>
+            <div className=" crtp position-absolute ">
+              <span className=" NumberItems position-absolute">
+                {ItemsNumber}
+              </span>
             </div>
           </Link>
-          {/* <Link to="/Profile">
-          {
-              state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
 
+          <a
+            className="position-fixed"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1"
+          >
+            {state ? (
+              <img
+                src={state.photoURL}
+                className="rounded-pill  "
+                width="50%"
+              />
+            ) : (
+              <BsFillPersonFill />
+            )}
+          </a>
 
-          }
-          </Link> */}
-            
-  {/* <Link to="" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-  {
-              state? <img src={state.photoURL} className="rounded-pill w-25 "/>:<BsFillPersonFill/>
-          }
-  </Link> */}
- <a class="position-fixed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-{state? <img src={state.photoURL} className="rounded-pill  " width="50%"/>:<BsFillPersonFill/>}
-
- </a>
-
-  <div class="row text-start mt-1 position-fixed" style={{position:'absolute',right:'14%',top:'5%'}}>
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body ">
-         
-          
-           
-              {/* <Link to="/login" className="log" >Log out</Link>     */}
-              {user?(
-                  <ul className="ps-0"  style={{listStyle:"none"}}>
-                                <li>
-            <Link to="/profile" className="log">Your Profile</Link>               
-          </li>
-          <hr/>
-                 <li> <a type="button" className='log' onClick={handelLogOut}> Log out</a>   </li></ul>
-          ):(
-            <ul className="ps-0"  style={{listStyle:"none"}}>
-
-          <li><Link to="/login" className="log" >Log in</Link> </li>
-          </ul>
-          ) 
-          }           
-            
-
-          
-      </div>
-    </div>
-  </div>
-  </div>
-          {/* <Link to="/Profile" className="me-3">
-            
-          </Link> */}
+          <div
+            className="row text-start mt-1 position-fixed"
+            style={{ position: "absolute", right: "14%", top: "5%" }}
+          >
+            <div className="col">
+              <div
+                className="collapse multi-collapse"
+                id="multiCollapseExample1"
+              >
+                <div className="card card-body ">
+                  {user ? (
+                    <ul className="ps-0" style={{ listStyle: "none" }}>
+                      <li>
+                        <Link to="/profile" className="log">
+                          Your Profile
+                        </Link>
+                      </li>
+                      <hr />
+                      <li>
+                        {" "}
+                        <a type="button" className="log" onClick={handelLogOut}>
+                          {" "}
+                          Log out
+                        </a>{" "}
+                      </li>
+                    </ul>
+                  ) : (
+                    <ul className="ps-0" style={{ listStyle: "none" }}>
+                      <li>
+                        <Link to="/login" className="log">
+                          Log in
+                        </Link>{" "}
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
