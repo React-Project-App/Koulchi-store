@@ -12,7 +12,7 @@ function DetailPost() {
   useEffect(() => {
     dispatch(GetPost(Id));
   }, []);
-  const { Titre, Article, Photo, Auteur, DatePost } = useSelector(
+  const { Title, Article, Photo, Auteur, DatePost,Introduction } = useSelector(
     (state) => state.Post
   );
   let datePost = new Date(null);
@@ -21,59 +21,61 @@ function DetailPost() {
   }
 
   return DatePost ? (
-    <div className="mt-5 pt-3">
+    <div className="">
       <HeaderBlog />
 
       <div className="container content  ">
-        <div className="row">
-          <div className="content-area blog-section blog-post col-md-12 col-sm-12">
-            <article className="type-post">
-              <div className="entry-cover ">
-                <div>
-                  <img src={Photo} alt="blog" className="col-12" />
+
+        <div class="row">
+          <div class="content-area blog-section blog-post col-md-12 col-sm-12">
+            <article class="type-post">
+              <div class="entry-cover ">
+                <div className=" text-center ">
+                  <img src={Photo} alt="blog" className="img-fluid " />
                 </div>
 
-                <span className="post-date">
-                  <a href="#">
-                    <i class="fa fa-calendar-o"></i>
+                <span class="post-date">
+                  <a className="text-dark fw-bold">
+
                     {datePost.toDateString()}
                   </a>
                 </span>
               </div>
-              <div className="blog-content">
-                <h3 className="entry-title">{Titre}</h3>
-                <div className="entry-meta">
-                  <span className="post-admin">
-                    <i className="fa fa-user"></i>Posted By
-                    <a href="" title="Max" className="text-primary">
-                     
-                      {Auteur}
+
+              <div class="blog-content">
+                <h3 class="entry-title">{Title}</h3>
+                <div class="entry-meta">
+                  <span class="post-admin">
+                    Posted By
+                    <a  title="Max" className="text-primary">
+                       {Auteur}
                     </a>
                   </span>
                 </div>
-                <div className="entry-content">
+                <div class="entry-content">
+                <blockquote>
+								    {Introduction}
+								</blockquote>
+
                   <p>{Article}</p>
-                  {/* <blockquote>
-									<i class="fa fa-quote-left"></i>
-									Were gonna pay a call on the Addams Family. I have always wanted to have a question            neighbor just like you. I've wanted to live in a neighborhood with you.
-								</blockquote> */}
+                  
                   {/* <p>Give us any rule we'll break it. We're gonna make our dreams come true. Here he comes Here comes Speed Racer. He's a demon on wheels. Makin' your way in the world today takes everything you've got. Takin' a break from all your worries sure would help a lot. Believe it or not I'm walking on air. I never thought I could feel so free. Flying away on a wing and a prayer. Who could it be? Believe it or not its just me.</p> */}
                   {/* <p>Give us any rule we'll break it. We're gonna make our dreams come true. Here he comes Here comes Speed Racer. He's a demon on wheels. Makin' your way in the world today takes everything you've got. </p> */}
                   <div className="tags ">
                     <ul className="social pb-3">
                       <li>
-                        <a title="facebook">
-                          <FaFacebook />
+                        <a title="facebook" >
+                          <FaFacebook className="pointer"/>
                         </a>
                       </li>
                       <li>
-                        <a title="facebook">
-                          <FaInstagram />
+                        <a title="Instagram">
+                          <FaInstagram className="pointer"/>
                         </a>
                       </li>
                       <li>
-                        <a title="facebook">
-                          <FaTwitter />
+                        <a title="Twitter" >
+                          <FaTwitter className="pointer"/>
                         </a>
                       </li>
                     </ul>

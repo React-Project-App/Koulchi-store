@@ -24,9 +24,11 @@ useEffect(()=>{
 	
 
   return (posts.length>0)?(
-    <div className='mt-5 pt-3'>
-      <HeaderBlog/>
-            <div className="container ">
+
+    <div className=''>
+      <HeaderBlog title="Our Blog" />
+            <div class="container ">
+
 				
 				<div className=" row ">
                     <div className='col-md-9 col-sm-12 '>
@@ -36,7 +38,7 @@ useEffect(()=>{
 						posts.map(post=>{
 							
 							return(
-								<Post post={post}/>
+								<Post post={post} />
 							)
 						
 						})

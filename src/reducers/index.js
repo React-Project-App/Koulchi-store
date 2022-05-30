@@ -13,5 +13,9 @@ import ListUsers from "./ListUsers";
 import Post from "./Post";
 import SearchPost from "./SearchPost";
 import RecentPosts from "./RecentPosts";
-export const   Red = combineReducers({products,Cart,Auth,Filter,Categories,FilterCategorie,Post,SearchPost,RecentPosts,ListUsers});
+
+import AboutTeam from "./AboutTeam";
+
+export const   Red = combineReducers({products,Cart,Auth,Filter,Categories,FilterCategorie,Post,SearchPost,RecentPosts,AboutTeam});
+
 

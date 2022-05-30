@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaAngleDoubleRight } from "react-icons/fa";
-
+import { FaAngleDoubleRight,FaUser } from "react-icons/fa";
+import parse  from 'html-react-parser'
+ import {ReactHtmlParser,convertNodeToElement}  from 'react-html-parser'
 function Post(post) {
-  const { Titre, Article, Photo, Auteur, DatePost, id } = post.post;
+  const { Title,  Photo, Auteur, DatePost, id,Introduction } = post.post;
   let datePost = new Date(null);
   datePost.setTime(DatePost.seconds * 1000);
 
@@ -26,13 +27,14 @@ function Post(post) {
             <a
               title="new Collectios are imported In Our shop."
             >
-              {Titre}
+              {Title}
             </a>
           </h3>
           <div class="entry-meta">
             {/* <span class="post-like"><a href="#" title="224 Likes"><i class="fa fa-heart-o"></i>224 Likes</a></span> */}
             <span class="post-admin">
-              <i class="fa fa-user"></i><span className="text-primary">Posted By </span> 
+              {/* <i class="fa fa-user"></i> */}
+              <span className="text-primary">Posted By </span> 
               <a  title="Max">
                 
                 {Auteur}
@@ -40,7 +42,7 @@ function Post(post) {
             </span>
           </div>
           <div class="entry-content">
-            <p>{Article}</p>
+            <p>{Introduction}</p>
             <Link
               to={`/DetailPost/${id}`}
               title="Read More"

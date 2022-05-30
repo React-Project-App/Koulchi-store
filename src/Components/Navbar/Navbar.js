@@ -21,7 +21,7 @@ const Navbar = () => {
   };
   const user = auth.currentUser;
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white ">
       <div className="container">
         <Link
           to="/home"
@@ -30,9 +30,7 @@ const Navbar = () => {
           <span>K</span>OULCHI<span>.</span>
         </Link>
         <div className="ms-5 d-lg-none ms-auto ">
-          <Link to="/FavoriteProducts" className="me-3">
-            <BsHeartFill />
-          </Link>
+          
           <Link to="/cart" className="me-3 position-relative ">
             <BsFillCartFill />
           </Link>
@@ -127,6 +125,16 @@ const Navbar = () => {
                 Blog
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/AboutUs">
+                About us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/Contact">
+                Contact us
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="ms-5 d-lg-block d-none ">
@@ -139,6 +147,7 @@ const Navbar = () => {
               </span>
             </div>
           </Link>
+
 
           <a
             className="position-fixed"

@@ -40,19 +40,20 @@ function SidePost() {
         </div>
       </aside>
 
-      {/* recent Post */}
+
 
       <aside className="widget widget_latest_post">
         <h3 className="widget-title">recent posts</h3>
         {
-            (posts.length>0)?posts.map((post,key)=>{
+
+            (posts.length>0)&&(posts.map((post,key)=>{
                 return(
-                    <div key={key} >
-                    <RecentPosts post={post}/>
-                    <hr className="col-10 text-center ms-4"/>
-                    </div>
+                    <>
+                    <RecentPosts post={post} key={key}/>
+                    </>
+
                 )
-            }):console.log("sss")
+            }))
         }
       </aside>
     </div>

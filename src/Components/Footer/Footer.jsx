@@ -7,6 +7,10 @@ import {BsInstagram} from "react-icons/bs"
 import {BsGithub} from "react-icons/bs"
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import {BiMoney,BiSupport} from "react-icons/bi"
+import {FiTruck} from "react-icons/fi"
+
+ 
 function Footer() {
   const CartProducts= useSelector(state=>state.Cart)
   const [loading,setloading]=useState(true);
@@ -22,6 +26,25 @@ function Footer() {
     <footer className="bg-dark text-center text-white ">
     {/* <!-- Grid container --> */}
     <div className="container p-4 ">
+
+    {/* <div class="services-item">
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="srv-box">
+							<FiTruck/><h5>Free delivery</h5><i class="icon icon-Dollar"></i>
+							<span class="icon_close"></span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="srv-box">
+							<BiMoney/><h5>Money Back</h5><i class="icon icon-Dollars"></i>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="srv-box">
+            <BiSupport/><h5>24/7 support</h5><i class="icon icon-Timer"></i>
+						</div>
+					</div>
+			</div> */}
       {/* <!-- Section: Social media --> */}
       <section className="mb-4">
         {/* <!-- Facebook --> */}
