@@ -1,15 +1,30 @@
 import { async } from "@firebase/util";
-import { addDoc, collection, doc } from "firebase/firestore";
+import { addDoc, arrayUnion, collection, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { SENTMESSAGE } from "../actionconstants/ActionCn";
 import { auth, db } from "../FirebaseConfig/FirebaseConfig";
 
 
-export const SentMessage=(msg)=>async (dispatch)=>{
+export const SentMessage=(msg,email)=>async (dispatch)=>{
     try {
-    await addDoc(collection(db,"Contact"),msg)
-    // console.log(msg);
-    dispatch({type:SENTMESSAGE})
+
+        const docRef = doc(db, "Contact", email);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            await updateDoc(doc(db,"Contact",email), {
+                Message: arrayUnion(msg.Message)
+            });
+          }
+          else{
+            await setDoc(doc(db,"Contact",email),msg)
+            console.log(email);
+            dispatch({type:SENTMESSAGE})
+          }
+        
+
+    
+
+    
         toast.success("Message sent");
     } catch (error) {
         // console.log(error)
