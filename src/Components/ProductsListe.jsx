@@ -23,7 +23,6 @@ const ProductsListe = ({product}) => {
         className="col-3 product-item  m-4 pointer"
         >
 
-{/* <Link to={`/products/${id}`} className='text-decoration-none text-light'> */}
                    
                    
         <div className="product-img">
@@ -41,12 +40,7 @@ const ProductsListe = ({product}) => {
                 </button>
 
             </div>
-            {/* <span className="heart-icon">
-               
-                { (heart  ?  
-                <BsHeartFill className='heart-fill' onClick={_=>setheart(!heart)}/> :
-                <BsHeart className='heart-fill' onClick={_=>setheart(!heart)}/>)}
-            </span> */}
+           
         </div>
 
         <div className="product-info p-3">
@@ -55,24 +49,8 @@ const ProductsListe = ({product}) => {
             <span className="product-price">{Curprice} DH</span>
             <span className="old-price text-dark ">{ Prevprice}DH</span>
         </div>
-        {/* </Link> */}
         </motion.div>
-    // </div>
-
-    // <div classNameName='col-4'>
-       
-      
-   
-    // <div classNameName="card shadow h-75">
-    //     <img classNameName="card-img-top h-75 " src={Photo} alt={Title}   />
-    //     <div classNameName="card-body">
-    //         <h4 classNameName="card-title">{Title}</h4>
-    //         <p classNameName="card-text">{Price}</p>
-    //     </div>
-    //     <Link to={`/products/${id}`} classNameName='btn btn-primary'>View</Link>
-        
-    // </div>
-    // </div>
+  
     
   )
 }

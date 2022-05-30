@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function HeaderBlog({title,para}) {
   return (
+
     <div class="page-banner  no-padding">
 			
 				<div class="">
@@ -13,6 +14,7 @@ function HeaderBlog({title,para}) {
 				</div>
 			</div>
   )
+
 }
 
-export default HeaderBlog
+export default HeaderBlog;

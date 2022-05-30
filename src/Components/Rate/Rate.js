@@ -25,10 +25,8 @@ const Rate = ({ count, rating, color, onRating ,rate }) => {
             <FaStar
               key={idx}
               className="pointer"
-              // onClick={() => onRating(idx)}
               style={{ color: getColor(idx) }}
-              // onMouseEnter={() => setHoverRating(idx)}
-              // onMouseLeave={() => setHoverRating(0)}
+
             />
           ));
         }

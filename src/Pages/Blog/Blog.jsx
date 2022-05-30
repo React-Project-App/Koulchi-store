@@ -24,11 +24,13 @@ useEffect(()=>{
 	
 
   return (posts.length>0)?(
+
     <div className=''>
       <HeaderBlog title="Our Blog" />
             <div class="container ">
+
 				
-				<div class=" row ">
+				<div className=" row ">
                     <div className='col-md-9 col-sm-12 '>
 					{
 
@@ -46,10 +48,8 @@ useEffect(()=>{
 					
                     
                     </div>
-					{/* sidePost */}
                     <SidePost/>
                 </div>
-                 {/* side */}
                  
                 
                 

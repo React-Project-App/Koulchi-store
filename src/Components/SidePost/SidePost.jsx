@@ -17,7 +17,6 @@ function SidePost() {
       const  posts= useSelector(
         (state) => state.RecentPosts
       );
-    // console.log(posts)
   return (
     <div className="col-md-3 col-sm-12 widget-area order-sm-1 ">
       {/* search */}
@@ -41,16 +40,18 @@ function SidePost() {
         </div>
       </aside>
 
-      {/* recent Post */}
+
 
       <aside className="widget widget_latest_post">
         <h3 className="widget-title">recent posts</h3>
         {
+
             (posts.length>0)&&(posts.map((post,key)=>{
                 return(
                     <>
                     <RecentPosts post={post} key={key}/>
                     </>
+
                 )
             }))
         }

@@ -10,9 +10,15 @@ let datePost = new Date(null);
   if(DatePost){
   datePost.setTime(DatePost.seconds * 1000);}
   return (
+
+    
+      <div className="latest-box">
+        <div className=" ">
+
     <>
       <div class="latest-box recent-title">
         <div class=" ">
+
           <div className="row">
             <Link to={`/DetailPost/${id}`} className="col-sm-6">
               <img
@@ -30,10 +36,10 @@ let datePost = new Date(null);
           </div>
 
           <span className="row text-center pt-2">
-            <Link to={`/DetailPost/${id}`} class="calendar col-12" >
-              <i class="fa fa-calendar-o"></i>{datePost.toDateString()}
+            <Link to={`/DetailPost/${id}`} className="calendar col-12" >
+              <i className="fa fa-calendar-o"></i>{datePost.toDateString()}
             </Link>
-            <Link to={`/DetailPost/${id}`} class="calendar col-12" >
+            <Link to={`/DetailPost/${id}`} className="calendar col-12" >
              <span>Posted By</span> {Auteur}
             </Link >
           </span>
