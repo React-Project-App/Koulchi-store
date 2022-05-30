@@ -20,6 +20,7 @@ export const SentMessage=(msg,email)=>async (dispatch)=>{
             await setDoc(doc(db,"Contact",email),msg)
             console.log(email);
             dispatch({type:SENTMESSAGE})
+            
           }
         
 
