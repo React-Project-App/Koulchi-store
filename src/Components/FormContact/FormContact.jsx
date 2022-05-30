@@ -6,12 +6,12 @@ function FormContact() {
   const dispatch = useDispatch();
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
-  const [Message, setMessage] = useState("");
+  const [Message, setMessage] = useState([]);
   const Answer = "NotAnswered";
   const obj = {
     Name,
     Email,
-    Message,
+    Message:[Message],
     Answer,
   };
   const show = Name && Email && Message;
@@ -46,7 +46,7 @@ function FormContact() {
           className="container__input form-control shadow-none"
           placeholder="Add a brief messge"
           value={Message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) =>  setMessage(e.target.value)}
         ></textarea>
         <label class="container__label">Message</label>
       </div>

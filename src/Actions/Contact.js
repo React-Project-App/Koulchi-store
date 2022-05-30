@@ -7,12 +7,13 @@ import { auth, db } from "../FirebaseConfig/FirebaseConfig";
 
 export const SentMessage=(msg,email)=>async (dispatch)=>{
     try {
-
+             console.log(msg.Message);
         const docRef = doc(db, "Contact", email);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             await updateDoc(doc(db,"Contact",email), {
-                Message: arrayUnion(msg.Message)
+               
+                Message: arrayUnion(msg.Message[0])
             });
           }
           else{
@@ -27,7 +28,7 @@ export const SentMessage=(msg,email)=>async (dispatch)=>{
     
         toast.success("Message sent");
     } catch (error) {
-        // console.log(error)
+        console.log(error)
         toast.success("Message has not been sent");
     }
 }
