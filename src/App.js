@@ -58,6 +58,7 @@ function App() {
 
         {/* Route</>  */}
           {<Route path="/login" element={state ? <Navigate to="/home"/> :<Login/>} />}
+          {/* <Route path="/login" element={<PrivateRoute1> <Login/>   </PrivateRoute1>}/> */}
         {/* <Route path="/login" element={<Login />}/>  */}
 
         

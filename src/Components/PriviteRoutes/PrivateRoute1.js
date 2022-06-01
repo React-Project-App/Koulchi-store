@@ -1,17 +1,20 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { CheckLogin_User } from '../../Actions/Auth'
 
 
 
-const PrivateRoute1 = ({children}) => {
+const PrivateRoute1 = () => {
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch()
-    dispatch(CheckLogin_User())
+    useEffect(() => {
+      dispatch(CheckLogin_User())
+
+    }, [])
   const state=useSelector(state=>state.Auth)
     console.log(state)
-  return  state ? <Navigate to="/home"/>:<output/>
+  return  state?<output/> : <Navigate to="/home"/>
 }
 
 export default PrivateRoute1
