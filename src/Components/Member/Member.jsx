@@ -17,9 +17,9 @@ function Member({member}) {
             <p style={{cursor:'default'}}>{Sentence}</p>
             <ul class="social">
                 <li><a href={Facebook} title="Facebook"><BsFacebook className='bs'/> </a></li>
-                <li><a href={Instagram} title="Twitter"><BsInstagram className='bs'/></a></li>
+                <li><a href={Instagram} title="Instagram"><BsInstagram className='bs'/></a></li>
                 <li><a href={Linkden} title="Linkedin"><BsLinkedin className='bs'/></a></li>
-                <li><a href={Github} title="Tumblr"><BsGithub className='bs'/></a></li>
+                <li><a href={Github} title="Github"><BsGithub className='bs'/></a></li>
             </ul>
         </div>
     </div>
