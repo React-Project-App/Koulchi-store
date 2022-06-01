@@ -2,12 +2,38 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SentMessage } from "../../Actions/Contact";
 import { BsArrowUpRight } from "react-icons/bs";
+import axios from "axios";
+// import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
+
 function FormContact() {
   const dispatch = useDispatch();
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState([]);
   const Answer = "NotViewed";
+  const sendMail =()=>{
+
+
+
+
+const template_params={
+        to_name: Name,
+        from_name: Name,
+        message: Message,
+        email:Email
+        }
+emailjs.send('service_5h6pusi', 'template_gi3w71f',template_params, 'AI1YprBYar1GHeCU2')
+ .then((response) =>{
+        toast.success("Check your email for a reply")
+      }
+    ).catch((error)=> {
+      toast.error("Something went wrong")
+        
+      });
+
+  }
   const obj = {
     Name,
     Email,
@@ -30,7 +56,7 @@ function FormContact() {
 
       <div className="mt-4 contain">
         <input
-          type="text"
+          type="email"
           placeholder="name@email.com"
           className="container__input form-control shadow-none"
           value={Email}
@@ -60,6 +86,7 @@ function FormContact() {
             setEmail("");
             setName("");
             setMessage("");
+            sendMail()
           }}
         >
           Submit Message <BsArrowUpRight className="mb-1" />
