@@ -499,4 +499,9 @@ padding: 10px 5px 0px 5px;
 
 
 
-
+.vovo{
+    list-style: none;
+}
+.dropdown-menu {
+    min-width: fit-content;
+}

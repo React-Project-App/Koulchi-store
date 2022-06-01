@@ -29,70 +29,53 @@ const Navbar = () => {
         >
           <span>K</span>OULCHI<span>.</span>
         </Link>
-        <div className="ms-5 d-lg-none ms-auto ">
+        <div className="ms-5  d-lg-none d-flex align-items-center ms-auto ">
           
-          <Link to="/cart" className="me-3 position-relative ">
+          <Link to="/cart" className="me-1 position-relative ">
             <BsFillCartFill />
+            <div className=" crtp position-absolute ">
+              <span className=" NumberItems position-absolute">
+                {ItemsNumber}
+              </span>
+            </div>
           </Link>
 
-          <a
-            class=""
-            data-bs-toggle="collapse"
-            href="#multiCollapseExample1"
-            role="button"
-            aria-expanded="false"
-            aria-controls="multiCollapseExample1"
-          >
+          <li class="nav-item dropdown vovo ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {state ? (
-              <img src={state.photoURL} className="rounded-pill w-25 " />
+              <img
+                src={state.photoURL}
+                className="rounded-pill  w-25"
+              />
             ) : (
-              <BsFillPersonFill />
+              <BsFillPersonFill  />
             )}
           </a>
-
-          <div
-            className="row text-start mt-1 "
-            style={{
-              position: "absolute",
-              right: "calc(14%)",
-              top: "calc(60%)",
-            }}
-          >
-            <div className="col">
-              <div
-                className="collapse multi-collapse"
-                id="multiCollapseExample1"
-              >
-                <div className="card card-body ">
-                  {user ? (
-                    <ul className="ps-0" style={{ listStyle: "none" }}>
+          <ul class="dropdown-menu vovo " aria-labelledby="navbarDropdown">
+          {user ? (<>
                       <li>
-                        <Link to="/profile" className="log">
+                        <Link to="/profile" class="dropdown-item">
                           Your Profile
                         </Link>
                       </li>
-                      <hr />
+                      <li><hr class="dropdown-divider"/></li>
                       <li>
-                        {" "}
-                        <a type="button" className="log" onClick={handelLogOut}>
-                          {" "}
+                        <a type="button" class="dropdown-item" onClick={handelLogOut}>
                           Log out
-                        </a>{" "}
+                        </a>
                       </li>
-                    </ul>
+                      </>
                   ) : (
-                    <ul className="ps-0" style={{ listStyle: "none" }}>
-                      <li>
-                        <Link to="/login" className="log">
+                      <li >
+                        <Link to="/login" class="dropdown-item">
                           Log in
-                        </Link>{" "}
-                      </li>
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+                        </Link>
+                      </li>)}
+           
+          </ul>
+        </li>
+
+         
         </div>
         <button
           className="navbar-toggler shadow-none"
@@ -137,19 +120,53 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="ms-5 d-lg-block d-none ">
+        <div className=" d-lg-flex d-none align-items-center">
           <Link to="/Cart" className="me-4 position-relative  ">
             <BsFillCartFill />
-
             <div className=" crtp position-absolute ">
               <span className=" NumberItems position-absolute">
                 {ItemsNumber}
               </span>
             </div>
           </Link>
+          
+          <li class="nav-item dropdown vovo me-5">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {state ? (
+              <img
+                src={state.photoURL}
+                className="rounded-pill  "
+                width="50%"
+              />
+            ) : (
+              <BsFillPersonFill  />
+            )}
+          </a>
+          <ul class="dropdown-menu vovo " aria-labelledby="navbarDropdown">
+          {user ? (<>
+                      <li>
+                        <Link to="/profile" class="dropdown-item">
+                          Your Profile
+                        </Link>
+                      </li>
+                      <li><hr class="dropdown-divider"/></li>
+                      <li>
+                        <a type="button" class="dropdown-item" onClick={handelLogOut}>
+                          Log out
+                        </a>
+                      </li>
+                      </>
+                  ) : (
+                      <li >
+                        <Link to="/login" class="dropdown-item">
+                          Log in
+                        </Link>
+                      </li>)}
+           
+          </ul>
+        </li>
 
-
-          <a
+          {/* <a
             className="position-fixed"
             data-bs-toggle="collapse"
             role="button"
@@ -165,9 +182,9 @@ const Navbar = () => {
             ) : (
               <BsFillPersonFill />
             )}
-          </a>
+          </a> */}
 
-          <div
+          {/* <div
             className="row text-start mt-1 position-fixed"
             style={{ position: "absolute", right: "14%", top: "5%" }}
           >
@@ -205,7 +222,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
