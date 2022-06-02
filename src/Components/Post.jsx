@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDoubleRight,FaUser } from "react-icons/fa";
-import parse  from 'html-react-parser'
- import {ReactHtmlParser,convertNodeToElement}  from 'react-html-parser'
+
+
 function Post(post) {
   const { Title,  Photo, Auteur, DatePost, id,Introduction } = post.post;
   let datePost = new Date(null);
