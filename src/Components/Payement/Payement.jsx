@@ -21,7 +21,6 @@ function App({ Total }) {
             orderId: data.orderID,
             email: details.payer.email_address,
             name: details.payer.name.given_name,
-            adresse:details.payer.address.line1,
             total: Total,
             createdAt: new Date(),
             status: "success",
