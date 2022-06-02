@@ -12,15 +12,18 @@ function App({ Total }) {
       <PayPalButton
         options={{
           clientId:
-            "AeSMgBV-xZVsUdWPzzgIBjYF7hNhYE3eVCgR3FqVs4Z7kywhEy7t1S3mLmdKLT3Y1zyylr3vSwkeRBgw",
+            "AchNg7n2z2SK8i_WcueuogQ6oNhCTu9KcbzMW5PmIGj8FFOE5D08N7s4xRuMvElDpcFs_Q-P3OXnHO7g",
           currency: "USD",
         }}
         amount={Total}
         onSuccess={async (details, data) => {
+          console.log(details);
           const docRef = await addDoc(collection(db, "Orders"), {
             orderId: data.orderID,
             email: details.payer.email_address,
             name: details.payer.name.given_name,
+            adresse:details.payer.address.address_line_1,
+            CodePostal:details.payer.address.postal_code,
             total: Total,
             createdAt: new Date(),
             status: "success",

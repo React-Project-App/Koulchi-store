@@ -1,7 +1,6 @@
 import {
   CHECK_LOGIN_USER,
   LOGIN,
-  LOGIN_WITH_FACEBOOK,
   LOGIN_WITH_GOOGLE,
   LOGOUT,
   RESET_PASSWORD,
@@ -12,7 +11,6 @@ export default function Auth(state = null, { type, payload }) {
     case LOGIN:
       return payload.user;
     case LOGOUT:
-   
       return;
     case CHECK_LOGIN_USER:
       return payload;
@@ -20,7 +18,6 @@ export default function Auth(state = null, { type, payload }) {
       return payload;
     case RESET_PASSWORD:
       return state;
-
     default:
       return state;
   }
