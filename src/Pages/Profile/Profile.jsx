@@ -16,22 +16,14 @@ function Profile() {
   const  [LogedUser,setLogedUser]=useState(null)
 
   const [Name,setName]=useState('')
-//   const [Phone,setPhone]=useState(0)
   const localUser= JSON.parse( localStorage.getItem('User'))
-  
- 
   const navigate = useNavigate();
-
   const [image,setImage]=useState('')
-  
   const changeUserInfo= async()=>{
     try {
          const user = await updateProfile(auth.currentUser,{
             displayName :Name,
           })
-        //   console.log(user)
-
-
           toast.success("Information has been updated successfully")
     } catch (error) {
       
@@ -52,23 +44,12 @@ function Profile() {
                   <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  onChange={(e)=> setName(e.target.value)}/>
                  
               </div>
-              {/* <div class="mb-3"> */}
-                  {/* <label for="exampleInputEmail1" class="form-label  fw-bold">Phone</label> */}
-                  {/* <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e)=> HandelFile(e.target.files[0 ])} /> */}
-            
-              {/* </div> */}
+              
               <div className='mb-3'>
               <button type="button" class="btn btn-primary mb-3"  onClick={()=>navigate("/ResetPassword")}>Change Password</button>
   
               </div>
-              {/* <div class="d-flex justify-content-between mb-3">
-                  <a href="forgot password.html" class="link ">Don't Know Your Password ?</a>
-              </div> */}
-              {/* <div class="mb-4">
-                  <label for="exampleInputEmail1" class="form-label">New Password</label>
-                  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                
-              </div> */}
+             
               <button type="button" class="btn btn-primary mb-3" onClick={()=>changeUserInfo()} >SAVE CHANGES</button>
           </form>
       </section>

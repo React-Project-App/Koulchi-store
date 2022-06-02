@@ -1,7 +1,6 @@
-import { clear } from '@testing-library/user-event/dist/clear'
 import React ,{useState}from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link,useLocation,useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link,useNavigate } from 'react-router-dom'
 import { CreateUserWithEmailAndPassword } from '../../Actions/Auth'
 
 const SignUp = () => {
@@ -9,8 +8,8 @@ const SignUp = () => {
     
     const navigate = useNavigate();
     const [Email,setEmail]=useState("")
-const [Password,setPassword]=useState("")
-const [Name,setName]=useState("")
+    const [Password,setPassword]=useState("")
+    const [Name,setName]=useState("")
 
 
 const handelEmailChnage = (e) => {
@@ -25,10 +24,7 @@ const handelNameChnage = (e) => {
 
 const handelLogin = () => {
     // e.preventDefault();
-    // if(!localStorage.getItem("user")){
     dispatch(CreateUserWithEmailAndPassword(Email,Password,Name))
-    // return
-    // }
     navigate("/home")
 
     

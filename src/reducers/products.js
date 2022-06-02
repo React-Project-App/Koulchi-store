@@ -1,4 +1,4 @@
-import { AMOUNT_PRODUCT, GET_ALL_PRODUCTS, GET_DETAILS_PRODUCT, GET_FEATURED_PRODUCTS, RATE_PRODUCT } from "../actionconstants/ActionCn";
+import {  GET_ALL_PRODUCTS, GET_DETAILS_PRODUCT, GET_FEATURED_PRODUCTS, RATE_PRODUCT } from "../actionconstants/ActionCn";
 
 
 export default function products(state = [], {type,pyload}) {

@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CheckLogin_User, LoginWithFacebook, LoginWithGoogle, LoginWithmailAndPassword,Logout } from '../../Actions/Auth'
-// import { AiFillFacebook ,AiFillGoogleCircle} from "react-icons/ai";
 import {BsGoogle,BsFacebook} from 'react-icons/bs'
-import { FcGoogle } from "react-icons/fc";
 import { Link, Navigate } from 'react-router-dom';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from '../../FirebaseConfig/FirebaseConfig';
 import { toast } from 'react-toastify';
 
 const Login = () => {
@@ -30,19 +26,12 @@ const [Password,setPassword]=useState("")
         setPassword(e.target.value);
     }
     const handelLogin =   () => {
-        // e.preventDefault();
         dispatch(LoginWithmailAndPassword(Email,Password))
         
         console.log(state)
         if(localStorage.getItem('user')){
             toast.success("Login Successfully")
         }
-        // if(state){
-        //     await setDoc(doc(db,"users",state.uid),{
-        //         name:user.user.displayName,
-        //         email:user.user.email,
-        //       })
-        // }
     }
 
     const handelLogOut= () => {

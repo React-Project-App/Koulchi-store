@@ -6,10 +6,6 @@ import Auth from "./Auth";
 import Filter from "./Filter"
 import Categories from "./Categories"
 import FilterCategorie from "./FilterCategorie"
-
-import ListUsers from "./ListUsers";
-
-
 import Post from "./Post";
 import SearchPost from "./SearchPost";
 import RecentPosts from "./RecentPosts";
