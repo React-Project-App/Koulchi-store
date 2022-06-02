@@ -144,21 +144,21 @@ const Navbar = () => {
           </a>
           <ul class="dropdown-menu vovo " aria-labelledby="navbarDropdown">
           {user ? (<>
-                      <li>
-                        <Link to="/profile" class="dropdown-item">
+                      <li  className="bg-white">
+                        <Link to="/profile" class="">
                           Your Profile
                         </Link>
                       </li>
                       <li><hr class="dropdown-divider"/></li>
                       <li>
-                        <a type="button" class="dropdown-item" onClick={handelLogOut}>
+                        <a type="button" class="" onClick={handelLogOut}>
                           Log out
                         </a>
                       </li>
                       </>
                   ) : (
                       <li >
-                        <Link to="/login" class="dropdown-item">
+                        <Link to="/login" class="">
                           Log in
                         </Link>
                       </li>)}
@@ -166,63 +166,7 @@ const Navbar = () => {
           </ul>
         </li>
 
-          {/* <a
-            className="position-fixed"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="multiCollapseExample1"
-          >
-            {state ? (
-              <img
-                src={state.photoURL}
-                className="rounded-pill  "
-                width="50%"
-              />
-            ) : (
-              <BsFillPersonFill />
-            )}
-          </a> */}
-
-          {/* <div
-            className="row text-start mt-1 position-fixed"
-            style={{ position: "absolute", right: "14%", top: "5%" }}
-          >
-            <div className="col">
-              <div
-                className="collapse multi-collapse"
-                id="multiCollapseExample1"
-              >
-                <div className="card card-body ">
-                  {user ? (
-                    <ul className="ps-0" style={{ listStyle: "none" }}>
-                      <li>
-                        <Link to="/profile" className="log">
-                          Your Profile
-                        </Link>
-                      </li>
-                      <hr />
-                      <li>
-                        {" "}
-                        <a type="button" className="log" onClick={handelLogOut}>
-                          {" "}
-                          Log out
-                        </a>{" "}
-                      </li>
-                    </ul>
-                  ) : (
-                    <ul className="ps-0" style={{ listStyle: "none" }}>
-                      <li>
-                        <Link to="/login" className="log">
-                          Log in
-                        </Link>{" "}
-                      </li>
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div> */}
+        
         </div>
       </div>
     </nav>
