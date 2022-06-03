@@ -27,7 +27,7 @@ function App({ Total }) {
             total: Total,
             createdAt: new Date(), 
             status: "success",
-            cart: JSON.stringify(localStorage.getItem("Cart")),
+            cart: JSON.parse(localStorage.getItem("Cart")),
           });
           toast.success(
             "Transaction completed by " + details.payer.name.given_name
