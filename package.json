@@ -14,7 +14,7 @@
     "emailjs-com": "^3.2.0",
     "firebase": "^9.7.0",
     "framer-motion": "^4.1.17",
-    "react": "17.0",
+    "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-paypal-button-v2": "^2.6.3",

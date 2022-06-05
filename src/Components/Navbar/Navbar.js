@@ -40,34 +40,35 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <li class="nav-item dropdown vovo ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown vovo ">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {state ? (
               <img
                 src={state.photoURL}
                 className="rounded-pill  w-25"
+                style={{width:"30px"}}
               />
             ) : (
               <BsFillPersonFill  />
             )}
           </a>
-          <ul class="dropdown-menu vovo " aria-labelledby="navbarDropdown">
+          <ul className="dropdown-menu vovo " aria-labelledby="navbarDropdown">
           {user ? (<>
                       <li>
-                        <Link to="/profile" class="dropdown-item">
+                        <Link to="/profile" className="dropdown-item">
                           Your Profile
                         </Link>
                       </li>
-                      <li><hr class="dropdown-divider"/></li>
+                      <li><hr className="dropdown-divider"/></li>
                       <li>
-                        <a type="button" class="dropdown-item" onClick={handelLogOut}>
+                        <a type="button" className="dropdown-item" onClick={handelLogOut}>
                           Log out
                         </a>
                       </li>
                       </>
                   ) : (
                       <li >
-                        <Link to="/login" class="dropdown-item">
+                        <Link to="/login" className="dropdown-item">
                           Log in
                         </Link>
                       </li>)}
@@ -130,35 +131,35 @@ const Navbar = () => {
             </div>
           </Link>
           
-          <li class="nav-item dropdown vovo me-5">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown vovo me-5">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {state ? (
               <img
                 src={state.photoURL}
                 className="rounded-pill  "
-                width="50%"
+                style={{width:"30px"}}
               />
             ) : (
               <BsFillPersonFill  />
             )}
           </a>
-          <ul class="dropdown-menu vovo " aria-labelledby="navbarDropdown">
+          <ul className="dropdown-menu vovo " aria-labelledby="navbarDropdown">
           {user ? (<>
                       <li  className="bg-white">
-                        <Link to="/profile" class="">
+                        <Link to="/profile" className="">
                           Your Profile
                         </Link>
                       </li>
-                      <li><hr class="dropdown-divider"/></li>
+                      <li><hr className="dropdown-divider"/></li>
                       <li>
-                        <a type="button" class="" onClick={handelLogOut}>
+                        <a type="button" className="" onClick={handelLogOut}>
                           Log out
                         </a>
                       </li>
                       </>
                   ) : (
                       <li >
-                        <Link to="/login" class="">
+                        <Link to="/login" className="">
                           Log in
                         </Link>
                       </li>)}

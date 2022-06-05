@@ -8,16 +8,12 @@ import {
 export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage.getItem("Cart")):[], { type, payload }) => {
   switch (type) {
     case ADD_TO_CART:
-      // const { id } = payloa
       
-      console.log(payload);
       const cartItem = cart.find((item) => item.id === payload.id);
 
-      console.log(cartItem);
       if (cartItem) {
         const newCart = cart.map((item) => {
           if (item.id === payload.id) {
-            console.log(item.Amount)
             return {
               ...item,
               Amount: item.Amount + payload.Amount,
@@ -64,7 +60,6 @@ export const Cart = (cart = localStorage.getItem("Cart")?JSON.parse(localStorage
             };
           }
           else{
-            console.log(item.Curprice)
             return {
               ...item,
               Amount: 1,
