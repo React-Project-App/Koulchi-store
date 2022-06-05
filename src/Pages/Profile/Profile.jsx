@@ -36,7 +36,7 @@ function Profile() {
       <section class="col-lg-6 col-12 sing p-5">
           <form class="p-5 d-flex flex-column align-content-center ms-lg-5">
               <div class="mb-3 mt-5 text-center row">
-                  <img src={user.photoURL } class="pro col-4" alt="" />
+                  <img src={user.photoURL } class="pro col-4 rounded-circle" alt="" />
                   <h3 class="fw-bold col-8 user-name text-uppercase ">{user.displayName}</h3>
               </div>
               <div class="mb-3">
@@ -54,9 +54,11 @@ function Profile() {
           </form>
       </section>
       <section class="col-lg-6 col-12 sing-img d-none d-lg-flex p-5  flex-column ">
-          <img src="https://raw.githubusercontent.com/rachid-wanmid/DESIGN_ECO_POJ/main/page%20img/Accept%20request-pana.png" class="img-fluid w-75 mt-5 pt-5" alt=""/>
+          <img src="https://raw.githubusercontent.com/rachid-wanmid/DESIGN_ECO_POJ/main/page%20img/Accept%20request-pana.png" class="img-fluid w-75 mt-5 pt-5 " alt=""/>
       </section>
-  </main> ):<>does not exist</>}</div>
+  </main> ):(<div className='d-flex justify-content-center align-items-center load'>
+<div className='loader'></div>
+    </div>) }</div>
    
 
   )
